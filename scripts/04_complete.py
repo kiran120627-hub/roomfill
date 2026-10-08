@@ -89,6 +89,83 @@ def procedural_fill(shape: tuple[int, int], base: np.ndarray, seed: int) -> np.n
     return (img * 255).astype(np.uint8)
 
 
+def blueprint_guidance(args, fs: dict, L: float, W: float, px: float, scale_m: float) -> dict:
+    """Mode A guiding Mode B: align the parsed floor plan to the fitted shell, then protect the
+    plan's doors and windows as openings so completion never paints a wall over them.
+
+    The plan's orientation relative to the reconstruction is unknown (which wall is "west", and
+    whether the drawing is mirrored relative to our axes), so all 4 flips are tried and the one whose
+    openings land on wall areas the cameras actually SAW THROUGH wins."""
+    plan = json.loads(Path(args.plan_layout).read_text())
+    Lp, Bp = plan["room"]["length"], plan["room"]["breadth"]
+    Lm, Wm = L * scale_m, W * scale_m                      # shell extents in metres (x = ex, y = ey)
+    swap = (Lm >= Wm) != (Lp >= Bp)                         # plan length runs along shell y instead of x
+    px_m = px * scale_m
+
+    def place(op, flipA, flipB):
+        """plan opening -> (shell face, u range in texels)."""
+        a, b = op["start_m"], op["end_m"]
+        side = op["wall"]
+        if not swap:
+            ax_len, other_len, sx, sy = Lp, Bp, Lm / Lp, Wm / Bp
+            if side in ("west", "east"):                    # wall at x=const, runs along plan z -> shell y
+                face = "wall_x0" if (side == "west") != flipA else "wall_x1"
+                lo, hi = (Bp - b, Bp - a) if flipB else (a, b)
+                return face, lo * sy, hi * sy
+            face = "wall_y0" if (side == "north") != flipB else "wall_y1"
+            lo, hi = (Lp - b, Lp - a) if flipA else (a, b)
+            return face, lo * sx, hi * sx
+        sx, sy = Wm / Lp, Lm / Bp                            # plan x -> shell y, plan z -> shell x
+        if side in ("west", "east"):
+            face = "wall_y0" if (side == "west") != flipA else "wall_y1"
+            lo, hi = (Bp - b, Bp - a) if flipB else (a, b)
+            return face, lo * sy, hi * sy
+        face = "wall_x0" if (side == "north") != flipB else "wall_x1"
+        lo, hi = (Lp - b, Lp - a) if flipA else (a, b)
+        return face, lo * sx, hi * sx
+
+    def rect(op, flipA, flipB):
+        face, lo, hi = place(op, flipA, flipB)
+        f = fs[face]
+        c0, c1 = int(max(0, lo / px_m)), int(min(f["nu"], np.ceil(hi / px_m)))
+        top = args.plan_door_height if op["kind"] == "door" else args.plan_window_top
+        bot = 0.0 if op["kind"] == "door" else args.plan_sill
+        r0, r1 = int(bot / px_m), int(min(f["nv"], np.ceil(top / px_m)))
+        return face, slice(r0, r1), slice(c0, c1)
+
+    scores = {}
+    for flipA in (False, True):
+        for flipB in (False, True):
+            ev = []
+            for op in plan["openings"]:
+                face, rs, cs = rect(op, flipA, flipB)
+                m = fs[face]["opening"][rs, cs]
+                ev.append(float(m.mean()) if m.size else 0.0)
+            scores[(flipA, flipB)] = float(np.mean(ev)) if ev else 0.0
+    best = max(scores, key=scores.get)
+    protected = []
+    for op in plan["openings"]:
+        face, rs, cs = rect(op, *best)
+        f = fs[face]
+        region = np.zeros_like(f["opening"])
+        region[rs, cs] = True
+        add = region & ~f["observed"]                      # a seen closed door leaf stays observed
+        newly = add & ~f["opening"]                        # not already seen-through by the cameras
+        f["opening"] = f["opening"] | add
+        f["protected"] = f.get("protected", 0) + float(newly.mean())
+        protected.append({"kind": op["kind"], "plan_wall": op["wall"], "face": face,
+                          "opening_texels": int(region.sum()),
+                          "already_seen_through": int((region & ~newly & ~f["observed"]).sum()),
+                          "newly_protected_by_plan": int(newly.sum())})
+    out = {"plan": str(args.plan_layout), "swap_axes": bool(swap),
+           "orientation": {"flip_along_length": best[0], "flip_along_breadth": best[1]},
+           "evidence_seen_through": round(scores[best], 3),
+           "evidence_by_orientation": {f"{int(k[0])}{int(k[1])}": round(v, 3) for k, v in scores.items()},
+           "openings": protected}
+    print("blueprint guidance:", json.dumps(out), flush=True)
+    return out
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--run", required=True, type=Path)
@@ -99,6 +176,11 @@ def main() -> None:
                     help="metres around the walked camera path treated as free space (0 = off)")
     ap.add_argument("--vis-views", type=int, default=60, help="training views used for the visibility test")
     ap.add_argument("--vis-downscale", type=int, default=2)
+    ap.add_argument("--plan-layout", type=Path, default=None,
+                    help="layout.json from 10_floorplan.py: protect the plan's doors/windows during completion")
+    ap.add_argument("--plan-door-height", type=float, default=2.1)
+    ap.add_argument("--plan-sill", type=float, default=0.9)
+    ap.add_argument("--plan-window-top", type=float, default=2.1)
     ap.add_argument("--debug-snap", action="store_true")
     ap.add_argument("--snap", action="store_true",
                     help="snap faces to the seen surface (off: rendered depth on plain walls is too smeared)")
@@ -225,8 +307,9 @@ def main() -> None:
     new = {k: [] for k in ("means", "rgb", "quat", "conf")}
     report, upper_wall_colours = {}, []
     frames = face_frames(sh)
-    # Walls first so their upper-band colour can seed a fully unseen ceiling.
-    for name in ["wall_x0", "wall_x1", "wall_y0", "wall_y1", "floor", "ceiling"]:
+    ORDER = ["wall_x0", "wall_x1", "wall_y0", "wall_y1", "floor", "ceiling"]
+    fs = {}
+    for name in ORDER:
         o, du, dv, U, V, n = frames[name]
         nu, nv = max(2, int(U / px)), max(2, int(V / px))
         jj0, ii0 = np.mgrid[0:nv, 0:nu]
@@ -248,6 +331,16 @@ def main() -> None:
         unseen = ~observed & ~opening
         small = ndimage.binary_opening(unseen, iterations=2)
         observed |= unseen & ~small
+        fs[name] = dict(o=o, du=du, dv=dv, n=n, nu=nu, nv=nv, shift=shift,
+                        observed=observed, opening=opening, colour=colour)
+
+    plan_report = blueprint_guidance(args, fs, L, W, px, scale_m) if args.plan_layout else None
+
+    # Walls first so their upper-band colour can seed a fully unseen ceiling.
+    for name in ORDER:
+        f = fs[name]
+        o, du, dv, n, nu, nv, shift = f["o"], f["du"], f["dv"], f["n"], f["nu"], f["nv"], f["shift"]
+        observed, opening, colour = f["observed"], f["opening"], f["colour"]
         tex = np.where(observed[..., None], colour, 0)
         # Observed texels with no colour sample are sampling gaps: fill them, but they stay "observed".
         gaps = observed & (colour.sum(-1) <= 1e-6)
@@ -296,7 +389,8 @@ def main() -> None:
             new["rgb"].append(out[jj, ii] / 255.0)
             new["quat"].append(np.repeat(rotmat_to_quat_wxyz(R)[None], len(ii), 0))
             new["conf"].append(conf[jj, ii])
-        report[name] = {"snap": round(shift, 4), "observed": round(frac_obs, 3), "opening": round(float(opening.mean()), 3),
+        report[name] = {"snap": round(shift, 4), "plan_protected": round(float(f.get("protected", 0)), 3),
+                        "observed": round(frac_obs, 3), "opening": round(float(opening.mean()), 3),
                         "generated": round(float(fill_mask.mean()), 3), "method": method,
                         "new_gaussians": int(len(ii))}
         print(name, report[name], flush=True)
@@ -339,6 +433,7 @@ def main() -> None:
     pd = {k: v.to(device) for k, v in merged.items()}
     metrics = train_mod.evaluate(pd, scene.test, device, args.out / "test_renders")
     metrics.update({"faces": report, "generated_gaussians": n_new, "floaters_pruned": pruned,
+                    "blueprint": plan_report,
                     "num_gaussians": int(len(merged["means"]))})
     (args.out / "metrics.json").write_text(json.dumps(metrics, indent=2))
     m = metrics["mean"]
