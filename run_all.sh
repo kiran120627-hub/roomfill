@@ -44,11 +44,11 @@ MEAS_ARGS=(); [[ -f "$MEAS" ]] && MEAS_ARGS=(--measurements "$MEAS")
 
 python 09_eval.py --data "$DENSE" --downscale "$DS" --runs "$B" "$C"
 [[ -f "$MEAS" ]] && python 05_geometry.py --base "$B" --comp "$C" --measurements "$MEAS" --out "$OUT/geometry.json"
-python 06_export.py --run "$C" --shell-run "$B" --data "$DENSE"
+python 06_export.py --run "$C" --shell-run "$B" --data "$DENSE" --baseline-run "$B"
 python 08_objects.py --run "$C" --shell-run "$B" || echo "objects stage failed (non-fatal)"
 python 07_report.py --work "$WORK" --out "$OUT" --shell-run baseline --viewer-out "$HERE/viewer/$NAME"
 
 mkdir -p "$HERE/viewer/$NAME"
 cp "$C/export/room.json" "$C/export/room.splat" "$C/export/room_honesty.splat" \
-   "$C/export/room_splat.ply" "$C/export/room_splat_honesty.ply" "$C/export/room_shell.glb" "$HERE/viewer/$NAME/"
+   "$C/export/room_baseline.splat" "$C/export/room_splat.ply" "$C/export/room_splat_honesty.ply" "$C/export/room_shell.glb" "$HERE/viewer/$NAME/"
 echo "done -> $OUT/RESULTS.md | viewer: python viewer/serve.py, then http://localhost:8766/?scene=$NAME"

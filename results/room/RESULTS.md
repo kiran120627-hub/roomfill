@@ -8,7 +8,7 @@ Colour-aligned (cc) metrics fit one 3x4 colour map per image before scoring, rem
 |---|---|---|---|---|---|---|
 | Baseline 3DGS | 11.65 | 0.598 | 0.663 | 16.04 | 0.642 | 0.628 |
 | + depth prior, floater suppression | 13.12 | 0.569 | 0.650 | 16.18 | 0.621 | 0.646 |
-| + shell completion (RoomFill) | 11.67 | 0.598 | 0.658 | 16.10 | 0.643 | 0.627 |
+| + shell completion (RoomFill) | 12.17 | 0.597 | 0.653 | 16.20 | 0.643 | 0.622 |
 
 ## Metric room dimensions (m)
 
@@ -25,15 +25,15 @@ Colour-aligned (cc) metrics fit one 3x4 colour map per image before scoring, rem
 | Variant | Chamfer (cm) | Accuracy (cm) | Completeness (cm) | Coverage @10 cm |
 |---|---|---|---|---|
 | Baseline 3DGS | 21.0 | 13.0 | 29.1 | 20% |
-| RoomFill | 14.9 | 15.2 | 14.6 | 30% |
+| RoomFill | 15.2 | 14.9 | 15.5 | 29% |
 
 ## Shell coverage (fraction of each surface)
 
 | Face | Observed | Opening (seen through) | Generated | Method |
 |---|---|---|---|---|
-| wall_x0 | 26% | 6% | 68% | lama |
-| wall_x1 | 55% | 0% | 45% | lama |
-| wall_y0 | 42% | 2% | 56% | lama |
-| wall_y1 | 12% | 0% | 88% | lama |
-| floor | 72% | 0% | 28% | lama |
-| ceiling | 26% | 0% | 74% | lama |
+| wall_x0 | 35% | 8% | 58% | lama |
+| wall_x1 | 83% | 0% | 17% | lama |
+| wall_y0 | 54% | 2% | 44% | lama |
+| wall_y1 | 44% | 0% | 56% | lama |
+| floor | 78% | 0% | 22% | lama |
+| ceiling | 43% | 0% | 57% | lama |

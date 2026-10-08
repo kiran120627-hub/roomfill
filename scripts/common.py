@@ -166,3 +166,21 @@ def save_splat(path: Path, params: dict[str, torch.Tensor]) -> None:
     buf["r"] = (q[order] * 128 + 128).round().clip(0, 255).astype(np.uint8)
     path.parent.mkdir(parents=True, exist_ok=True)
     buf.tofile(str(path))
+
+
+def floater_mask(params: dict[str, torch.Tensor], cam_centres: np.ndarray, radius: float,
+                 haze_scale: float, haze_opacity: float = 0.15) -> torch.Tensor:
+    """True = keep. Removes (a) Gaussians within `radius` of the walked camera path: a handheld
+    phone is never inside furniture or walls, so anything there is a floater fitted to explain a
+    few frames; (b) large, faint "haze" Gaussians. Units are the params' own (SfM) units."""
+    from scipy.spatial import cKDTree
+    xyz = params["means"].detach().cpu().numpy()
+    d, _ = cKDTree(cam_centres).query(xyz, k=1, workers=-1)
+    near_path = torch.from_numpy(d < radius)
+    size = torch.exp(params["scales"].detach().cpu()).max(1).values
+    op = torch.sigmoid(params["opacities"].detach().cpu())
+    haze = (size > haze_scale) & (op < haze_opacity)
+    keep = ~(near_path | haze)
+    if "tag" in params:
+        keep |= params["tag"].detach().cpu() > 0.5          # never drop generated shell texels
+    return keep

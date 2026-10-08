@@ -28,7 +28,7 @@ from PIL import Image
 from gsplat import rasterization
 from scipy import ndimage
 
-from common import load_scene, save_ply
+from common import floater_mask, load_scene, save_ply
 
 C0 = 0.28209479177387814
 train_mod = importlib.import_module("02_train")
@@ -95,6 +95,8 @@ def main() -> None:
     ap.add_argument("--data", required=True, type=Path)
     ap.add_argument("--out", required=True, type=Path)
     ap.add_argument("--res", type=int, default=400, help="texture pixels across the longest room side")
+    ap.add_argument("--floater-radius", type=float, default=0.5,
+                    help="metres around the walked camera path treated as free space (0 = off)")
     ap.add_argument("--vis-views", type=int, default=60, help="training views used for the visibility test")
     ap.add_argument("--vis-downscale", type=int, default=2)
     ap.add_argument("--debug-snap", action="store_true")
@@ -112,6 +114,18 @@ def main() -> None:
 
     sh = json.loads((args.run / "shell.json").read_text())
     p = torch.load(args.run / "params.pt", map_location="cpu")
+
+    # Camera-path floater pruning: a handheld phone is never inside furniture, so Gaussians within
+    # --floater-radius metres of the walked path are floaters (plus large faint haze blobs).
+    scale_m = json.loads((args.run / "scale.json").read_text())["chosen_scale"] if (args.run / "scale.json").exists() else 1.0
+    path_scene = load_scene(args.data, downscale=8)
+    cams = np.stack([torch.linalg.inv(v.viewmat)[:3, 3].numpy() for v in path_scene.train])
+    n0 = len(p["means"])
+    if args.floater_radius > 0:
+        keep = floater_mask(p, cams, args.floater_radius / scale_m, haze_scale=0.3 / scale_m)
+        p = {k: v[keep] for k, v in p.items()}
+    pruned = n0 - len(p["means"])
+    print(f"floater pruning: removed {pruned:,} of {n0:,} Gaussians", flush=True)
 
     L, W = sh["dims_sfm"]["length"], sh["dims_sfm"]["width"]
     px = max(L, W) / args.res
@@ -324,7 +338,7 @@ def main() -> None:
     scene = load_scene(args.data, downscale=base_ds)
     pd = {k: v.to(device) for k, v in merged.items()}
     metrics = train_mod.evaluate(pd, scene.test, device, args.out / "test_renders")
-    metrics.update({"faces": report, "generated_gaussians": n_new,
+    metrics.update({"faces": report, "generated_gaussians": n_new, "floaters_pruned": pruned,
                     "num_gaussians": int(len(merged["means"]))})
     (args.out / "metrics.json").write_text(json.dumps(metrics, indent=2))
     m = metrics["mean"]

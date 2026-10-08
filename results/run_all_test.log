@@ -1,0 +1,223 @@
+{
+  "room": {
+    "length": 9.23,
+    "breadth": 8.88,
+    "height": 3.5,
+    "wall_thickness": 0.349
+  },
+  "openings": [
+    {
+      "wall": "west",
+      "kind": "door",
+      "start_m": 0.554,
+      "end_m": 1.427,
+      "width_m": 0.873
+    }
+  ]
+}
+/home/kiranriya0990/hn3d/lib/python3.12/site-packages/torchvision/models/_utils.py:207: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/home/kiranriya0990/hn3d/lib/python3.12/site-packages/torchvision/models/_utils.py:222: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=VGG16_Weights.IMAGENET1K_V1`. You can also use `weights=VGG16_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+run                        PSNR   SSIM  LPIPS | PSNRcc SSIMcc LPIPScc  n
+baseline                  11.65  0.598  0.663 |  16.04  0.642   0.628  833,349
+completed                 12.17  0.597  0.653 |  16.20  0.643   0.622  996,567
+{
+  "gt_box_m": {
+    "x": 9.23,
+    "z": 8.88,
+    "height": 3.5
+  },
+  "band_m": 0.3,
+  "baseline": {
+    "accuracy_m": 0.12968143118518835,
+    "completeness_m": 0.29122262467757726,
+    "chamfer_m": 0.2104520279313828,
+    "coverage_10cm": 0.2043421971619849,
+    "coverage_25cm": 0.5702519462378414,
+    "shell_points": 97186
+  },
+  "completed": {
+    "accuracy_m": 0.14917700596354785,
+    "completeness_m": 0.15544627777142117,
+    "chamfer_m": 0.15231164186748453,
+    "coverage_10cm": 0.28746401376420283,
+    "coverage_25cm": 0.910728582866293,
+    "shell_points": 294146
+  },
+  "dimensions": {
+    "ours_m": {
+      "length": 9.598,
+      "width": 8.552,
+      "height": 3.276
+    },
+    "tape_m": {
+      "length": 9.23,
+      "width": 8.88,
+      "height": 3.5
+    },
+    "abs_error_m": {
+      "x": 0.3680000000000003,
+      "z": 0.3280000000000012,
+      "height": 0.2240000000000002
+    }
+  }
+}
+kept 995,851 of 996,567 Gaussians inside 2x the room box
+{
+  "units": "metres",
+  "frame": "Y-up, floor y=0, room centred at x=z=0",
+  "dimensions": {
+    "length": 9.598,
+    "width": 8.552,
+    "height": 3.276
+  },
+  "camera_height_m": 1.491,
+  "scale_estimators": {
+    "depth": {
+      "length": 19.496,
+      "width": 17.371,
+      "height": 6.655
+    },
+    "camera": {
+      "length": 9.01,
+      "width": 8.028,
+      "height": 3.075
+    },
+    "floorplan": {
+      "length": 9.598,
+      "width": 8.552,
+      "height": 3.276
+    },
+    "tape": {
+      "length": 9.598,
+      "width": 8.552,
+      "height": 3.276
+    }
+  },
+  "ceiling_observed": true,
+  "faces": {
+    "wall_x0": {
+      "snap": 0.0,
+      "observed": 0.346,
+      "opening": 0.077,
+      "generated": 0.576,
+      "method": "lama",
+      "new_gaussians": 27899
+    },
+    "wall_x1": {
+      "snap": 0.0,
+      "observed": 0.831,
+      "opening": 0.0,
+      "generated": 0.169,
+      "method": "lama",
+      "new_gaussians": 8196
+    },
+    "wall_y0": {
+      "snap": 0.0,
+      "observed": 0.538,
+      "opening": 0.018,
+      "generated": 0.445,
+      "method": "lama",
+      "new_gaussians": 24195
+    },
+    "wall_y1": {
+      "snap": 0.0,
+      "observed": 0.437,
+      "opening": 0.001,
+      "generated": 0.561,
+      "method": "lama",
+      "new_gaussians": 30536
+    },
+    "floor": {
+      "snap": 0.0,
+      "observed": 0.782,
+      "opening": 0.0,
+      "generated": 0.218,
+      "method": "lama",
+      "new_gaussians": 31017
+    },
+    "ceiling": {
+      "snap": 0.0,
+      "observed": 0.43,
+      "opening": 0.0,
+      "generated": 0.57,
+      "method": "lama",
+      "new_gaussians": 81118
+    }
+  },
+  "gaussians": {
+    "total": 995851,
+    "generated": 202961
+  },
+  "dim_error_pct_vs_tape": {
+    "length_width": [
+      3.69,
+      3.99
+    ],
+    "height": 6.4
+  },
+  "scale_from": "floorplan",
+  "home_camera": {
+    "position": [
+      -3.374,
+      1.502,
+      -3.265
+    ],
+    "look_at": [
+      -2.677,
+      1.562,
+      -0.347
+    ]
+  }
+}
+{
+  "objects": 37,
+  "by_label": {
+    "object": 11,
+    "podium/lectern": 4,
+    "cupboard/shelf": 3,
+    "desk/bench": 14,
+    "ceiling fixture (fan/light)": 5
+  }
+}
+# Results
+
+## Novel-view quality on held-out photos
+
+Colour-aligned (cc) metrics fit one 3x4 colour map per image before scoring, removing the photo-mode vs video-mode exposure difference. Raw metrics are reported alongside.
+
+| Variant | PSNR | SSIM | LPIPS | PSNR cc | SSIM cc | LPIPS cc |
+|---|---|---|---|---|---|---|
+| Baseline 3DGS | 11.65 | 0.598 | 0.663 | 16.04 | 0.642 | 0.628 |
+| + depth prior, floater suppression | 13.12 | 0.569 | 0.650 | 16.18 | 0.621 | 0.646 |
+| + shell completion (RoomFill) | 12.17 | 0.597 | 0.653 | 16.20 | 0.643 | 0.622 |
+
+## Metric room dimensions (m)
+
+| Scale estimator | Length | Width | Height | L / W error vs tape (%) |
+|---|---|---|---|---|
+| depth | 19.50 | 17.37 | 6.66 | 95.6, 111.2 |
+| camera | 9.01 | 8.03 | 3.08 | 9.6, 2.4 |
+| floorplan (chosen) | 9.60 | 8.55 | 3.28 | 3.7, 4.0 |
+| tape (reference only) | 9.60 | 8.55 | 3.28 | 3.7, 4.0 |
+| tape (ground truth) | 9.23 | 8.88 | 3.5 | - |
+
+## Geometry vs the tape-measured room box
+
+| Variant | Chamfer (cm) | Accuracy (cm) | Completeness (cm) | Coverage @10 cm |
+|---|---|---|---|---|
+| Baseline 3DGS | 21.0 | 13.0 | 29.1 | 20% |
+| RoomFill | 15.2 | 14.9 | 15.5 | 29% |
+
+## Shell coverage (fraction of each surface)
+
+| Face | Observed | Opening (seen through) | Generated | Method |
+|---|---|---|---|---|
+| wall_x0 | 35% | 8% | 58% | lama |
+| wall_x1 | 83% | 0% | 17% | lama |
+| wall_y0 | 54% | 2% | 44% | lama |
+| wall_y1 | 44% | 0% | 56% | lama |
+| floor | 78% | 0% | 22% | lama |
+| ceiling | 43% | 0% | 57% | lama |
+done -> /mnt/c/Users/KIRAN/.claude/calde/hacknex-3d/results/room/RESULTS.md | viewer: python viewer/serve.py, then http://localhost:8766/?scene=room

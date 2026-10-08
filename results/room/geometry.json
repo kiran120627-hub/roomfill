@@ -14,12 +14,12 @@
     "shell_points": 97186
   },
   "completed": {
-    "accuracy_m": 0.15166177113423443,
-    "completeness_m": 0.14624115009811287,
-    "chamfer_m": 0.14895146061617365,
-    "coverage_10cm": 0.30311909101749485,
-    "coverage_25cm": 0.9535287804711855,
-    "shell_points": 375764
+    "accuracy_m": 0.14917700596354785,
+    "completeness_m": 0.15544627777142117,
+    "chamfer_m": 0.15231164186748453,
+    "coverage_10cm": 0.28746401376420283,
+    "coverage_25cm": 0.910728582866293,
+    "shell_points": 294146
   },
   "dimensions": {
     "ours_m": {

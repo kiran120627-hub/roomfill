@@ -1,33 +1,34 @@
 {
   "quality": {
     "baseline": {
-      "psnr": 16.037247959764372,
-      "ssim": 0.6424230217933655,
-      "lpips": 0.6277210772037506
+      "psnr": 15.791338391491147,
+      "ssim": 0.7200358152389527,
+      "lpips": 0.6045096278190613
     },
     "completed": {
-      "psnr": 16.098845121331742,
-      "ssim": 0.6431376695632934,
-      "lpips": 0.626644229888916
+      "psnr": 16.1495504728389,
+      "ssim": 0.7238410472869873,
+      "lpips": 0.6013688802719116
     }
   },
   "quality_is_colour_aligned": true,
   "geometry": {
     "baseline": {
-      "accuracy_m": 0.12968143118518835,
-      "completeness_m": 0.29122262467757726,
-      "chamfer_m": 0.2104520279313828,
-      "coverage_10cm": 0.2043421971619849,
-      "coverage_25cm": 0.5702519462378414,
-      "shell_points": 97186
+      "accuracy_m": 0.1322570667398204,
+      "completeness_m": 0.3111946651090566,
+      "chamfer_m": 0.2217258659244385,
+      "coverage_10cm": 0.1899647377476449,
+      "coverage_25cm": 0.5194453435088496,
+      "shell_points": 60136
     },
     "completed": {
-      "accuracy_m": 0.15166177113423443,
-      "completeness_m": 0.14624115009811287,
-      "chamfer_m": 0.14895146061617365,
-      "coverage_10cm": 0.30311909101749485,
-      "coverage_25cm": 0.9535287804711855,
-      "shell_points": 375764
+      "accuracy_m": 0.15086666089510375,
+      "completeness_m": 0.15835459810607014,
+      "chamfer_m": 0.15461062950058696,
+      "coverage_10cm": 0.2808118835493927,
+      "coverage_25cm": 0.9023474098427678,
+      "shell_points": 272629
     }
-  }
+  },
+  "resolution": "full"
 }

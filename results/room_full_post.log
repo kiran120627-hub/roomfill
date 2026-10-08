@@ -1,0 +1,63 @@
+floater pruning: removed 29,677 of 678,302 Gaussians
+visibility views=400 at 794x446
+/home/kiranriya0990/hn3d/lib/python3.12/site-packages/torch/jit/_serialization.py:176: FutureWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+wall_x0 {'snap': 0.0, 'observed': 0.399, 'opening': 0.083, 'generated': 0.518, 'method': 'lama', 'new_gaussians': 25068}
+wall_x1 {'snap': 0.0, 'observed': 0.732, 'opening': 0.0, 'generated': 0.268, 'method': 'lama', 'new_gaussians': 12995}
+wall_y0 {'snap': 0.0, 'observed': 0.574, 'opening': 0.019, 'generated': 0.407, 'method': 'lama', 'new_gaussians': 22129}
+wall_y1 {'snap': 0.0, 'observed': 0.388, 'opening': 0.001, 'generated': 0.611, 'method': 'lama', 'new_gaussians': 33244}
+floor {'snap': 0.0, 'observed': 0.756, 'opening': 0.0, 'generated': 0.244, 'method': 'lama', 'new_gaussians': 34724}
+ceiling {'snap': 0.0, 'observed': 0.394, 'opening': 0.0, 'generated': 0.606, 'method': 'lama', 'new_gaussians': 86362}
+/home/kiranriya0990/hn3d/lib/python3.12/site-packages/torchvision/models/_utils.py:207: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/home/kiranriya0990/hn3d/lib/python3.12/site-packages/torchvision/models/_utils.py:222: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=VGG16_Weights.IMAGENET1K_V1`. You can also use `weights=VGG16_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+TEST  psnr=11.26  ssim=0.6574  lpips=0.6449  generated=214,522
+/home/kiranriya0990/hn3d/lib/python3.12/site-packages/torchvision/models/_utils.py:207: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/home/kiranriya0990/hn3d/lib/python3.12/site-packages/torchvision/models/_utils.py:222: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=VGG16_Weights.IMAGENET1K_V1`. You can also use `weights=VGG16_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+run                        PSNR   SSIM  LPIPS | PSNRcc SSIMcc LPIPScc  n
+full                      10.68  0.655  0.652 |  15.79  0.720   0.605  678,302
+completed_full            11.26  0.657  0.645 |  16.15  0.724   0.601  863,147
+{
+  "gt_box_m": {
+    "x": 9.23,
+    "z": 8.88,
+    "height": 3.5
+  },
+  "band_m": 0.3,
+  "baseline": {
+    "accuracy_m": 0.1322570667398204,
+    "completeness_m": 0.3111946651090566,
+    "chamfer_m": 0.2217258659244385,
+    "coverage_10cm": 0.1899647377476449,
+    "coverage_25cm": 0.5194453435088496,
+    "shell_points": 60136
+  },
+  "completed": {
+    "accuracy_m": 0.15086666089510375,
+    "completeness_m": 0.15835459810607014,
+    "chamfer_m": 0.15461062950058696,
+    "coverage_10cm": 0.2808118835493927,
+    "coverage_25cm": 0.9023474098427678,
+    "shell_points": 272629
+  },
+  "dimensions": {
+    "ours_m": {
+      "length": 9.598,
+      "width": 8.552,
+      "height": 3.276
+    },
+    "tape_m": {
+      "length": 9.23,
+      "width": 8.88,
+      "height": 3.5
+    },
+    "abs_error_m": {
+      "x": 0.3680000000000003,
+      "z": 0.3280000000000012,
+      "height": 0.2240000000000002
+    }
+  }
+}

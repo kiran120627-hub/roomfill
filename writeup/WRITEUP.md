@@ -61,16 +61,18 @@ Gaussian splatting pipeline" named as the example baseline for Mode B.
 
 ## 5. Results (our classroom)
 
+Headline numbers are at full resolution (1588 x 893, 20,000 iterations). RoomFill = the same trained
+model plus camera-path floater pruning (0.5 m) and shell completion; the baseline is the untouched model.
+
 ### 5.1 Geometric accuracy vs the tape-measured room box (25 percent of the rubric)
 
 | Variant | Chamfer | Accuracy | Completeness | Coverage within 25 cm |
 |---|---|---|---|---|
-| Baseline 3DGS | 21.0 cm | **13.0 cm** | 29.1 cm | 57% |
-| **RoomFill** | **14.9 cm** | 15.2 cm | **14.6 cm** | **95%** |
+| Baseline 3DGS | 22.2 cm | **13.2 cm** | 31.1 cm | 52% |
+| **RoomFill** | **15.5 cm** | 15.1 cm | **15.8 cm** | **90%** |
 
-Completion reduces Chamfer distance by 29 percent and halves completeness error: 95 percent of the true
-room surfaces now have geometry within 25 cm, versus 57 percent. Accuracy is slightly worse because
-generated surfaces sit a few centimetres off the true walls.
+Completion cuts Chamfer distance by 30 percent and halves completeness error. Accuracy is slightly worse
+because generated surfaces sit a few centimetres off the true walls. (Half-resolution run: 21.0 to 15.2 cm.)
 
 ### 5.2 Metric dimensions
 
@@ -86,36 +88,46 @@ The residual 4 percent is the shell fit, not the scale.
 
 ### 5.3 Novel-view quality on the 5 held-out photos (20 percent of the rubric)
 
+Full resolution:
+
+| Variant | PSNR | SSIM | LPIPS | PSNR cc | SSIM cc | LPIPS cc |
+|---|---|---|---|---|---|---|
+| Baseline 3DGS | 10.68 | 0.655 | 0.652 | 15.79 | 0.720 | 0.605 |
+| **RoomFill** | **11.26** | **0.657** | **0.645** | **16.15** | **0.724** | **0.601** |
+
+Half resolution (ablation):
+
 | Variant | PSNR | SSIM | LPIPS | PSNR cc | SSIM cc | LPIPS cc |
 |---|---|---|---|---|---|---|
 | Baseline 3DGS | 11.65 | 0.598 | 0.663 | 16.04 | 0.642 | 0.628 |
-| + depth prior, floater suppression | 13.12 | 0.569 | 0.650 | 16.18 | 0.621 | 0.646 |
-| **RoomFill (completed)** | 11.67 | 0.598 | 0.658 | 16.10 | 0.643 | 0.627 |
+| + depth prior (Pearson, mono depth) | 13.12 | 0.569 | 0.650 | 16.18 | 0.621 | 0.646 |
+| + floater pruning + completion (RoomFill) | 12.17 | 0.597 | 0.653 | 16.20 | 0.643 | 0.622 |
 
 "cc" = colour-aligned: one 3x4 colour map per image is fitted before scoring, because the held-out photos
 come from the phone's photo mode (different exposure and tone curve from video mode). Raw numbers are
-reported alongside. Completion improves all three colour-aligned metrics slightly and never damages
-observed content (by construction it only adds Gaussians where no camera looked). The depth-prior variant
-removes floaters near off-path cameras (photo 4: 4.6 dB to 13.6 dB raw) but softens on-path detail.
+reported alongside. RoomFill beats the baseline on every metric at full resolution. Camera-path floater
+pruning alone (half resolution) moves PSNR cc 16.04 to 16.22 and LPIPS cc 0.628 to 0.623; the radius was
+fixed at 0.5 m rather than picked as the best of {0.3, 0.5, 0.8} on the test photos.
 
 ### 5.4 Honesty (15 percent of the rubric)
 
 | Surface | Observed | Seen-through opening | Generated |
 |---|---|---|---|
-| wall_x0 | 26% | 6% | 68% |
-| wall_x1 (windows) | 55% | 0% | 45% |
-| wall_y0 (board) | 42% | 2% | 56% |
-| wall_y1 | 12% | 0% | 88% |
-| floor | 72% | 0% | 28% |
-| ceiling | 26% | 0% | 74% |
+| wall_x0 | 40% | 8% | 52% |
+| wall_x1 (windows) | 73% | 0% | 27% |
+| wall_y0 (board) | 57% | 2% | 41% |
+| wall_y1 | 39% | 0% | 61% |
+| floor | 76% | 0% | 24% |
+| ceiling | 39% | 0% | 61% |
 
-Overall 25.1 percent of exported Gaussians are generated. The viewer's "Show generated" mode tints every
+Every camera in the walkthrough faced the same half of the room (yaw 0 to 180 degrees), which is why the
+back walls and ceiling carry the most generated area. Overall 24.9 percent of exported Gaussians are generated. The viewer's "Show generated" mode tints every
 generated Gaussian magenta (stronger tint = lower confidence); the honesty variants of the PLY, .splat and
 GLB carry the same tint, and the plain variants carry the flags as attributes.
 
 ### 5.5 Objects
 
-37 objects extracted (14 desk/bench units, 4 ceiling fixtures, 3 podium-like, 3 cupboards, 13 other).
+36 objects extracted (18 desk/bench units, 6 ceiling fixtures, 2 podium-like, 3 cupboards, 7 other).
 Desks touching in a row merge into one object.
 
 ### 5.6 Sparse photos instead of a full video (stretch goal)
@@ -148,8 +160,8 @@ drawing itself is 8.2 percent out of proportion to its labels.
 
 ## 7. Ablation summary (research contribution)
 
-1. Baseline vs + shell completion: Chamfer 21.0 to 14.9 cm, coverage@25 cm 57 to 95 percent, colour-aligned
-   novel-view metrics slightly better on all three.
+1. Baseline vs RoomFill (full resolution): Chamfer 22.2 to 15.5 cm, coverage@25 cm 52 to 90 percent,
+   better on all six novel-view metrics.
 2. Scale estimators: monocular depth (rejected) vs camera-height prior vs floor plan (table 5.2).
 3. Depth prior: large gains on off-path views with floaters, small losses on on-path detail.
 4. Shell fitting: "largest plane" picks desk height (1.08 SfM units room height); "lowest / highest strong
@@ -164,6 +176,6 @@ drawing itself is 8.2 percent out of proportion to its labels.
 ## 9. Reproduce
 ```bash
 ./run_all.sh room data/raw/room.mp4 51
-python -m http.server 8766 --directory viewer      # http://localhost:8766/?scene=room
+python viewer/serve.py                              # http://localhost:8766/?scene=room
 python scripts/10_floorplan.py --plan data/floorplan.jpg --out results/floorplan
 ```

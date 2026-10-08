@@ -10,10 +10,14 @@ Blueprints and Room Video), Mode B, with Mode A and both modes combined as bonus
 
 | | Baseline 3DGS | RoomFill |
 |---|---|---|
-| Chamfer distance to the measured room | 21.0 cm | **14.9 cm** |
-| True surfaces covered within 25 cm | 57% | **95%** |
-| Held-out photos, PSNR / SSIM / LPIPS (colour-aligned) | 16.04 / 0.642 / 0.628 | **16.10 / 0.643 / 0.627** |
+| Chamfer distance to the measured room | 22.2 cm | **15.5 cm** |
+| True surfaces covered within 25 cm | 52% | **90%** |
+| Held-out photos, PSNR / SSIM / LPIPS (colour-aligned) | 15.79 / 0.720 / 0.605 | **16.15 / 0.724 / 0.601** |
+| Held-out photos, raw PSNR | 10.68 | **11.26** |
 | Room dimensions vs tape (with floor plan) | no scale | **3.7% / 4.0%, height 6.4%** |
+
+Full resolution (1588 x 893), 20,000 iterations, same frames for both. Live demo:
+https://kiran120627-hub.github.io/roomfill/viewer/?scene=room
 
 Full tables, ablations and limitations: [writeup/WRITEUP.md](writeup/WRITEUP.md) and
 [results/room/RESULTS.md](results/room/RESULTS.md).
@@ -38,7 +42,7 @@ Full tables, ablations and limitations: [writeup/WRITEUP.md](writeup/WRITEUP.md)
 python viewer/serve.py
 ```
 Open http://localhost:8766/?scene=room. Drag to look, scroll to walk, **G** shows generated regions,
-**M** shows measurements, **R** resets the view, **H** hides the UI.
+**B** compares with the baseline, **1-3** jump to viewpoints, **M** shows measurements, **R** resets the view, **H** hides the UI.
 
 ## Run the pipeline on a new room
 Requirements: WSL Ubuntu, NVIDIA GPU, COLMAP, ffmpeg, PyTorch with CUDA, gsplat (built from source),

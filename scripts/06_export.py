@@ -160,6 +160,8 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--run", required=True, type=Path, help="completed run (stage 4 output)")
     ap.add_argument("--shell-run", required=True, type=Path, help="run holding shell.json / scale.json")
+    ap.add_argument("--baseline-run", type=Path, default=None,
+                    help="also export this run (vanilla 3DGS) as room_baseline.splat for the viewer's compare mode")
     ap.add_argument("--data", type=Path, default=None,
                     help="dense COLMAP folder; used to pick a real video camera as the viewer's home view")
     args = ap.parse_args()
@@ -200,6 +202,13 @@ def main() -> None:
     save_ply(out / "room_splat_honesty.ply", honest, sh0_only=True)
     save_splat(out / "room_honesty.splat", honest)
 
+    if args.baseline_run:
+        pb = torch.load(args.baseline_run / "params.pt", map_location="cpu")
+        pb["conf"] = torch.ones(len(pb["means"]))
+        pbm = transform_params(pb, R, t, s)
+        kb = (pbm["means"].abs() <= torch.from_numpy(reach).float()).all(1)
+        save_splat(out / "room_baseline.splat", {k: v[kb] for k, v in pbm.items()})
+
     faces_dir = args.run / "faces"
     build_glb(faces_dir, sh, s, to_room, False, out / "room_shell.glb")
     build_glb(faces_dir, sh, s, to_room, True, out / "room_shell_honesty.glb")
@@ -220,21 +229,38 @@ def main() -> None:
     if args.data:
         from common import load_scene
         scene = load_scene(args.data, downscale=8)
-        best, best_score = None, -1e9
+        # Viewpoints come from REAL video cameras (the model is fit there; off-path views show floaters).
+        # overview = inside the room, longest free sightline; reverse = best one facing the other way;
+        # look up = overview tilted up 35 degrees toward the ceiling the walkthrough barely filmed.
+        dims_ = sc["dims_m"]
+        hx, hz = dims_["length"] / 2, dims_["width"] / 2
+        cands = []
         for v in scene.train:
             c2w = torch.linalg.inv(v.viewmat).numpy()
             pos = to_room(c2w[:3, 3][None])[0]
-            fwd = (R @ c2w[:3, 2])
-            dims_ = sc["dims_m"]
-            if abs(pos[0]) > dims_["length"] / 2 - 0.3 or abs(pos[2]) > dims_["width"] / 2 - 0.3:
-                continue                        # skip frames filmed outside the room (corridor)
-            r_xz = np.array([pos[0], pos[2]])
-            f_xz = np.array([fwd[0], fwd[2]])
-            score = np.linalg.norm(r_xz) * float(f_xz @ (-r_xz) / (np.linalg.norm(r_xz) * np.linalg.norm(f_xz) + 1e-9))
-            if score > best_score:
-                best, best_score = (pos, pos + 3.0 * fwd / np.linalg.norm(fwd)), score
-        room["home_camera"] = {"position": [round(float(x), 3) for x in best[0]],
-                               "look_at": [round(float(x), 3) for x in best[1]]}
+            if abs(pos[0]) > hx - 1.0 or abs(pos[2]) > hz - 1.0:
+                continue
+            fwd = R @ c2w[:3, 2]
+            fwd = fwd / np.linalg.norm(fwd)
+            f = np.array([fwd[0], fwd[2]]) / (np.linalg.norm([fwd[0], fwd[2]]) + 1e-9)
+            ts = [((np.sign(f[i]) * h) - pos[2 * i]) / f[i] for i, h in ((0, hx), (1, hz)) if abs(f[i]) > 1e-6]
+            reach = min(t for t in ts if t > 0) if ts else 0
+            cands.append((reach - 2.0 * abs(fwd[1]), pos, fwd, f))
+        cands.sort(key=lambda c: -c[0])
+        _, pos0, fwd0, f0 = cands[0]
+        # Second view: the open camera that looks most differently from the overview (walkthroughs
+        # often never face backwards, so "reverse" may not exist; take the widest real angle).
+        open_ = [c for c in cands if c[0] > 0.5 * cands[0][0]] or cands
+        rev = min(open_, key=lambda c: float(c[3] @ f0))
+        a35 = np.radians(35)
+        up_dir = np.array([f0[0] * np.cos(a35), np.sin(a35), f0[1] * np.cos(a35)])
+        r3 = lambda x: [round(float(t), 3) for t in x]
+        room["views"] = {
+            "overview": {"position": r3(pos0), "look_at": r3(pos0 + 3.0 * fwd0)},
+            "ceiling": {"position": r3(pos0), "look_at": r3(pos0 + 3.0 * up_dir)},
+            "side": {"position": r3(rev[1]), "look_at": r3(rev[1] + 3.0 * rev[2])},
+        }
+        room["home_camera"] = room["views"]["overview"]
     (out / "room.json").write_text(json.dumps(room, indent=2))
     print(json.dumps(room, indent=2))
 
