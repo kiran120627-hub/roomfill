@@ -1,0 +1,9 @@
+train=400 test=5 points=64898 scene_scale=8.415 res=1589x892
+step      0 loss 0.4259 psnr  7.02 n=64,898 mem=2.02GB t=2s
+step    500 loss 0.1546 psnr 14.48 n=64,898 mem=2.02GB t=33s
+step   1000 loss 0.0839 psnr 19.17 n=82,826 mem=2.02GB t=73s
+step   1500 loss 0.1028 psnr 19.32 n=105,707 mem=2.02GB t=119s
+step   2000 loss 0.1586 psnr 14.44 n=134,910 mem=2.02GB t=153s
+step   2500 loss 0.0690 psnr 21.73 n=172,180 mem=2.02GB t=188s
+step   3000 loss 0.0835 psnr 20.57 n=219,748 mem=2.02GB t=224s
+step   3500 loss 0.0660 psnr 22.26 n=280,458 mem=2.02GB t=266s

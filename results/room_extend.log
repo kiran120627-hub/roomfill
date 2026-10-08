@@ -1,0 +1,1537 @@
++ ffmpeg -loglevel error -ss 38.0 -to 51.0 -i ../data/raw/room.mp4 -vf fps=15.0 -q:v 2 /tmp/tmp0clb2phs/c_%05d.jpg
+extra frames: 78
++ colmap feature_extractor --database_path /home/kiranriya0990/hn3d_work/room/colmap/database.db --image_path /home/kiranriya0990/hn3d_work/room/images --image_list_path /home/kiranriya0990/hn3d_work/room/colmap/extra_list.txt --ImageReader.camera_model OPENCV --ImageReader.single_camera_per_folder 1 --SiftExtraction.max_num_features 12000 --SiftExtraction.num_threads 8 --SiftExtraction.use_gpu 0
+I20261008 17:31:48.805541   706 misc.cc:44] 
+==============================================================================
+Feature extraction
+==============================================================================
+I20261008 17:31:48.807318   715 sift.cc:727] Creating SIFT CPU feature extractor
+I20261008 17:31:48.807960   722 sift.cc:727] Creating SIFT CPU feature extractor
+I20261008 17:31:48.807499   717 sift.cc:727] Creating SIFT CPU feature extractor
+I20261008 17:31:48.807654   719 sift.cc:727] Creating SIFT CPU feature extractor
+I20261008 17:31:48.807771   718 sift.cc:727] Creating SIFT CPU feature extractor
+I20261008 17:31:48.807780   720 sift.cc:727] Creating SIFT CPU feature extractor
+I20261008 17:31:48.807862   721 sift.cc:727] Creating SIFT CPU feature extractor
+I20261008 17:31:48.807348   716 sift.cc:727] Creating SIFT CPU feature extractor
+I20261008 17:31:53.509127   723 feature_extraction.cc:259] Processed file [1/78]
+I20261008 17:31:53.512599   723 feature_extraction.cc:262]   Name:            train/extra_0002.jpg
+I20261008 17:31:53.513059   723 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 17:31:53.513592   723 feature_extraction.cc:274]   Camera:          #3 - OPENCV
+I20261008 17:31:53.514068   723 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 17:31:53.514850   723 feature_extraction.cc:281]   Features:        2554
+I20261008 17:31:53.598453   723 feature_extraction.cc:259] Processed file [2/78]
+I20261008 17:31:53.600502   723 feature_extraction.cc:262]   Name:            train/extra_0007.jpg
+I20261008 17:31:53.601127   723 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 17:31:53.601595   723 feature_extraction.cc:274]   Camera:          #3 - OPENCV
+I20261008 17:31:53.602052   723 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 17:31:53.602473   723 feature_extraction.cc:281]   Features:        2393
+I20261008 17:31:53.710517   723 feature_extraction.cc:259] Processed file [3/78]
+I20261008 17:31:53.711615   723 feature_extraction.cc:262]   Name:            train/extra_0000.jpg
+I20261008 17:31:53.712272   723 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 17:31:53.712776   723 feature_extraction.cc:274]   Camera:          #3 - OPENCV
+I20261008 17:31:53.713253   723 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 17:31:53.713984   723 feature_extraction.cc:281]   Features:        2807
+I20261008 17:31:53.770598   723 feature_extraction.cc:259] Processed file [4/78]
+I20261008 17:31:53.772406   723 feature_extraction.cc:262]   Name:            train/extra_0003.jpg
+I20261008 17:31:53.773203   723 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 17:31:53.773872   723 feature_extraction.cc:274]   Camera:          #3 - OPENCV
+I20261008 17:31:53.774394   723 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 17:31:53.774977   723 feature_extraction.cc:281]   Features:        2614
+I20261008 17:31:53.793619   723 feature_extraction.cc:259] Processed file [5/78]
+I20261008 17:31:53.794518   723 feature_extraction.cc:262]   Name:            train/extra_0004.jpg
+I20261008 17:31:53.795141   723 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 17:31:53.795820   723 feature_extraction.cc:274]   Camera:          #3 - OPENCV
+I20261008 17:31:53.796501   723 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 17:31:53.797259   723 feature_extraction.cc:281]   Features:        2512
+I20261008 17:31:53.992208   723 feature_extraction.cc:259] Processed file [6/78]
+I20261008 17:31:53.993610   723 feature_extraction.cc:262]   Name:            train/extra_0005.jpg
+I20261008 17:31:53.994620   723 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 17:31:53.995350   723 feature_extraction.cc:274]   Camera:          #3 - OPENCV
+I20261008 17:31:53.996204   723 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 17:31:53.997057   723 feature_extraction.cc:281]   Features:        2093
+I20261008 17:31:54.027951   723 feature_extraction.cc:259] Processed file [7/78]
+I20261008 17:31:54.029803   723 feature_extraction.cc:262]   Name:            train/extra_0006.jpg
+I20261008 17:31:54.030637   723 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 17:31:54.031459   723 feature_extraction.cc:274]   Camera:          #3 - OPENCV
+I20261008 17:31:54.032262   723 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 17:31:54.032888   723 feature_extraction.cc:281]   Features:        2381
+I20261008 17:31:54.633332   723 feature_extraction.cc:259] Processed file [8/78]
+I20261008 17:31:54.634624   723 feature_extraction.cc:262]   Name:            train/extra_0001.jpg
+I20261008 17:31:54.635126   723 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 17:31:54.635591   723 feature_extraction.cc:274]   Camera:          #3 - OPENCV
+I20261008 17:31:54.635969   723 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 17:31:54.636374   723 feature_extraction.cc:281]   Features:        2791
+I20261008 17:31:55.795543   723 feature_extraction.cc:259] Processed file [9/78]
+I20261008 17:31:55.798074   723 feature_extraction.cc:262]   Name:            train/extra_0009.jpg
+I20261008 17:31:55.799117   723 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 17:31:55.799775   723 feature_extraction.cc:274]   Camera:          #3 - OPENCV
+I20261008 17:31:55.800241   723 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 17:31:55.801049   723 feature_extraction.cc:281]   Features:        2074
+I20261008 17:31:55.871734   723 feature_extraction.cc:259] Processed file [10/78]
+I20261008 17:31:55.873032   723 feature_extraction.cc:262]   Name:            train/extra_0008.jpg
+I20261008 17:31:55.873607   723 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 17:31:55.874128   723 feature_extraction.cc:274]   Camera:          #3 - OPENCV
+I20261008 17:31:55.874560   723 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 17:31:55.875010   723 feature_extraction.cc:281]   Features:        2128
+I20261008 17:31:56.139120   723 feature_extraction.cc:259] Processed file [11/78]
+I20261008 17:31:56.141091   723 feature_extraction.cc:262]   Name:            train/extra_0010.jpg
+I20261008 17:31:56.141906   723 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 17:31:56.142582   723 feature_extraction.cc:274]   Camera:          #3 - OPENCV
+I20261008 17:31:56.143114   723 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 17:31:56.143673   723 feature_extraction.cc:281]   Features:        2432
+I20261008 17:31:56.178627   723 feature_extraction.cc:259] Processed file [12/78]
+I20261008 17:31:56.179953   723 feature_extraction.cc:262]   Name:            train/extra_0011.jpg
+I20261008 17:31:56.180495   723 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 17:31:56.180884   723 feature_extraction.cc:274]   Camera:          #3 - OPENCV
+I20261008 17:31:56.181384   723 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 17:31:56.182018   723 feature_extraction.cc:281]   Features:        3001
+I20261008 17:31:56.222137   723 feature_extraction.cc:259] Processed file [13/78]
+I20261008 17:31:56.223546   723 feature_extraction.cc:262]   Name:            train/extra_0012.jpg
+I20261008 17:31:56.224298   723 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 17:31:56.224756   723 feature_extraction.cc:274]   Camera:          #3 - OPENCV
+I20261008 17:31:56.225281   723 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 17:31:56.225878   723 feature_extraction.cc:281]   Features:        3034
+I20261008 17:31:56.285974   723 feature_extraction.cc:259] Processed file [14/78]
+I20261008 17:31:56.287168   723 feature_extraction.cc:262]   Name:            train/extra_0013.jpg
+I20261008 17:31:56.287657   723 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 17:31:56.288278   723 feature_extraction.cc:274]   Camera:          #3 - OPENCV
+I20261008 17:31:56.288801   723 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 17:31:56.289260   723 feature_extraction.cc:281]   Features:        2780
+I20261008 17:31:56.459641   723 feature_extraction.cc:259] Processed file [15/78]
+I20261008 17:31:56.461609   723 feature_extraction.cc:262]   Name:            train/extra_0014.jpg
+I20261008 17:31:56.464349   723 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 17:31:56.466213   723 feature_extraction.cc:274]   Camera:          #3 - OPENCV
+I20261008 17:31:56.467945   723 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 17:31:56.469995   723 feature_extraction.cc:281]   Features:        2311
+I20261008 17:31:56.808348   723 feature_extraction.cc:259] Processed file [16/78]
+I20261008 17:31:56.810734   723 feature_extraction.cc:262]   Name:            train/extra_0015.jpg
+I20261008 17:31:56.812459   723 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 17:31:56.813983   723 feature_extraction.cc:274]   Camera:          #3 - OPENCV
+I20261008 17:31:56.814646   723 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 17:31:56.815683   723 feature_extraction.cc:281]   Features:        2001
+I20261008 17:31:57.298369   723 feature_extraction.cc:259] Processed file [17/78]
+I20261008 17:31:57.299821   723 feature_extraction.cc:262]   Name:            train/extra_0017.jpg
+I20261008 17:31:57.300680   723 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 17:31:57.301331   723 feature_extraction.cc:274]   Camera:          #3 - OPENCV
+I20261008 17:31:57.301779   723 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 17:31:57.302259   723 feature_extraction.cc:281]   Features:        1068
+I20261008 17:31:57.341784   723 feature_extraction.cc:259] Processed file [18/78]
+I20261008 17:31:57.344053   723 feature_extraction.cc:262]   Name:            train/extra_0016.jpg
+I20261008 17:31:57.344632   723 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 17:31:57.345082   723 feature_extraction.cc:274]   Camera:          #3 - OPENCV
+I20261008 17:31:57.345458   723 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 17:31:57.345957   723 feature_extraction.cc:281]   Features:        1606
+I20261008 17:31:57.545466   723 feature_extraction.cc:259] Processed file [19/78]
+I20261008 17:31:57.546838   723 feature_extraction.cc:262]   Name:            train/extra_0018.jpg
+I20261008 17:31:57.547277   723 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 17:31:57.547802   723 feature_extraction.cc:274]   Camera:          #3 - OPENCV
+I20261008 17:31:57.548336   723 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 17:31:57.548815   723 feature_extraction.cc:281]   Features:        1330
+I20261008 17:31:57.647315   723 feature_extraction.cc:259] Processed file [20/78]
+I20261008 17:31:57.648799   723 feature_extraction.cc:262]   Name:            train/extra_0020.jpg
+I20261008 17:31:57.649348   723 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 17:31:57.650197   723 feature_extraction.cc:274]   Camera:          #3 - OPENCV
+I20261008 17:31:57.650743   723 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 17:31:57.651172   723 feature_extraction.cc:281]   Features:        1135
+I20261008 17:31:57.672734   723 feature_extraction.cc:259] Processed file [21/78]
+I20261008 17:31:57.675437   723 feature_extraction.cc:262]   Name:            train/extra_0019.jpg
+I20261008 17:31:57.676970   723 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 17:31:57.678545   723 feature_extraction.cc:274]   Camera:          #3 - OPENCV
+I20261008 17:31:57.679970   723 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 17:31:57.681492   723 feature_extraction.cc:281]   Features:        1293
+I20261008 17:31:57.812541   723 feature_extraction.cc:259] Processed file [22/78]
+I20261008 17:31:57.814148   723 feature_extraction.cc:262]   Name:            train/extra_0021.jpg
+I20261008 17:31:57.814627   723 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 17:31:57.815116   723 feature_extraction.cc:274]   Camera:          #3 - OPENCV
+I20261008 17:31:57.815608   723 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 17:31:57.816550   723 feature_extraction.cc:281]   Features:        1461
+I20261008 17:31:57.988481   723 feature_extraction.cc:259] Processed file [23/78]
+I20261008 17:31:57.990423   723 feature_extraction.cc:262]   Name:            train/extra_0022.jpg
+I20261008 17:31:57.991185   723 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 17:31:57.991791   723 feature_extraction.cc:274]   Camera:          #3 - OPENCV
+I20261008 17:31:57.992566   723 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 17:31:57.993263   723 feature_extraction.cc:281]   Features:        1772
+I20261008 17:31:58.269898   723 feature_extraction.cc:259] Processed file [24/78]
+I20261008 17:31:58.272113   723 feature_extraction.cc:262]   Name:            train/extra_0023.jpg
+I20261008 17:31:58.272675   723 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 17:31:58.273164   723 feature_extraction.cc:274]   Camera:          #3 - OPENCV
+I20261008 17:31:58.273587   723 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 17:31:58.273932   723 feature_extraction.cc:281]   Features:        898
+I20261008 17:31:58.737412   723 feature_extraction.cc:259] Processed file [25/78]
+I20261008 17:31:58.739771   723 feature_extraction.cc:262]   Name:            train/extra_0025.jpg
+I20261008 17:31:58.740437   723 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 17:31:58.740882   723 feature_extraction.cc:274]   Camera:          #3 - OPENCV
+I20261008 17:31:58.741317   723 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 17:31:58.741792   723 feature_extraction.cc:281]   Features:        483
+I20261008 17:31:58.760771   723 feature_extraction.cc:259] Processed file [26/78]
+I20261008 17:31:58.762044   723 feature_extraction.cc:262]   Name:            train/extra_0024.jpg
+I20261008 17:31:58.763356   723 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 17:31:58.763756   723 feature_extraction.cc:274]   Camera:          #3 - OPENCV
+I20261008 17:31:58.764050   723 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 17:31:58.764389   723 feature_extraction.cc:281]   Features:        600
+I20261008 17:31:58.989152   723 feature_extraction.cc:259] Processed file [27/78]
+I20261008 17:31:58.990486   723 feature_extraction.cc:262]   Name:            train/extra_0026.jpg
+I20261008 17:31:58.991130   723 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 17:31:58.991798   723 feature_extraction.cc:274]   Camera:          #3 - OPENCV
+I20261008 17:31:58.992342   723 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 17:31:58.992874   723 feature_extraction.cc:281]   Features:        415
+I20261008 17:31:59.070688   723 feature_extraction.cc:259] Processed file [28/78]
+I20261008 17:31:59.071923   723 feature_extraction.cc:262]   Name:            train/extra_0028.jpg
+I20261008 17:31:59.072381   723 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 17:31:59.072880   723 feature_extraction.cc:274]   Camera:          #3 - OPENCV
+I20261008 17:31:59.073239   723 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 17:31:59.073563   723 feature_extraction.cc:281]   Features:        378
+I20261008 17:31:59.119385   723 feature_extraction.cc:259] Processed file [29/78]
+I20261008 17:31:59.121728   723 feature_extraction.cc:262]   Name:            train/extra_0027.jpg
+I20261008 17:31:59.123246   723 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 17:31:59.124150   723 feature_extraction.cc:274]   Camera:          #3 - OPENCV
+I20261008 17:31:59.124794   723 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 17:31:59.125313   723 feature_extraction.cc:281]   Features:        397
+I20261008 17:31:59.235955   723 feature_extraction.cc:259] Processed file [30/78]
+I20261008 17:31:59.236958   723 feature_extraction.cc:262]   Name:            train/extra_0029.jpg
+I20261008 17:31:59.237567   723 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 17:31:59.238397   723 feature_extraction.cc:274]   Camera:          #3 - OPENCV
+I20261008 17:31:59.238955   723 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 17:31:59.240028   723 feature_extraction.cc:281]   Features:        746
+I20261008 17:31:59.447430   723 feature_extraction.cc:259] Processed file [31/78]
+I20261008 17:31:59.448511   723 feature_extraction.cc:262]   Name:            train/extra_0030.jpg
+I20261008 17:31:59.449612   723 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 17:31:59.450687   723 feature_extraction.cc:274]   Camera:          #3 - OPENCV
+I20261008 17:31:59.451308   723 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 17:31:59.451849   723 feature_extraction.cc:281]   Features:        1013
+I20261008 17:31:59.848760   723 feature_extraction.cc:259] Processed file [32/78]
+I20261008 17:31:59.850440   723 feature_extraction.cc:262]   Name:            train/extra_0031.jpg
+I20261008 17:31:59.851150   723 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 17:31:59.851653   723 feature_extraction.cc:274]   Camera:          #3 - OPENCV
+I20261008 17:31:59.852061   723 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 17:31:59.852448   723 feature_extraction.cc:281]   Features:        993
+I20261008 17:32:00.119020   723 feature_extraction.cc:259] Processed file [33/78]
+I20261008 17:32:00.120517   723 feature_extraction.cc:262]   Name:            train/extra_0032.jpg
+I20261008 17:32:00.121246   723 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 17:32:00.121894   723 feature_extraction.cc:274]   Camera:          #3 - OPENCV
+I20261008 17:32:00.122413   723 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 17:32:00.122891   723 feature_extraction.cc:281]   Features:        649
+I20261008 17:32:00.196831   723 feature_extraction.cc:259] Processed file [34/78]
+I20261008 17:32:00.198558   723 feature_extraction.cc:262]   Name:            train/extra_0033.jpg
+I20261008 17:32:00.199249   723 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 17:32:00.199844   723 feature_extraction.cc:274]   Camera:          #3 - OPENCV
+I20261008 17:32:00.200471   723 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 17:32:00.201020   723 feature_extraction.cc:281]   Features:        517
+I20261008 17:32:00.479748   723 feature_extraction.cc:259] Processed file [35/78]
+I20261008 17:32:00.481142   723 feature_extraction.cc:262]   Name:            train/extra_0034.jpg
+I20261008 17:32:00.481886   723 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 17:32:00.482494   723 feature_extraction.cc:274]   Camera:          #3 - OPENCV
+I20261008 17:32:00.483107   723 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 17:32:00.483889   723 feature_extraction.cc:281]   Features:        697
+I20261008 17:32:00.616127   723 feature_extraction.cc:259] Processed file [36/78]
+I20261008 17:32:00.617353   723 feature_extraction.cc:262]   Name:            train/extra_0035.jpg
+I20261008 17:32:00.618100   723 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 17:32:00.618644   723 feature_extraction.cc:274]   Camera:          #3 - OPENCV
+I20261008 17:32:00.619148   723 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 17:32:00.619772   723 feature_extraction.cc:281]   Features:        696
+I20261008 17:32:00.642205   723 feature_extraction.cc:259] Processed file [37/78]
+I20261008 17:32:00.643432   723 feature_extraction.cc:262]   Name:            train/extra_0036.jpg
+I20261008 17:32:00.644055   723 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 17:32:00.644608   723 feature_extraction.cc:274]   Camera:          #3 - OPENCV
+I20261008 17:32:00.645208   723 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 17:32:00.645763   723 feature_extraction.cc:281]   Features:        284
+I20261008 17:32:00.746019   723 feature_extraction.cc:259] Processed file [38/78]
+I20261008 17:32:00.748196   723 feature_extraction.cc:262]   Name:            train/extra_0037.jpg
+I20261008 17:32:00.748940   723 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 17:32:00.749542   723 feature_extraction.cc:274]   Camera:          #3 - OPENCV
+I20261008 17:32:00.750115   723 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 17:32:00.750566   723 feature_extraction.cc:281]   Features:        412
+I20261008 17:32:00.847702   723 feature_extraction.cc:259] Processed file [39/78]
+I20261008 17:32:00.850111   723 feature_extraction.cc:262]   Name:            train/extra_0038.jpg
+I20261008 17:32:00.851815   723 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 17:32:00.853420   723 feature_extraction.cc:274]   Camera:          #3 - OPENCV
+I20261008 17:32:00.854948   723 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 17:32:00.856279   723 feature_extraction.cc:281]   Features:        358
+I20261008 17:32:01.293097   723 feature_extraction.cc:259] Processed file [40/78]
+I20261008 17:32:01.294178   723 feature_extraction.cc:262]   Name:            train/extra_0039.jpg
+I20261008 17:32:01.295362   723 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 17:32:01.296319   723 feature_extraction.cc:274]   Camera:          #3 - OPENCV
+I20261008 17:32:01.298081   723 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 17:32:01.300065   723 feature_extraction.cc:281]   Features:        690
+I20261008 17:32:01.468004   723 feature_extraction.cc:259] Processed file [41/78]
+I20261008 17:32:01.470147   723 feature_extraction.cc:262]   Name:            train/extra_0040.jpg
+I20261008 17:32:01.472373   723 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 17:32:01.474915   723 feature_extraction.cc:274]   Camera:          #3 - OPENCV
+I20261008 17:32:01.476941   723 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 17:32:01.478708   723 feature_extraction.cc:281]   Features:        670
+I20261008 17:32:01.556493   723 feature_extraction.cc:259] Processed file [42/78]
+I20261008 17:32:01.558341   723 feature_extraction.cc:262]   Name:            train/extra_0041.jpg
+I20261008 17:32:01.559429   723 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 17:32:01.560119   723 feature_extraction.cc:274]   Camera:          #3 - OPENCV
+I20261008 17:32:01.560563   723 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 17:32:01.561093   723 feature_extraction.cc:281]   Features:        654
+I20261008 17:32:01.772014   723 feature_extraction.cc:259] Processed file [43/78]
+I20261008 17:32:01.773468   723 feature_extraction.cc:262]   Name:            train/extra_0042.jpg
+I20261008 17:32:01.774243   723 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 17:32:01.774922   723 feature_extraction.cc:274]   Camera:          #3 - OPENCV
+I20261008 17:32:01.775355   723 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 17:32:01.775873   723 feature_extraction.cc:281]   Features:        553
+I20261008 17:32:01.874135   723 feature_extraction.cc:259] Processed file [44/78]
+I20261008 17:32:01.876405   723 feature_extraction.cc:262]   Name:            train/extra_0043.jpg
+I20261008 17:32:01.878021   723 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 17:32:01.880023   723 feature_extraction.cc:274]   Camera:          #3 - OPENCV
+I20261008 17:32:01.882179   723 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 17:32:01.883821   723 feature_extraction.cc:281]   Features:        363
+I20261008 17:32:01.946179   723 feature_extraction.cc:259] Processed file [45/78]
+I20261008 17:32:01.947468   723 feature_extraction.cc:262]   Name:            train/extra_0044.jpg
+I20261008 17:32:01.949446   723 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 17:32:01.951854   723 feature_extraction.cc:274]   Camera:          #3 - OPENCV
+I20261008 17:32:01.952775   723 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 17:32:01.953792   723 feature_extraction.cc:281]   Features:        393
+I20261008 17:32:02.079766   723 feature_extraction.cc:259] Processed file [46/78]
+I20261008 17:32:02.081779   723 feature_extraction.cc:262]   Name:            train/extra_0045.jpg
+I20261008 17:32:02.082558   723 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 17:32:02.083106   723 feature_extraction.cc:274]   Camera:          #3 - OPENCV
+I20261008 17:32:02.083571   723 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 17:32:02.083961   723 feature_extraction.cc:281]   Features:        271
+I20261008 17:32:02.135743   723 feature_extraction.cc:259] Processed file [47/78]
+I20261008 17:32:02.136978   723 feature_extraction.cc:262]   Name:            train/extra_0046.jpg
+I20261008 17:32:02.137758   723 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 17:32:02.138377   723 feature_extraction.cc:274]   Camera:          #3 - OPENCV
+I20261008 17:32:02.138828   723 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 17:32:02.139266   723 feature_extraction.cc:281]   Features:        326
+I20261008 17:32:02.598560   723 feature_extraction.cc:259] Processed file [48/78]
+I20261008 17:32:02.601428   723 feature_extraction.cc:262]   Name:            train/extra_0047.jpg
+I20261008 17:32:02.603451   723 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 17:32:02.605350   723 feature_extraction.cc:274]   Camera:          #3 - OPENCV
+I20261008 17:32:02.606870   723 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 17:32:02.608633   723 feature_extraction.cc:281]   Features:        302
+I20261008 17:32:02.801982   723 feature_extraction.cc:259] Processed file [49/78]
+I20261008 17:32:02.803444   723 feature_extraction.cc:262]   Name:            train/extra_0048.jpg
+I20261008 17:32:02.804342   723 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 17:32:02.804930   723 feature_extraction.cc:274]   Camera:          #3 - OPENCV
+I20261008 17:32:02.805393   723 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 17:32:02.805968   723 feature_extraction.cc:281]   Features:        384
+I20261008 17:32:02.831296   723 feature_extraction.cc:259] Processed file [50/78]
+I20261008 17:32:02.833505   723 feature_extraction.cc:262]   Name:            train/extra_0049.jpg
+I20261008 17:32:02.834542   723 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 17:32:02.835275   723 feature_extraction.cc:274]   Camera:          #3 - OPENCV
+I20261008 17:32:02.836225   723 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 17:32:02.839001   723 feature_extraction.cc:281]   Features:        291
+I20261008 17:32:03.073288   723 feature_extraction.cc:259] Processed file [51/78]
+I20261008 17:32:03.075146   723 feature_extraction.cc:262]   Name:            train/extra_0050.jpg
+I20261008 17:32:03.075981   723 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 17:32:03.076567   723 feature_extraction.cc:274]   Camera:          #3 - OPENCV
+I20261008 17:32:03.077049   723 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 17:32:03.077521   723 feature_extraction.cc:281]   Features:        265
+I20261008 17:32:03.097713   723 feature_extraction.cc:259] Processed file [52/78]
+I20261008 17:32:03.099398   723 feature_extraction.cc:262]   Name:            train/extra_0051.jpg
+I20261008 17:32:03.100461   723 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 17:32:03.101114   723 feature_extraction.cc:274]   Camera:          #3 - OPENCV
+I20261008 17:32:03.101787   723 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 17:32:03.102981   723 feature_extraction.cc:281]   Features:        225
+I20261008 17:32:03.147490   723 feature_extraction.cc:259] Processed file [53/78]
+I20261008 17:32:03.148955   723 feature_extraction.cc:262]   Name:            train/extra_0052.jpg
+I20261008 17:32:03.150849   723 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 17:32:03.151943   723 feature_extraction.cc:274]   Camera:          #3 - OPENCV
+I20261008 17:32:03.152565   723 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 17:32:03.153666   723 feature_extraction.cc:281]   Features:        276
+I20261008 17:32:03.359984   723 feature_extraction.cc:259] Processed file [54/78]
+I20261008 17:32:03.361340   723 feature_extraction.cc:262]   Name:            train/extra_0053.jpg
+I20261008 17:32:03.361917   723 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 17:32:03.362406   723 feature_extraction.cc:274]   Camera:          #3 - OPENCV
+I20261008 17:32:03.363137   723 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 17:32:03.363704   723 feature_extraction.cc:281]   Features:        203
+I20261008 17:32:03.394882   723 feature_extraction.cc:259] Processed file [55/78]
+I20261008 17:32:03.396885   723 feature_extraction.cc:262]   Name:            train/extra_0054.jpg
+I20261008 17:32:03.397648   723 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 17:32:03.398629   723 feature_extraction.cc:274]   Camera:          #3 - OPENCV
+I20261008 17:32:03.399808   723 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 17:32:03.400624   723 feature_extraction.cc:281]   Features:        252
+I20261008 17:32:03.916936   723 feature_extraction.cc:259] Processed file [56/78]
+I20261008 17:32:03.918560   723 feature_extraction.cc:262]   Name:            train/extra_0055.jpg
+I20261008 17:32:03.919513   723 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 17:32:03.920152   723 feature_extraction.cc:274]   Camera:          #3 - OPENCV
+I20261008 17:32:03.920712   723 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 17:32:03.921329   723 feature_extraction.cc:281]   Features:        371
+I20261008 17:32:04.061772   723 feature_extraction.cc:259] Processed file [57/78]
+I20261008 17:32:04.063544   723 feature_extraction.cc:262]   Name:            train/extra_0056.jpg
+I20261008 17:32:04.064607   723 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 17:32:04.066596   723 feature_extraction.cc:274]   Camera:          #3 - OPENCV
+I20261008 17:32:04.067742   723 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 17:32:04.068380   723 feature_extraction.cc:281]   Features:        457
+I20261008 17:32:04.178565   723 feature_extraction.cc:259] Processed file [58/78]
+I20261008 17:32:04.179911   723 feature_extraction.cc:262]   Name:            train/extra_0057.jpg
+I20261008 17:32:04.180537   723 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 17:32:04.181052   723 feature_extraction.cc:274]   Camera:          #3 - OPENCV
+I20261008 17:32:04.181566   723 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 17:32:04.182504   723 feature_extraction.cc:281]   Features:        421
+I20261008 17:32:04.430819   723 feature_extraction.cc:259] Processed file [59/78]
+I20261008 17:32:04.432147   723 feature_extraction.cc:262]   Name:            train/extra_0058.jpg
+I20261008 17:32:04.432667   723 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 17:32:04.433350   723 feature_extraction.cc:274]   Camera:          #3 - OPENCV
+I20261008 17:32:04.433954   723 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 17:32:04.434553   723 feature_extraction.cc:281]   Features:        303
+I20261008 17:32:04.450160   723 feature_extraction.cc:259] Processed file [60/78]
+I20261008 17:32:04.452780   723 feature_extraction.cc:262]   Name:            train/extra_0059.jpg
+I20261008 17:32:04.453416   723 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 17:32:04.453979   723 feature_extraction.cc:274]   Camera:          #3 - OPENCV
+I20261008 17:32:04.454804   723 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 17:32:04.455171   723 feature_extraction.cc:281]   Features:        512
+I20261008 17:32:04.515928   723 feature_extraction.cc:259] Processed file [61/78]
+I20261008 17:32:04.517911   723 feature_extraction.cc:262]   Name:            train/extra_0060.jpg
+I20261008 17:32:04.518666   723 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 17:32:04.519243   723 feature_extraction.cc:274]   Camera:          #3 - OPENCV
+I20261008 17:32:04.520748   723 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 17:32:04.522344   723 feature_extraction.cc:281]   Features:        1055
+I20261008 17:32:04.802471   723 feature_extraction.cc:259] Processed file [62/78]
+I20261008 17:32:04.803730   723 feature_extraction.cc:262]   Name:            train/extra_0062.jpg
+I20261008 17:32:04.804426   723 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 17:32:04.804869   723 feature_extraction.cc:274]   Camera:          #3 - OPENCV
+I20261008 17:32:04.805294   723 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 17:32:04.805912   723 feature_extraction.cc:281]   Features:        1082
+I20261008 17:32:04.806774   723 feature_extraction.cc:259] Processed file [63/78]
+I20261008 17:32:04.807578   723 feature_extraction.cc:262]   Name:            train/extra_0061.jpg
+I20261008 17:32:04.808084   723 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 17:32:04.808597   723 feature_extraction.cc:274]   Camera:          #3 - OPENCV
+I20261008 17:32:04.809324   723 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 17:32:04.810163   723 feature_extraction.cc:281]   Features:        1165
+I20261008 17:32:05.321820   723 feature_extraction.cc:259] Processed file [64/78]
+I20261008 17:32:05.323556   723 feature_extraction.cc:262]   Name:            train/extra_0063.jpg
+I20261008 17:32:05.324536   723 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 17:32:05.325286   723 feature_extraction.cc:274]   Camera:          #3 - OPENCV
+I20261008 17:32:05.325786   723 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 17:32:05.326488   723 feature_extraction.cc:281]   Features:        936
+I20261008 17:32:05.473098   723 feature_extraction.cc:259] Processed file [65/78]
+I20261008 17:32:05.474040   723 feature_extraction.cc:262]   Name:            train/extra_0064.jpg
+I20261008 17:32:05.474339   723 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 17:32:05.474566   723 feature_extraction.cc:274]   Camera:          #3 - OPENCV
+I20261008 17:32:05.474785   723 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 17:32:05.475095   723 feature_extraction.cc:281]   Features:        1697
+I20261008 17:32:05.537070   723 feature_extraction.cc:259] Processed file [66/78]
+I20261008 17:32:05.538156   723 feature_extraction.cc:262]   Name:            train/extra_0065.jpg
+I20261008 17:32:05.538669   723 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 17:32:05.539155   723 feature_extraction.cc:274]   Camera:          #3 - OPENCV
+I20261008 17:32:05.539619   723 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 17:32:05.540083   723 feature_extraction.cc:281]   Features:        1794
+I20261008 17:32:05.770208   723 feature_extraction.cc:259] Processed file [67/78]
+I20261008 17:32:05.771044   723 feature_extraction.cc:262]   Name:            train/extra_0066.jpg
+I20261008 17:32:05.771654   723 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 17:32:05.772080   723 feature_extraction.cc:274]   Camera:          #3 - OPENCV
+I20261008 17:32:05.772388   723 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 17:32:05.772717   723 feature_extraction.cc:281]   Features:        1424
+I20261008 17:32:05.867936   723 feature_extraction.cc:259] Processed file [68/78]
+I20261008 17:32:05.868935   723 feature_extraction.cc:262]   Name:            train/extra_0067.jpg
+I20261008 17:32:05.869516   723 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 17:32:05.870153   723 feature_extraction.cc:274]   Camera:          #3 - OPENCV
+I20261008 17:32:05.870549   723 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 17:32:05.871026   723 feature_extraction.cc:281]   Features:        2018
+I20261008 17:32:05.921469   723 feature_extraction.cc:259] Processed file [69/78]
+I20261008 17:32:05.924139   723 feature_extraction.cc:262]   Name:            train/extra_0068.jpg
+I20261008 17:32:05.924940   723 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 17:32:05.925556   723 feature_extraction.cc:274]   Camera:          #3 - OPENCV
+I20261008 17:32:05.926076   723 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 17:32:05.926640   723 feature_extraction.cc:281]   Features:        2324
+I20261008 17:32:06.150523   723 feature_extraction.cc:259] Processed file [70/78]
+I20261008 17:32:06.151508   723 feature_extraction.cc:262]   Name:            train/extra_0069.jpg
+I20261008 17:32:06.151985   723 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 17:32:06.152475   723 feature_extraction.cc:274]   Camera:          #3 - OPENCV
+I20261008 17:32:06.153128   723 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 17:32:06.153981   723 feature_extraction.cc:281]   Features:        1791
+I20261008 17:32:06.155064   723 feature_extraction.cc:259] Processed file [71/78]
+I20261008 17:32:06.155548   723 feature_extraction.cc:262]   Name:            train/extra_0070.jpg
+I20261008 17:32:06.159924   723 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 17:32:06.160621   723 feature_extraction.cc:274]   Camera:          #3 - OPENCV
+I20261008 17:32:06.161145   723 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 17:32:06.161638   723 feature_extraction.cc:281]   Features:        1439
+I20261008 17:32:06.492141   723 feature_extraction.cc:259] Processed file [72/78]
+I20261008 17:32:06.493149   723 feature_extraction.cc:262]   Name:            train/extra_0071.jpg
+I20261008 17:32:06.493654   723 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 17:32:06.494331   723 feature_extraction.cc:274]   Camera:          #3 - OPENCV
+I20261008 17:32:06.494719   723 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 17:32:06.495009   723 feature_extraction.cc:281]   Features:        1634
+I20261008 17:32:06.750042   723 feature_extraction.cc:259] Processed file [73/78]
+I20261008 17:32:06.750751   723 feature_extraction.cc:262]   Name:            train/extra_0072.jpg
+I20261008 17:32:06.751137   723 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 17:32:06.751907   723 feature_extraction.cc:274]   Camera:          #3 - OPENCV
+I20261008 17:32:06.752403   723 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 17:32:06.752830   723 feature_extraction.cc:281]   Features:        1817
+I20261008 17:32:06.792459   723 feature_extraction.cc:259] Processed file [74/78]
+I20261008 17:32:06.793344   723 feature_extraction.cc:262]   Name:            train/extra_0073.jpg
+I20261008 17:32:06.793910   723 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 17:32:06.794255   723 feature_extraction.cc:274]   Camera:          #3 - OPENCV
+I20261008 17:32:06.794560   723 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 17:32:06.794859   723 feature_extraction.cc:281]   Features:        2091
+I20261008 17:32:07.005205   723 feature_extraction.cc:259] Processed file [75/78]
+I20261008 17:32:07.006052   723 feature_extraction.cc:262]   Name:            train/extra_0074.jpg
+I20261008 17:32:07.006572   723 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 17:32:07.006955   723 feature_extraction.cc:274]   Camera:          #3 - OPENCV
+I20261008 17:32:07.007315   723 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 17:32:07.007614   723 feature_extraction.cc:281]   Features:        2729
+I20261008 17:32:07.110620   723 feature_extraction.cc:259] Processed file [76/78]
+I20261008 17:32:07.111389   723 feature_extraction.cc:262]   Name:            train/extra_0075.jpg
+I20261008 17:32:07.111757   723 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 17:32:07.112138   723 feature_extraction.cc:274]   Camera:          #3 - OPENCV
+I20261008 17:32:07.112552   723 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 17:32:07.112928   723 feature_extraction.cc:281]   Features:        2914
+I20261008 17:32:07.132069   723 feature_extraction.cc:259] Processed file [77/78]
+I20261008 17:32:07.133473   723 feature_extraction.cc:262]   Name:            train/extra_0076.jpg
+I20261008 17:32:07.134899   723 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 17:32:07.135931   723 feature_extraction.cc:274]   Camera:          #3 - OPENCV
+I20261008 17:32:07.137120   723 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 17:32:07.137588   723 feature_extraction.cc:281]   Features:        2736
+I20261008 17:32:07.253561   723 feature_extraction.cc:259] Processed file [78/78]
+I20261008 17:32:07.254299   723 feature_extraction.cc:262]   Name:            train/extra_0077.jpg
+I20261008 17:32:07.254676   723 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 17:32:07.254988   723 feature_extraction.cc:274]   Camera:          #3 - OPENCV
+I20261008 17:32:07.255234   723 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 17:32:07.255522   723 feature_extraction.cc:281]   Features:        2182
+I20261008 17:32:07.262888   706 timer.cc:91] Elapsed time: 0.308 [minutes]
+pairs: 10962 (against 133 existing frames)
++ colmap matches_importer --database_path /home/kiranriya0990/hn3d_work/room/colmap/database.db --match_list_path /home/kiranriya0990/hn3d_work/room/colmap/extra_pairs.txt --match_type pairs --SiftMatching.num_threads 8 --SiftMatching.guided_matching 1 --SiftMatching.use_gpu 0
+I20261008 17:32:07.410233   725 misc.cc:44] 
+==============================================================================
+Feature matching
+==============================================================================
+I20261008 17:32:07.457494   726 sift.cc:1434] Creating SIFT CPU feature matcher
+I20261008 17:32:07.457638   727 sift.cc:1434] Creating SIFT CPU feature matcher
+I20261008 17:32:07.457994   728 sift.cc:1434] Creating SIFT CPU feature matcher
+I20261008 17:32:07.458396   729 sift.cc:1434] Creating SIFT CPU feature matcher
+I20261008 17:32:07.458766   730 sift.cc:1434] Creating SIFT CPU feature matcher
+I20261008 17:32:07.458945   731 sift.cc:1434] Creating SIFT CPU feature matcher
+I20261008 17:32:07.459036   732 sift.cc:1434] Creating SIFT CPU feature matcher
+I20261008 17:32:07.462757   744 sift.cc:1434] Creating SIFT CPU feature matcher
+I20261008 17:32:07.462291   742 sift.cc:1434] Creating SIFT CPU feature matcher
+I20261008 17:32:07.462451   743 sift.cc:1434] Creating SIFT CPU feature matcher
+I20261008 17:32:07.462635   745 sift.cc:1434] Creating SIFT CPU feature matcher
+I20261008 17:32:07.459647   733 sift.cc:1434] Creating SIFT CPU feature matcher
+I20261008 17:32:07.462826   748 sift.cc:1434] Creating SIFT CPU feature matcher
+I20261008 17:32:07.463626   747 sift.cc:1434] Creating SIFT CPU feature matcher
+I20261008 17:32:07.463724   746 sift.cc:1434] Creating SIFT CPU feature matcher
+I20261008 17:32:07.463824   749 sift.cc:1434] Creating SIFT CPU feature matcher
+I20261008 17:32:07.466087   725 pairing.cc:795] Importing image pairs...
+I20261008 17:32:07.470979   725 pairing.cc:828] Matching block [1/9]
+I20261008 17:32:28.788656   725 feature_matching.cc:47] in 21.318s
+I20261008 17:32:28.790210   725 pairing.cc:828] Matching block [2/9]
+I20261008 17:32:43.919148   725 feature_matching.cc:47] in 15.129s
+I20261008 17:32:43.920275   725 pairing.cc:828] Matching block [3/9]
+I20261008 17:32:49.901970   725 feature_matching.cc:47] in 5.982s
+I20261008 17:32:49.903085   725 pairing.cc:828] Matching block [4/9]
+I20261008 17:32:54.849575   725 feature_matching.cc:47] in 4.947s
+I20261008 17:32:54.850801   725 pairing.cc:828] Matching block [5/9]
+I20261008 17:32:59.129185   725 feature_matching.cc:47] in 4.278s
+I20261008 17:32:59.129980   725 pairing.cc:828] Matching block [6/9]
+I20261008 17:33:03.580111   725 feature_matching.cc:47] in 4.450s
+I20261008 17:33:03.581457   725 pairing.cc:828] Matching block [7/9]
+I20261008 17:33:08.594257   725 feature_matching.cc:47] in 5.013s
+I20261008 17:33:08.595360   725 pairing.cc:828] Matching block [8/9]
+I20261008 17:33:16.919502   725 feature_matching.cc:47] in 8.324s
+I20261008 17:33:16.920471   725 pairing.cc:828] Matching block [9/9]
+I20261008 17:33:27.296373   725 feature_matching.cc:47] in 10.376s
+I20261008 17:33:27.297209   725 timer.cc:91] Elapsed time: 1.331 [minutes]
++ colmap image_registrator --database_path /home/kiranriya0990/hn3d_work/room/colmap/database.db --input_path /home/kiranriya0990/hn3d_work/room/colmap/sparse/1 --output_path /home/kiranriya0990/hn3d_work/room/colmap/sparse_ext --Mapper.abs_pose_min_num_inliers 15 --Mapper.abs_pose_min_inlier_ratio 0.15
+I20261008 17:33:27.410833   750 misc.cc:44] 
+==============================================================================
+Loading database
+==============================================================================
+I20261008 17:33:27.413672   750 database_cache.cc:66] Loading rigs...
+I20261008 17:33:27.414645   750 database_cache.cc:76]  3 in 0.001s
+I20261008 17:33:27.415514   750 database_cache.cc:84] Loading cameras...
+I20261008 17:33:27.416466   750 database_cache.cc:102]  3 in 0.001s
+I20261008 17:33:27.416978   750 database_cache.cc:110] Loading frames...
+I20261008 17:33:27.417663   750 database_cache.cc:127]  483 in 0.001s
+I20261008 17:33:27.418012   750 database_cache.cc:135] Loading matches...
+I20261008 17:33:27.470423   750 database_cache.cc:140]  12445 in 0.052s
+I20261008 17:33:27.471375   750 database_cache.cc:156] Loading images...
+I20261008 17:33:27.582542   750 database_cache.cc:241]  483 in 0.111s (connected 483)
+I20261008 17:33:27.584216   750 database_cache.cc:252] Building correspondence graph...
+I20261008 17:33:27.849685   750 database_cache.cc:279]  in 0.266s (ignored 0)
+I20261008 17:33:27.852882   750 timer.cc:91] Elapsed time: 0.007 [minutes]
+I20261008 17:33:28.203184   750 misc.cc:44] 
+==============================================================================
+Registering image #406 (406)
+==============================================================================
+I20261008 17:33:28.204025   750 image.cc:306] 
+=> Image sees 1816 / 2299 points
+I20261008 17:33:28.269598   750 misc.cc:44] 
+==============================================================================
+Registering image #407 (407)
+==============================================================================
+I20261008 17:33:28.270646   750 image.cc:306] 
+=> Image sees 1678 / 2103 points
+I20261008 17:33:28.340442   750 misc.cc:44] 
+==============================================================================
+Registering image #408 (408)
+==============================================================================
+I20261008 17:33:28.341522   750 image.cc:306] 
+=> Image sees 1935 / 2803 points
+I20261008 17:33:28.422574   750 misc.cc:44] 
+==============================================================================
+Registering image #409 (409)
+==============================================================================
+I20261008 17:33:28.423549   750 image.cc:306] 
+=> Image sees 1772 / 2315 points
+I20261008 17:33:28.496934   750 misc.cc:44] 
+==============================================================================
+Registering image #410 (410)
+==============================================================================
+I20261008 17:33:28.497746   750 image.cc:306] 
+=> Image sees 1824 / 2237 points
+I20261008 17:33:28.567281   750 misc.cc:44] 
+==============================================================================
+Registering image #411 (411)
+==============================================================================
+I20261008 17:33:28.568012   750 image.cc:306] 
+=> Image sees 1567 / 1912 points
+I20261008 17:33:28.631543   750 misc.cc:44] 
+==============================================================================
+Registering image #412 (412)
+==============================================================================
+I20261008 17:33:28.632557   750 image.cc:306] 
+=> Image sees 1746 / 2381 points
+I20261008 17:33:28.695748   750 misc.cc:44] 
+==============================================================================
+Registering image #413 (413)
+==============================================================================
+I20261008 17:33:28.696584   750 image.cc:306] 
+=> Image sees 2003 / 2505 points
+I20261008 17:33:28.798799   750 misc.cc:44] 
+==============================================================================
+Registering image #414 (414)
+==============================================================================
+I20261008 17:33:28.799602   750 image.cc:306] 
+=> Image sees 1509 / 2066 points
+I20261008 17:33:28.844689   750 misc.cc:44] 
+==============================================================================
+Registering image #415 (415)
+==============================================================================
+I20261008 17:33:28.846469   750 image.cc:306] 
+=> Image sees 1575 / 1886 points
+I20261008 17:33:28.922758   750 misc.cc:44] 
+==============================================================================
+Registering image #416 (416)
+==============================================================================
+I20261008 17:33:28.923874   750 image.cc:306] 
+=> Image sees 1786 / 2227 points
+I20261008 17:33:28.978685   750 misc.cc:44] 
+==============================================================================
+Registering image #417 (417)
+==============================================================================
+I20261008 17:33:28.979857   750 image.cc:306] 
+=> Image sees 2047 / 2687 points
+I20261008 17:33:29.040007   750 misc.cc:44] 
+==============================================================================
+Registering image #418 (418)
+==============================================================================
+I20261008 17:33:29.041239   750 image.cc:306] 
+=> Image sees 2107 / 3030 points
+I20261008 17:33:29.097369   750 misc.cc:44] 
+==============================================================================
+Registering image #419 (419)
+==============================================================================
+I20261008 17:33:29.099002   750 image.cc:306] 
+=> Image sees 1883 / 2487 points
+I20261008 17:33:29.142103   750 misc.cc:44] 
+==============================================================================
+Registering image #420 (420)
+==============================================================================
+I20261008 17:33:29.143154   750 image.cc:306] 
+=> Image sees 1679 / 2060 points
+I20261008 17:33:29.198155   750 misc.cc:44] 
+==============================================================================
+Registering image #421 (421)
+==============================================================================
+I20261008 17:33:29.199420   750 image.cc:306] 
+=> Image sees 1454 / 1827 points
+I20261008 17:33:29.285970   750 misc.cc:44] 
+==============================================================================
+Registering image #422 (422)
+==============================================================================
+I20261008 17:33:29.287390   750 image.cc:306] 
+=> Image sees 720 / 939 points
+I20261008 17:33:29.321058   750 misc.cc:44] 
+==============================================================================
+Registering image #423 (423)
+==============================================================================
+I20261008 17:33:29.322120   750 image.cc:306] 
+=> Image sees 1206 / 1465 points
+I20261008 17:33:29.350203   750 misc.cc:44] 
+==============================================================================
+Registering image #424 (424)
+==============================================================================
+I20261008 17:33:29.350943   750 image.cc:306] 
+=> Image sees 1015 / 1243 points
+I20261008 17:33:29.385507   750 misc.cc:44] 
+==============================================================================
+Registering image #425 (425)
+==============================================================================
+I20261008 17:33:29.386636   750 image.cc:306] 
+=> Image sees 817 / 1131 points
+I20261008 17:33:29.416426   750 misc.cc:44] 
+==============================================================================
+Registering image #426 (426)
+==============================================================================
+I20261008 17:33:29.417269   750 image.cc:306] 
+=> Image sees 925 / 1148 points
+I20261008 17:33:29.445047   750 misc.cc:44] 
+==============================================================================
+Registering image #427 (427)
+==============================================================================
+I20261008 17:33:29.445880   750 image.cc:306] 
+=> Image sees 1003 / 1267 points
+I20261008 17:33:29.467823   750 misc.cc:44] 
+==============================================================================
+Registering image #428 (428)
+==============================================================================
+I20261008 17:33:29.470069   750 image.cc:306] 
+=> Image sees 1122 / 1511 points
+I20261008 17:33:29.524767   750 misc.cc:44] 
+==============================================================================
+Registering image #429 (429)
+==============================================================================
+I20261008 17:33:29.525619   750 image.cc:306] 
+=> Image sees 680 / 809 points
+I20261008 17:33:29.557194   750 misc.cc:44] 
+==============================================================================
+Registering image #430 (430)
+==============================================================================
+I20261008 17:33:29.558768   750 image.cc:306] 
+=> Image sees 405 / 448 points
+I20261008 17:33:29.568167   750 misc.cc:44] 
+==============================================================================
+Registering image #431 (431)
+==============================================================================
+I20261008 17:33:29.569094   750 image.cc:306] 
+=> Image sees 510 / 600 points
+I20261008 17:33:29.583473   750 misc.cc:44] 
+==============================================================================
+Registering image #432 (432)
+==============================================================================
+I20261008 17:33:29.584259   750 image.cc:306] 
+=> Image sees 363 / 393 points
+I20261008 17:33:29.592458   750 misc.cc:44] 
+==============================================================================
+Registering image #433 (433)
+==============================================================================
+I20261008 17:33:29.593529   750 image.cc:306] 
+=> Image sees 333 / 363 points
+I20261008 17:33:29.603796   750 misc.cc:44] 
+==============================================================================
+Registering image #434 (434)
+==============================================================================
+I20261008 17:33:29.604897   750 image.cc:306] 
+=> Image sees 345 / 376 points
+I20261008 17:33:29.616842   750 misc.cc:44] 
+==============================================================================
+Registering image #435 (435)
+==============================================================================
+I20261008 17:33:29.617476   750 image.cc:306] 
+=> Image sees 588 / 693 points
+I20261008 17:33:29.633563   750 misc.cc:44] 
+==============================================================================
+Registering image #436 (436)
+==============================================================================
+I20261008 17:33:29.634193   750 image.cc:306] 
+=> Image sees 749 / 890 points
+I20261008 17:33:29.661355   750 misc.cc:44] 
+==============================================================================
+Registering image #437 (437)
+==============================================================================
+I20261008 17:33:29.662292   750 image.cc:306] 
+=> Image sees 788 / 916 points
+I20261008 17:33:29.691344   750 misc.cc:44] 
+==============================================================================
+Registering image #438 (438)
+==============================================================================
+I20261008 17:33:29.692061   750 image.cc:306] 
+=> Image sees 541 / 614 points
+I20261008 17:33:29.706068   750 misc.cc:44] 
+==============================================================================
+Registering image #439 (439)
+==============================================================================
+I20261008 17:33:29.707077   750 image.cc:306] 
+=> Image sees 471 / 517 points
+I20261008 17:33:29.716194   750 misc.cc:44] 
+==============================================================================
+Registering image #440 (440)
+==============================================================================
+I20261008 17:33:29.716836   750 image.cc:306] 
+=> Image sees 613 / 672 points
+I20261008 17:33:29.730532   750 misc.cc:44] 
+==============================================================================
+Registering image #441 (441)
+==============================================================================
+I20261008 17:33:29.731662   750 image.cc:306] 
+=> Image sees 612 / 696 points
+I20261008 17:33:29.747396   750 misc.cc:44] 
+==============================================================================
+Registering image #442 (442)
+==============================================================================
+I20261008 17:33:29.748620   750 image.cc:306] 
+=> Image sees 254 / 274 points
+I20261008 17:33:29.755386   750 misc.cc:44] 
+==============================================================================
+Registering image #443 (443)
+==============================================================================
+I20261008 17:33:29.756012   750 image.cc:306] 
+=> Image sees 380 / 396 points
+I20261008 17:33:29.765022   750 misc.cc:44] 
+==============================================================================
+Registering image #444 (444)
+==============================================================================
+I20261008 17:33:29.765537   750 image.cc:306] 
+=> Image sees 300 / 328 points
+I20261008 17:33:29.775890   750 misc.cc:44] 
+==============================================================================
+Registering image #445 (445)
+==============================================================================
+I20261008 17:33:29.777036   750 image.cc:306] 
+=> Image sees 603 / 690 points
+I20261008 17:33:29.792384   750 misc.cc:44] 
+==============================================================================
+Registering image #446 (446)
+==============================================================================
+I20261008 17:33:29.793301   750 image.cc:306] 
+=> Image sees 597 / 639 points
+I20261008 17:33:29.813364   750 misc.cc:44] 
+==============================================================================
+Registering image #447 (447)
+==============================================================================
+I20261008 17:33:29.814438   750 image.cc:306] 
+=> Image sees 540 / 580 points
+I20261008 17:33:29.831418   750 misc.cc:44] 
+==============================================================================
+Registering image #448 (448)
+==============================================================================
+I20261008 17:33:29.832446   750 image.cc:306] 
+=> Image sees 454 / 498 points
+I20261008 17:33:29.845700   750 misc.cc:44] 
+==============================================================================
+Registering image #449 (449)
+==============================================================================
+I20261008 17:33:29.846347   750 image.cc:306] 
+=> Image sees 331 / 345 points
+I20261008 17:33:29.855515   750 misc.cc:44] 
+==============================================================================
+Registering image #450 (450)
+==============================================================================
+I20261008 17:33:29.856058   750 image.cc:306] 
+=> Image sees 345 / 362 points
+I20261008 17:33:29.869161   750 misc.cc:44] 
+==============================================================================
+Registering image #451 (451)
+==============================================================================
+I20261008 17:33:29.869899   750 image.cc:306] 
+=> Image sees 242 / 252 points
+I20261008 17:33:29.879112   750 misc.cc:44] 
+==============================================================================
+Registering image #452 (452)
+==============================================================================
+I20261008 17:33:29.879776   750 image.cc:306] 
+=> Image sees 287 / 302 points
+I20261008 17:33:29.898761   750 misc.cc:44] 
+==============================================================================
+Registering image #453 (453)
+==============================================================================
+I20261008 17:33:29.899674   750 image.cc:306] 
+=> Image sees 267 / 278 points
+I20261008 17:33:29.917963   750 misc.cc:44] 
+==============================================================================
+Registering image #454 (454)
+==============================================================================
+I20261008 17:33:29.919844   750 image.cc:306] 
+=> Image sees 357 / 370 points
+I20261008 17:33:29.933522   750 misc.cc:44] 
+==============================================================================
+Registering image #455 (455)
+==============================================================================
+I20261008 17:33:29.934157   750 image.cc:306] 
+=> Image sees 265 / 277 points
+I20261008 17:33:29.944315   750 misc.cc:44] 
+==============================================================================
+Registering image #456 (456)
+==============================================================================
+I20261008 17:33:29.945127   750 image.cc:306] 
+=> Image sees 238 / 251 points
+I20261008 17:33:29.962621   750 misc.cc:44] 
+==============================================================================
+Registering image #457 (457)
+==============================================================================
+I20261008 17:33:29.963215   750 image.cc:306] 
+=> Image sees 216 / 218 points
+I20261008 17:33:29.972218   750 misc.cc:44] 
+==============================================================================
+Registering image #458 (458)
+==============================================================================
+I20261008 17:33:29.972745   750 image.cc:306] 
+=> Image sees 258 / 269 points
+I20261008 17:33:29.983949   750 misc.cc:44] 
+==============================================================================
+Registering image #459 (459)
+==============================================================================
+I20261008 17:33:29.984372   750 image.cc:306] 
+=> Image sees 182 / 193 points
+I20261008 17:33:29.990656   750 misc.cc:44] 
+==============================================================================
+Registering image #460 (460)
+==============================================================================
+I20261008 17:33:29.991129   750 image.cc:306] 
+=> Image sees 239 / 252 points
+I20261008 17:33:29.997665   750 misc.cc:44] 
+==============================================================================
+Registering image #461 (461)
+==============================================================================
+I20261008 17:33:29.998118   750 image.cc:306] 
+=> Image sees 331 / 354 points
+I20261008 17:33:30.010952   750 misc.cc:44] 
+==============================================================================
+Registering image #462 (462)
+==============================================================================
+I20261008 17:33:30.011906   750 image.cc:306] 
+=> Image sees 407 / 441 points
+I20261008 17:33:30.024109   750 misc.cc:44] 
+==============================================================================
+Registering image #463 (463)
+==============================================================================
+I20261008 17:33:30.024835   750 image.cc:306] 
+=> Image sees 355 / 391 points
+I20261008 17:33:30.049744   750 misc.cc:44] 
+==============================================================================
+Registering image #464 (464)
+==============================================================================
+I20261008 17:33:30.050907   750 image.cc:306] 
+=> Image sees 270 / 289 points
+I20261008 17:33:30.058405   750 misc.cc:44] 
+==============================================================================
+Registering image #465 (465)
+==============================================================================
+I20261008 17:33:30.059085   750 image.cc:306] 
+=> Image sees 424 / 493 points
+I20261008 17:33:30.069772   750 misc.cc:44] 
+==============================================================================
+Registering image #466 (466)
+==============================================================================
+I20261008 17:33:30.070323   750 image.cc:306] 
+=> Image sees 635 / 902 points
+I20261008 17:33:30.085739   750 misc.cc:44] 
+==============================================================================
+Registering image #467 (467)
+==============================================================================
+I20261008 17:33:30.086459   750 image.cc:306] 
+=> Image sees 534 / 888 points
+I20261008 17:33:30.105168   750 misc.cc:44] 
+==============================================================================
+Registering image #468 (468)
+==============================================================================
+I20261008 17:33:30.105870   750 image.cc:306] 
+=> Image sees 565 / 978 points
+I20261008 17:33:30.117211   750 misc.cc:44] 
+==============================================================================
+Registering image #469 (469)
+==============================================================================
+I20261008 17:33:30.117802   750 image.cc:306] 
+=> Image sees 465 / 831 points
+I20261008 17:33:30.131446   750 misc.cc:44] 
+==============================================================================
+Registering image #470 (470)
+==============================================================================
+I20261008 17:33:30.132135   750 image.cc:306] 
+=> Image sees 716 / 1695 points
+I20261008 17:33:30.144812   750 misc.cc:44] 
+==============================================================================
+Registering image #471 (471)
+==============================================================================
+I20261008 17:33:30.145483   750 image.cc:306] 
+=> Image sees 731 / 1599 points
+I20261008 17:33:30.177896   750 misc.cc:44] 
+==============================================================================
+Registering image #472 (472)
+==============================================================================
+I20261008 17:33:30.178644   750 image.cc:306] 
+=> Image sees 698 / 1418 points
+I20261008 17:33:30.200304   750 misc.cc:44] 
+==============================================================================
+Registering image #473 (473)
+==============================================================================
+I20261008 17:33:30.201097   750 image.cc:306] 
+=> Image sees 781 / 1849 points
+I20261008 17:33:30.220634   750 misc.cc:44] 
+==============================================================================
+Registering image #474 (474)
+==============================================================================
+I20261008 17:33:30.221812   750 image.cc:306] 
+=> Image sees 1005 / 2149 points
+I20261008 17:33:30.242779   750 misc.cc:44] 
+==============================================================================
+Registering image #475 (475)
+==============================================================================
+I20261008 17:33:30.243813   750 image.cc:306] 
+=> Image sees 794 / 1680 points
+I20261008 17:33:30.265743   750 misc.cc:44] 
+==============================================================================
+Registering image #476 (476)
+==============================================================================
+I20261008 17:33:30.267794   750 image.cc:306] 
+=> Image sees 692 / 1435 points
+I20261008 17:33:30.294894   750 misc.cc:44] 
+==============================================================================
+Registering image #477 (477)
+==============================================================================
+I20261008 17:33:30.295645   750 image.cc:306] 
+=> Image sees 772 / 1356 points
+I20261008 17:33:30.312388   750 misc.cc:44] 
+==============================================================================
+Registering image #478 (478)
+==============================================================================
+I20261008 17:33:30.313818   750 image.cc:306] 
+=> Image sees 865 / 1608 points
+I20261008 17:33:30.333560   750 misc.cc:44] 
+==============================================================================
+Registering image #479 (479)
+==============================================================================
+I20261008 17:33:30.334863   750 image.cc:306] 
+=> Image sees 913 / 2085 points
+I20261008 17:33:30.356539   750 misc.cc:44] 
+==============================================================================
+Registering image #480 (480)
+==============================================================================
+I20261008 17:33:30.357527   750 image.cc:306] 
+=> Image sees 944 / 2319 points
+I20261008 17:33:30.376031   750 misc.cc:44] 
+==============================================================================
+Registering image #481 (481)
+==============================================================================
+I20261008 17:33:30.377148   750 image.cc:306] 
+=> Image sees 996 / 2910 points
+I20261008 17:33:30.397605   750 misc.cc:44] 
+==============================================================================
+Registering image #482 (482)
+==============================================================================
+I20261008 17:33:30.398504   750 image.cc:306] 
+=> Image sees 942 / 2311 points
+I20261008 17:33:30.414341   750 misc.cc:44] 
+==============================================================================
+Registering image #483 (483)
+==============================================================================
+I20261008 17:33:30.415294   750 image.cc:306] 
+=> Image sees 803 / 1519 points
++ colmap bundle_adjuster --input_path /home/kiranriya0990/hn3d_work/room/colmap/sparse_ext --output_path /home/kiranriya0990/hn3d_work/room/colmap/sparse_ext
+I20261008 17:33:30.633800   751 misc.cc:44] 
+==============================================================================
+Global bundle adjustment
+==============================================================================
+I20261008 17:34:38.955039   751 bundle_adjustment.cc:1205] Bundle adjustment report
+    Residuals : 1052386
+   Parameters : 197603
+   Iterations : 65
+         Time : 67.8375 [s]
+ Initial cost : 0.913418 [px]
+   Final cost : 0.848647 [px]
+  Termination : Convergence
+
+I20261008 17:34:38.956593   751 timer.cc:91] Elapsed time: 1.139 [minutes]
++ colmap image_undistorter --image_path /home/kiranriya0990/hn3d_work/room/images --input_path /home/kiranriya0990/hn3d_work/room/colmap/sparse_ext --output_path /home/kiranriya0990/hn3d_work/room/dense_ext --output_type COLMAP
+I20261008 17:34:39.295353  1357 misc.cc:44] 
+==============================================================================
+Reading reconstruction
+==============================================================================
+I20261008 17:34:39.366631  1357 image.cc:361] => Reconstruction with 483 images and 64898 points
+I20261008 17:34:39.369200  1357 misc.cc:44] 
+==============================================================================
+Image undistortion
+==============================================================================
+I20261008 17:34:39.381134  1357 undistortion.cc:197] Undistorting image [1/483]
+I20261008 17:34:40.285893  1357 undistortion.cc:197] Undistorting image [2/483]
+I20261008 17:34:40.293525  1357 undistortion.cc:197] Undistorting image [3/483]
+I20261008 17:34:40.294593  1357 undistortion.cc:197] Undistorting image [4/483]
+I20261008 17:34:40.326421  1357 undistortion.cc:197] Undistorting image [5/483]
+I20261008 17:34:40.351791  1357 undistortion.cc:197] Undistorting image [6/483]
+I20261008 17:34:40.355333  1357 undistortion.cc:197] Undistorting image [7/483]
+I20261008 17:34:40.356408  1357 undistortion.cc:197] Undistorting image [8/483]
+I20261008 17:34:40.357362  1357 undistortion.cc:197] Undistorting image [9/483]
+I20261008 17:34:40.358085  1357 undistortion.cc:197] Undistorting image [10/483]
+I20261008 17:34:40.358819  1357 undistortion.cc:197] Undistorting image [11/483]
+I20261008 17:34:40.632723  1357 undistortion.cc:197] Undistorting image [12/483]
+I20261008 17:34:40.634310  1357 undistortion.cc:197] Undistorting image [13/483]
+I20261008 17:34:40.635332  1357 undistortion.cc:197] Undistorting image [14/483]
+I20261008 17:34:40.649737  1357 undistortion.cc:197] Undistorting image [15/483]
+I20261008 17:34:40.650893  1357 undistortion.cc:197] Undistorting image [16/483]
+I20261008 17:34:40.651250  1357 undistortion.cc:197] Undistorting image [17/483]
+I20261008 17:34:40.651582  1357 undistortion.cc:197] Undistorting image [18/483]
+I20261008 17:34:40.651835  1357 undistortion.cc:197] Undistorting image [19/483]
+I20261008 17:34:40.652377  1357 undistortion.cc:197] Undistorting image [20/483]
+I20261008 17:34:40.653177  1357 undistortion.cc:197] Undistorting image [21/483]
+I20261008 17:34:40.654037  1357 undistortion.cc:197] Undistorting image [22/483]
+I20261008 17:34:40.654980  1357 undistortion.cc:197] Undistorting image [23/483]
+I20261008 17:34:40.656092  1357 undistortion.cc:197] Undistorting image [24/483]
+I20261008 17:34:40.658339  1357 undistortion.cc:197] Undistorting image [25/483]
+I20261008 17:34:40.660254  1357 undistortion.cc:197] Undistorting image [26/483]
+I20261008 17:34:40.949664  1357 undistortion.cc:197] Undistorting image [27/483]
+I20261008 17:34:40.952502  1357 undistortion.cc:197] Undistorting image [28/483]
+I20261008 17:34:40.953940  1357 undistortion.cc:197] Undistorting image [29/483]
+I20261008 17:34:40.955148  1357 undistortion.cc:197] Undistorting image [30/483]
+I20261008 17:34:40.956324  1357 undistortion.cc:197] Undistorting image [31/483]
+I20261008 17:34:40.957706  1357 undistortion.cc:197] Undistorting image [32/483]
+I20261008 17:34:40.958371  1357 undistortion.cc:197] Undistorting image [33/483]
+I20261008 17:34:40.958870  1357 undistortion.cc:197] Undistorting image [34/483]
+I20261008 17:34:40.961791  1357 undistortion.cc:197] Undistorting image [35/483]
+I20261008 17:34:40.970681  1357 undistortion.cc:197] Undistorting image [36/483]
+I20261008 17:34:41.092429  1357 undistortion.cc:197] Undistorting image [37/483]
+I20261008 17:34:41.339177  1357 undistortion.cc:197] Undistorting image [38/483]
+I20261008 17:34:41.345944  1357 undistortion.cc:197] Undistorting image [39/483]
+I20261008 17:34:41.353439  1357 undistortion.cc:197] Undistorting image [40/483]
+I20261008 17:34:41.360590  1357 undistortion.cc:197] Undistorting image [41/483]
+I20261008 17:34:41.361645  1357 undistortion.cc:197] Undistorting image [42/483]
+I20261008 17:34:41.362396  1357 undistortion.cc:197] Undistorting image [43/483]
+I20261008 17:34:41.363013  1357 undistortion.cc:197] Undistorting image [44/483]
+I20261008 17:34:41.368283  1357 undistortion.cc:197] Undistorting image [45/483]
+I20261008 17:34:41.369365  1357 undistortion.cc:197] Undistorting image [46/483]
+I20261008 17:34:41.369575  1357 undistortion.cc:197] Undistorting image [47/483]
+I20261008 17:34:41.369735  1357 undistortion.cc:197] Undistorting image [48/483]
+I20261008 17:34:41.369901  1357 undistortion.cc:197] Undistorting image [49/483]
+I20261008 17:34:41.699879  1357 undistortion.cc:197] Undistorting image [50/483]
+I20261008 17:34:41.703606  1357 undistortion.cc:197] Undistorting image [51/483]
+I20261008 17:34:41.703950  1357 undistortion.cc:197] Undistorting image [52/483]
+I20261008 17:34:41.704161  1357 undistortion.cc:197] Undistorting image [53/483]
+I20261008 17:34:42.034719  1357 undistortion.cc:197] Undistorting image [54/483]
+I20261008 17:34:42.065722  1357 undistortion.cc:197] Undistorting image [55/483]
+I20261008 17:34:42.067507  1357 undistortion.cc:197] Undistorting image [56/483]
+I20261008 17:34:42.067956  1357 undistortion.cc:197] Undistorting image [57/483]
+I20261008 17:34:42.068295  1357 undistortion.cc:197] Undistorting image [58/483]
+I20261008 17:34:42.068527  1357 undistortion.cc:197] Undistorting image [59/483]
+I20261008 17:34:42.079960  1357 undistortion.cc:197] Undistorting image [60/483]
+I20261008 17:34:42.080636  1357 undistortion.cc:197] Undistorting image [61/483]
+I20261008 17:34:42.081000  1357 undistortion.cc:197] Undistorting image [62/483]
+I20261008 17:34:42.081323  1357 undistortion.cc:197] Undistorting image [63/483]
+I20261008 17:34:42.082252  1357 undistortion.cc:197] Undistorting image [64/483]
+I20261008 17:34:42.085752  1357 undistortion.cc:197] Undistorting image [65/483]
+I20261008 17:34:42.114991  1357 undistortion.cc:197] Undistorting image [66/483]
+I20261008 17:34:42.115657  1357 undistortion.cc:197] Undistorting image [67/483]
+I20261008 17:34:42.326670  1357 undistortion.cc:197] Undistorting image [68/483]
+I20261008 17:34:42.328140  1357 undistortion.cc:197] Undistorting image [69/483]
+I20261008 17:34:42.381188  1357 undistortion.cc:197] Undistorting image [70/483]
+I20261008 17:34:42.390954  1357 undistortion.cc:197] Undistorting image [71/483]
+I20261008 17:34:42.394188  1357 undistortion.cc:197] Undistorting image [72/483]
+I20261008 17:34:42.394716  1357 undistortion.cc:197] Undistorting image [73/483]
+I20261008 17:34:42.394976  1357 undistortion.cc:197] Undistorting image [74/483]
+I20261008 17:34:42.395226  1357 undistortion.cc:197] Undistorting image [75/483]
+I20261008 17:34:42.495050  1357 undistortion.cc:197] Undistorting image [76/483]
+I20261008 17:34:42.501927  1357 undistortion.cc:197] Undistorting image [77/483]
+I20261008 17:34:42.865437  1357 undistortion.cc:197] Undistorting image [78/483]
+I20261008 17:34:42.874119  1357 undistortion.cc:197] Undistorting image [79/483]
+I20261008 17:34:43.006300  1357 undistortion.cc:197] Undistorting image [80/483]
+I20261008 17:34:43.012068  1357 undistortion.cc:197] Undistorting image [81/483]
+I20261008 17:34:43.014672  1357 undistortion.cc:197] Undistorting image [82/483]
+I20261008 17:34:43.016462  1357 undistortion.cc:197] Undistorting image [83/483]
+I20261008 17:34:43.020663  1357 undistortion.cc:197] Undistorting image [84/483]
+I20261008 17:34:43.155910  1357 undistortion.cc:197] Undistorting image [85/483]
+I20261008 17:34:43.162228  1357 undistortion.cc:197] Undistorting image [86/483]
+I20261008 17:34:43.170589  1357 undistortion.cc:197] Undistorting image [87/483]
+I20261008 17:34:43.172199  1357 undistortion.cc:197] Undistorting image [88/483]
+I20261008 17:34:43.172928  1357 undistortion.cc:197] Undistorting image [89/483]
+I20261008 17:34:43.334946  1357 undistortion.cc:197] Undistorting image [90/483]
+I20261008 17:34:43.339201  1357 undistortion.cc:197] Undistorting image [91/483]
+I20261008 17:34:43.340847  1357 undistortion.cc:197] Undistorting image [92/483]
+I20261008 17:34:43.342815  1357 undistortion.cc:197] Undistorting image [93/483]
+I20261008 17:34:43.415555  1357 undistortion.cc:197] Undistorting image [94/483]
+I20261008 17:34:43.417029  1357 undistortion.cc:197] Undistorting image [95/483]
+I20261008 17:34:43.421940  1357 undistortion.cc:197] Undistorting image [96/483]
+I20261008 17:34:43.423417  1357 undistortion.cc:197] Undistorting image [97/483]
+I20261008 17:34:43.424314  1357 undistortion.cc:197] Undistorting image [98/483]
+I20261008 17:34:43.637382  1357 undistortion.cc:197] Undistorting image [99/483]
+I20261008 17:34:43.646132  1357 undistortion.cc:197] Undistorting image [100/483]
+I20261008 17:34:43.647078  1357 undistortion.cc:197] Undistorting image [101/483]
+I20261008 17:34:43.647347  1357 undistortion.cc:197] Undistorting image [102/483]
+I20261008 17:34:43.784397  1357 undistortion.cc:197] Undistorting image [103/483]
+I20261008 17:34:43.785578  1357 undistortion.cc:197] Undistorting image [104/483]
+I20261008 17:34:43.795120  1357 undistortion.cc:197] Undistorting image [105/483]
+I20261008 17:34:43.799268  1357 undistortion.cc:197] Undistorting image [106/483]
+I20261008 17:34:43.835525  1357 undistortion.cc:197] Undistorting image [107/483]
+I20261008 17:34:44.126216  1357 undistortion.cc:197] Undistorting image [108/483]
+I20261008 17:34:44.180248  1357 undistortion.cc:197] Undistorting image [109/483]
+I20261008 17:34:44.202418  1357 undistortion.cc:197] Undistorting image [110/483]
+I20261008 17:34:44.205420  1357 undistortion.cc:197] Undistorting image [111/483]
+I20261008 17:34:44.246382  1357 undistortion.cc:197] Undistorting image [112/483]
+I20261008 17:34:44.257588  1357 undistortion.cc:197] Undistorting image [113/483]
+I20261008 17:34:44.268433  1357 undistortion.cc:197] Undistorting image [114/483]
+I20261008 17:34:44.269037  1357 undistortion.cc:197] Undistorting image [115/483]
+I20261008 17:34:44.368021  1357 undistortion.cc:197] Undistorting image [116/483]
+I20261008 17:34:44.370613  1357 undistortion.cc:197] Undistorting image [117/483]
+I20261008 17:34:44.372852  1357 undistortion.cc:197] Undistorting image [118/483]
+I20261008 17:34:44.431754  1357 undistortion.cc:197] Undistorting image [119/483]
+I20261008 17:34:44.437930  1357 undistortion.cc:197] Undistorting image [120/483]
+I20261008 17:34:44.439757  1357 undistortion.cc:197] Undistorting image [121/483]
+I20261008 17:34:44.440102  1357 undistortion.cc:197] Undistorting image [122/483]
+I20261008 17:34:44.594827  1357 undistortion.cc:197] Undistorting image [123/483]
+I20261008 17:34:44.599663  1357 undistortion.cc:197] Undistorting image [124/483]
+I20261008 17:34:44.601774  1357 undistortion.cc:197] Undistorting image [125/483]
+I20261008 17:34:44.602065  1357 undistortion.cc:197] Undistorting image [126/483]
+I20261008 17:34:44.602285  1357 undistortion.cc:197] Undistorting image [127/483]
+I20261008 17:34:44.602494  1357 undistortion.cc:197] Undistorting image [128/483]
+I20261008 17:34:44.602779  1357 undistortion.cc:197] Undistorting image [129/483]
+I20261008 17:34:44.603021  1357 undistortion.cc:197] Undistorting image [130/483]
+I20261008 17:34:44.603266  1357 undistortion.cc:197] Undistorting image [131/483]
+I20261008 17:34:44.604272  1357 undistortion.cc:197] Undistorting image [132/483]
+I20261008 17:34:45.039594  1357 undistortion.cc:197] Undistorting image [133/483]
+I20261008 17:34:45.102391  1357 undistortion.cc:197] Undistorting image [134/483]
+I20261008 17:34:45.121038  1357 undistortion.cc:197] Undistorting image [135/483]
+I20261008 17:34:45.135689  1357 undistortion.cc:197] Undistorting image [136/483]
+I20261008 17:34:45.176149  1357 undistortion.cc:197] Undistorting image [137/483]
+I20261008 17:34:45.607043  1357 undistortion.cc:197] Undistorting image [138/483]
+I20261008 17:34:45.639362  1357 undistortion.cc:197] Undistorting image [139/483]
+I20261008 17:34:45.672227  1357 undistortion.cc:197] Undistorting image [140/483]
+I20261008 17:34:45.704125  1357 undistortion.cc:197] Undistorting image [141/483]
+I20261008 17:34:45.753336  1357 undistortion.cc:197] Undistorting image [142/483]
+I20261008 17:34:45.758198  1357 undistortion.cc:197] Undistorting image [143/483]
+I20261008 17:34:45.769032  1357 undistortion.cc:197] Undistorting image [144/483]
+I20261008 17:34:45.818753  1357 undistortion.cc:197] Undistorting image [145/483]
+I20261008 17:34:45.851786  1357 undistortion.cc:197] Undistorting image [146/483]
+I20261008 17:34:45.874094  1357 undistortion.cc:197] Undistorting image [147/483]
+I20261008 17:34:45.889921  1357 undistortion.cc:197] Undistorting image [148/483]
+I20261008 17:34:45.892576  1357 undistortion.cc:197] Undistorting image [149/483]
+I20261008 17:34:45.892915  1357 undistortion.cc:197] Undistorting image [150/483]
+I20261008 17:34:45.923070  1357 undistortion.cc:197] Undistorting image [151/483]
+I20261008 17:34:45.940634  1357 undistortion.cc:197] Undistorting image [152/483]
+I20261008 17:34:45.957687  1357 undistortion.cc:197] Undistorting image [153/483]
+I20261008 17:34:45.965145  1357 undistortion.cc:197] Undistorting image [154/483]
+I20261008 17:34:45.970625  1357 undistortion.cc:197] Undistorting image [155/483]
+I20261008 17:34:46.033989  1357 undistortion.cc:197] Undistorting image [156/483]
+I20261008 17:34:46.044031  1357 undistortion.cc:197] Undistorting image [157/483]
+I20261008 17:34:46.049921  1357 undistortion.cc:197] Undistorting image [158/483]
+I20261008 17:34:46.051883  1357 undistortion.cc:197] Undistorting image [159/483]
+I20261008 17:34:46.175088  1357 undistortion.cc:197] Undistorting image [160/483]
+I20261008 17:34:46.187457  1357 undistortion.cc:197] Undistorting image [161/483]
+I20261008 17:34:46.188271  1357 undistortion.cc:197] Undistorting image [162/483]
+I20261008 17:34:46.412336  1357 undistortion.cc:197] Undistorting image [163/483]
+I20261008 17:34:46.621968  1357 undistortion.cc:197] Undistorting image [164/483]
+I20261008 17:34:46.624372  1357 undistortion.cc:197] Undistorting image [165/483]
+I20261008 17:34:46.665289  1357 undistortion.cc:197] Undistorting image [166/483]
+I20261008 17:34:46.680778  1357 undistortion.cc:197] Undistorting image [167/483]
+I20261008 17:34:46.686278  1357 undistortion.cc:197] Undistorting image [168/483]
+I20261008 17:34:46.688673  1357 undistortion.cc:197] Undistorting image [169/483]
+I20261008 17:34:46.696532  1357 undistortion.cc:197] Undistorting image [170/483]
+I20261008 17:34:46.697219  1357 undistortion.cc:197] Undistorting image [171/483]
+I20261008 17:34:46.711966  1357 undistortion.cc:197] Undistorting image [172/483]
+I20261008 17:34:46.713519  1357 undistortion.cc:197] Undistorting image [173/483]
+I20261008 17:34:46.714219  1357 undistortion.cc:197] Undistorting image [174/483]
+I20261008 17:34:46.792239  1357 undistortion.cc:197] Undistorting image [175/483]
+I20261008 17:34:46.797293  1357 undistortion.cc:197] Undistorting image [176/483]
+I20261008 17:34:46.879369  1357 undistortion.cc:197] Undistorting image [177/483]
+I20261008 17:34:46.880426  1357 undistortion.cc:197] Undistorting image [178/483]
+I20261008 17:34:46.880863  1357 undistortion.cc:197] Undistorting image [179/483]
+I20261008 17:34:46.881318  1357 undistortion.cc:197] Undistorting image [180/483]
+I20261008 17:34:46.882530  1357 undistortion.cc:197] Undistorting image [181/483]
+I20261008 17:34:46.893813  1357 undistortion.cc:197] Undistorting image [182/483]
+I20261008 17:34:47.021210  1357 undistortion.cc:197] Undistorting image [183/483]
+I20261008 17:34:47.034148  1357 undistortion.cc:197] Undistorting image [184/483]
+I20261008 17:34:47.035334  1357 undistortion.cc:197] Undistorting image [185/483]
+I20261008 17:34:47.036087  1357 undistortion.cc:197] Undistorting image [186/483]
+I20261008 17:34:47.039572  1357 undistortion.cc:197] Undistorting image [187/483]
+I20261008 17:34:47.051054  1357 undistortion.cc:197] Undistorting image [188/483]
+I20261008 17:34:47.059819  1357 undistortion.cc:197] Undistorting image [189/483]
+I20261008 17:34:47.060855  1357 undistortion.cc:197] Undistorting image [190/483]
+I20261008 17:34:47.363999  1357 undistortion.cc:197] Undistorting image [191/483]
+I20261008 17:34:47.368412  1357 undistortion.cc:197] Undistorting image [192/483]
+I20261008 17:34:47.385872  1357 undistortion.cc:197] Undistorting image [193/483]
+I20261008 17:34:47.391466  1357 undistortion.cc:197] Undistorting image [194/483]
+I20261008 17:34:47.393514  1357 undistortion.cc:197] Undistorting image [195/483]
+I20261008 17:34:47.396090  1357 undistortion.cc:197] Undistorting image [196/483]
+I20261008 17:34:47.396615  1357 undistortion.cc:197] Undistorting image [197/483]
+I20261008 17:34:47.396948  1357 undistortion.cc:197] Undistorting image [198/483]
+I20261008 17:34:47.401873  1357 undistortion.cc:197] Undistorting image [199/483]
+I20261008 17:34:47.413432  1357 undistortion.cc:197] Undistorting image [200/483]
+I20261008 17:34:47.414595  1357 undistortion.cc:197] Undistorting image [201/483]
+I20261008 17:34:48.043075  1357 undistortion.cc:197] Undistorting image [202/483]
+I20261008 17:34:48.047161  1357 undistortion.cc:197] Undistorting image [203/483]
+I20261008 17:34:48.047859  1357 undistortion.cc:197] Undistorting image [204/483]
+I20261008 17:34:48.051951  1357 undistortion.cc:197] Undistorting image [205/483]
+I20261008 17:34:48.052484  1357 undistortion.cc:197] Undistorting image [206/483]
+I20261008 17:34:48.060034  1357 undistortion.cc:197] Undistorting image [207/483]
+I20261008 17:34:48.065425  1357 undistortion.cc:197] Undistorting image [208/483]
+I20261008 17:34:48.131063  1357 undistortion.cc:197] Undistorting image [209/483]
+I20261008 17:34:48.144209  1357 undistortion.cc:197] Undistorting image [210/483]
+I20261008 17:34:48.156307  1357 undistortion.cc:197] Undistorting image [211/483]
+I20261008 17:34:48.180848  1357 undistortion.cc:197] Undistorting image [212/483]
+I20261008 17:34:48.191782  1357 undistortion.cc:197] Undistorting image [213/483]
+I20261008 17:34:48.391585  1357 undistortion.cc:197] Undistorting image [214/483]
+I20261008 17:34:48.393646  1357 undistortion.cc:197] Undistorting image [215/483]
+I20261008 17:34:48.401885  1357 undistortion.cc:197] Undistorting image [216/483]
+I20261008 17:34:48.407164  1357 undistortion.cc:197] Undistorting image [217/483]
+I20261008 17:34:48.516494  1357 undistortion.cc:197] Undistorting image [218/483]
+I20261008 17:34:48.519435  1357 undistortion.cc:197] Undistorting image [219/483]
+I20261008 17:34:48.533069  1357 undistortion.cc:197] Undistorting image [220/483]
+I20261008 17:34:48.533774  1357 undistortion.cc:197] Undistorting image [221/483]
+I20261008 17:34:48.536470  1357 undistortion.cc:197] Undistorting image [222/483]
+I20261008 17:34:48.537559  1357 undistortion.cc:197] Undistorting image [223/483]
+I20261008 17:34:48.686267  1357 undistortion.cc:197] Undistorting image [224/483]
+I20261008 17:34:48.688956  1357 undistortion.cc:197] Undistorting image [225/483]
+I20261008 17:34:48.705847  1357 undistortion.cc:197] Undistorting image [226/483]
+I20261008 17:34:48.721215  1357 undistortion.cc:197] Undistorting image [227/483]
+I20261008 17:34:48.749293  1357 undistortion.cc:197] Undistorting image [228/483]
+I20261008 17:34:48.755512  1357 undistortion.cc:197] Undistorting image [229/483]
+I20261008 17:34:48.755861  1357 undistortion.cc:197] Undistorting image [230/483]
+I20261008 17:34:48.756105  1357 undistortion.cc:197] Undistorting image [231/483]
+I20261008 17:34:48.756732  1357 undistortion.cc:197] Undistorting image [232/483]
+I20261008 17:34:48.757753  1357 undistortion.cc:197] Undistorting image [233/483]
+I20261008 17:34:48.789058  1357 undistortion.cc:197] Undistorting image [234/483]
+I20261008 17:34:48.790565  1357 undistortion.cc:197] Undistorting image [235/483]
+I20261008 17:34:49.501070  1357 undistortion.cc:197] Undistorting image [236/483]
+I20261008 17:34:49.528488  1357 undistortion.cc:197] Undistorting image [237/483]
+I20261008 17:34:49.556309  1357 undistortion.cc:197] Undistorting image [238/483]
+I20261008 17:34:49.560276  1357 undistortion.cc:197] Undistorting image [239/483]
+I20261008 17:34:49.573475  1357 undistortion.cc:197] Undistorting image [240/483]
+I20261008 17:34:49.574759  1357 undistortion.cc:197] Undistorting image [241/483]
+I20261008 17:34:49.575001  1357 undistortion.cc:197] Undistorting image [242/483]
+I20261008 17:34:49.578195  1357 undistortion.cc:197] Undistorting image [243/483]
+I20261008 17:34:49.587813  1357 undistortion.cc:197] Undistorting image [244/483]
+I20261008 17:34:49.588997  1357 undistortion.cc:197] Undistorting image [245/483]
+I20261008 17:34:49.604624  1357 undistortion.cc:197] Undistorting image [246/483]
+I20261008 17:34:49.606369  1357 undistortion.cc:197] Undistorting image [247/483]
+I20261008 17:34:49.607704  1357 undistortion.cc:197] Undistorting image [248/483]
+I20261008 17:34:49.620416  1357 undistortion.cc:197] Undistorting image [249/483]
+I20261008 17:34:49.623872  1357 undistortion.cc:197] Undistorting image [250/483]
+I20261008 17:34:49.624869  1357 undistortion.cc:197] Undistorting image [251/483]
+I20261008 17:34:49.755276  1357 undistortion.cc:197] Undistorting image [252/483]
+I20261008 17:34:50.415117  1357 undistortion.cc:197] Undistorting image [253/483]
+I20261008 17:34:50.513934  1357 undistortion.cc:197] Undistorting image [254/483]
+I20261008 17:34:50.519382  1357 undistortion.cc:197] Undistorting image [255/483]
+I20261008 17:34:50.534799  1357 undistortion.cc:197] Undistorting image [256/483]
+I20261008 17:34:50.537472  1357 undistortion.cc:197] Undistorting image [257/483]
+I20261008 17:34:50.538870  1357 undistortion.cc:197] Undistorting image [258/483]
+I20261008 17:34:50.567909  1357 undistortion.cc:197] Undistorting image [259/483]
+I20261008 17:34:50.569590  1357 undistortion.cc:197] Undistorting image [260/483]
+I20261008 17:34:50.570492  1357 undistortion.cc:197] Undistorting image [261/483]
+I20261008 17:34:50.570755  1357 undistortion.cc:197] Undistorting image [262/483]
+I20261008 17:34:50.571326  1357 undistortion.cc:197] Undistorting image [263/483]
+I20261008 17:34:50.587392  1357 undistortion.cc:197] Undistorting image [264/483]
+I20261008 17:34:50.589389  1357 undistortion.cc:197] Undistorting image [265/483]
+I20261008 17:34:50.619427  1357 undistortion.cc:197] Undistorting image [266/483]
+I20261008 17:34:50.635812  1357 undistortion.cc:197] Undistorting image [267/483]
+I20261008 17:34:50.683869  1357 undistortion.cc:197] Undistorting image [268/483]
+I20261008 17:34:50.684648  1357 undistortion.cc:197] Undistorting image [269/483]
+I20261008 17:34:50.684981  1357 undistortion.cc:197] Undistorting image [270/483]
+I20261008 17:34:50.686570  1357 undistortion.cc:197] Undistorting image [271/483]
+I20261008 17:34:50.701786  1357 undistortion.cc:197] Undistorting image [272/483]
+I20261008 17:34:50.703373  1357 undistortion.cc:197] Undistorting image [273/483]
+I20261008 17:34:50.725134  1357 undistortion.cc:197] Undistorting image [274/483]
+I20261008 17:34:51.163151  1357 undistortion.cc:197] Undistorting image [275/483]
+I20261008 17:34:51.262728  1357 undistortion.cc:197] Undistorting image [276/483]
+I20261008 17:34:51.367573  1357 undistortion.cc:197] Undistorting image [277/483]
+I20261008 17:34:51.475589  1357 undistortion.cc:197] Undistorting image [278/483]
+I20261008 17:34:51.507723  1357 undistortion.cc:197] Undistorting image [279/483]
+I20261008 17:34:51.569773  1357 undistortion.cc:197] Undistorting image [280/483]
+I20261008 17:34:51.596823  1357 undistortion.cc:197] Undistorting image [281/483]
+I20261008 17:34:51.635128  1357 undistortion.cc:197] Undistorting image [282/483]
+I20261008 17:34:51.665670  1357 undistortion.cc:197] Undistorting image [283/483]
+I20261008 17:34:51.715696  1357 undistortion.cc:197] Undistorting image [284/483]
+I20261008 17:34:51.778442  1357 undistortion.cc:197] Undistorting image [285/483]
+I20261008 17:34:51.832096  1357 undistortion.cc:197] Undistorting image [286/483]
+I20261008 17:34:51.873504  1357 undistortion.cc:197] Undistorting image [287/483]
+I20261008 17:34:51.898797  1357 undistortion.cc:197] Undistorting image [288/483]
+I20261008 17:34:51.939497  1357 undistortion.cc:197] Undistorting image [289/483]
+I20261008 17:34:51.981961  1357 undistortion.cc:197] Undistorting image [290/483]
+I20261008 17:34:52.001709  1357 undistortion.cc:197] Undistorting image [291/483]
+I20261008 17:34:52.014786  1357 undistortion.cc:197] Undistorting image [292/483]
+I20261008 17:34:52.021266  1357 undistortion.cc:197] Undistorting image [293/483]
+I20261008 17:34:52.021684  1357 undistortion.cc:197] Undistorting image [294/483]
+I20261008 17:34:52.026403  1357 undistortion.cc:197] Undistorting image [295/483]
+I20261008 17:34:52.041401  1357 undistortion.cc:197] Undistorting image [296/483]
+I20261008 17:34:52.043516  1357 undistortion.cc:197] Undistorting image [297/483]
+I20261008 17:34:52.046600  1357 undistortion.cc:197] Undistorting image [298/483]
+I20261008 17:34:52.047130  1357 undistortion.cc:197] Undistorting image [299/483]
+I20261008 17:34:52.047621  1357 undistortion.cc:197] Undistorting image [300/483]
+I20261008 17:34:52.051544  1357 undistortion.cc:197] Undistorting image [301/483]
+I20261008 17:34:52.053723  1357 undistortion.cc:197] Undistorting image [302/483]
+I20261008 17:34:52.054822  1357 undistortion.cc:197] Undistorting image [303/483]
+I20261008 17:34:52.056608  1357 undistortion.cc:197] Undistorting image [304/483]
+I20261008 17:34:52.058643  1357 undistortion.cc:197] Undistorting image [305/483]
+I20261008 17:34:52.059963  1357 undistortion.cc:197] Undistorting image [306/483]
+I20261008 17:34:52.069188  1357 undistortion.cc:197] Undistorting image [307/483]
+I20261008 17:34:52.070483  1357 undistortion.cc:197] Undistorting image [308/483]
+I20261008 17:34:52.083541  1357 undistortion.cc:197] Undistorting image [309/483]
+I20261008 17:34:52.092218  1357 undistortion.cc:197] Undistorting image [310/483]
+I20261008 17:34:52.209594  1357 undistortion.cc:197] Undistorting image [311/483]
+I20261008 17:34:52.213614  1357 undistortion.cc:197] Undistorting image [312/483]
+I20261008 17:34:52.227289  1357 undistortion.cc:197] Undistorting image [313/483]
+I20261008 17:34:52.238092  1357 undistortion.cc:197] Undistorting image [314/483]
+I20261008 17:34:52.241380  1357 undistortion.cc:197] Undistorting image [315/483]
+I20261008 17:34:52.242823  1357 undistortion.cc:197] Undistorting image [316/483]
+I20261008 17:34:52.243270  1357 undistortion.cc:197] Undistorting image [317/483]
+I20261008 17:34:52.243539  1357 undistortion.cc:197] Undistorting image [318/483]
+I20261008 17:34:52.243953  1357 undistortion.cc:197] Undistorting image [319/483]
+I20261008 17:34:52.244249  1357 undistortion.cc:197] Undistorting image [320/483]
+I20261008 17:34:52.244503  1357 undistortion.cc:197] Undistorting image [321/483]
+I20261008 17:34:52.269934  1357 undistortion.cc:197] Undistorting image [322/483]
+I20261008 17:34:52.278908  1357 undistortion.cc:197] Undistorting image [323/483]
+I20261008 17:34:52.540022  1357 undistortion.cc:197] Undistorting image [324/483]
+I20261008 17:34:52.571946  1357 undistortion.cc:197] Undistorting image [325/483]
+I20261008 17:34:52.605662  1357 undistortion.cc:197] Undistorting image [326/483]
+I20261008 17:34:52.702510  1357 undistortion.cc:197] Undistorting image [327/483]
+I20261008 17:34:52.720721  1357 undistortion.cc:197] Undistorting image [328/483]
+I20261008 17:34:52.912072  1357 undistortion.cc:197] Undistorting image [329/483]
+I20261008 17:34:52.976353  1357 undistortion.cc:197] Undistorting image [330/483]
+I20261008 17:34:53.116644  1357 undistortion.cc:197] Undistorting image [331/483]
+I20261008 17:34:53.187050  1357 undistortion.cc:197] Undistorting image [332/483]
+I20261008 17:34:53.302732  1357 undistortion.cc:197] Undistorting image [333/483]
+I20261008 17:34:53.401629  1357 undistortion.cc:197] Undistorting image [334/483]
+I20261008 17:34:53.996891  1357 undistortion.cc:197] Undistorting image [335/483]
+I20261008 17:34:54.045038  1357 undistortion.cc:197] Undistorting image [336/483]
+I20261008 17:34:54.132107  1357 undistortion.cc:197] Undistorting image [337/483]
+I20261008 17:34:54.170682  1357 undistortion.cc:197] Undistorting image [338/483]
+I20261008 17:34:54.230913  1357 undistortion.cc:197] Undistorting image [339/483]
+I20261008 17:34:54.301272  1357 undistortion.cc:197] Undistorting image [340/483]
+I20261008 17:34:54.375041  1357 undistortion.cc:197] Undistorting image [341/483]
+I20261008 17:34:54.459694  1357 undistortion.cc:197] Undistorting image [342/483]
+I20261008 17:34:54.495041  1357 undistortion.cc:197] Undistorting image [343/483]
+I20261008 17:34:54.511410  1357 undistortion.cc:197] Undistorting image [344/483]
+I20261008 17:34:54.525553  1357 undistortion.cc:197] Undistorting image [345/483]
+I20261008 17:34:54.538318  1357 undistortion.cc:197] Undistorting image [346/483]
+I20261008 17:34:54.540278  1357 undistortion.cc:197] Undistorting image [347/483]
+I20261008 17:34:54.558810  1357 undistortion.cc:197] Undistorting image [348/483]
+I20261008 17:34:54.570544  1357 undistortion.cc:197] Undistorting image [349/483]
+I20261008 17:34:54.571854  1357 undistortion.cc:197] Undistorting image [350/483]
+I20261008 17:34:54.581485  1357 undistortion.cc:197] Undistorting image [351/483]
+I20261008 17:34:54.599339  1357 undistortion.cc:197] Undistorting image [352/483]
+I20261008 17:34:54.602010  1357 undistortion.cc:197] Undistorting image [353/483]
+I20261008 17:34:54.602790  1357 undistortion.cc:197] Undistorting image [354/483]
+I20261008 17:34:54.604733  1357 undistortion.cc:197] Undistorting image [355/483]
+I20261008 17:34:54.625994  1357 undistortion.cc:197] Undistorting image [356/483]
+I20261008 17:34:54.636477  1357 undistortion.cc:197] Undistorting image [357/483]
+I20261008 17:34:54.648653  1357 undistortion.cc:197] Undistorting image [358/483]
+I20261008 17:34:54.652403  1357 undistortion.cc:197] Undistorting image [359/483]
+I20261008 17:34:54.655045  1357 undistortion.cc:197] Undistorting image [360/483]
+I20261008 17:34:54.656746  1357 undistortion.cc:197] Undistorting image [361/483]
+I20261008 17:34:54.678381  1357 undistortion.cc:197] Undistorting image [362/483]
+I20261008 17:34:54.690776  1357 undistortion.cc:197] Undistorting image [363/483]
+I20261008 17:34:54.691517  1357 undistortion.cc:197] Undistorting image [364/483]
+I20261008 17:34:54.692019  1357 undistortion.cc:197] Undistorting image [365/483]
+I20261008 17:34:54.694320  1357 undistortion.cc:197] Undistorting image [366/483]
+I20261008 17:34:54.695050  1357 undistortion.cc:197] Undistorting image [367/483]
+I20261008 17:34:54.695418  1357 undistortion.cc:197] Undistorting image [368/483]
+I20261008 17:34:54.695659  1357 undistortion.cc:197] Undistorting image [369/483]
+I20261008 17:34:54.695950  1357 undistortion.cc:197] Undistorting image [370/483]
+I20261008 17:34:54.696161  1357 undistortion.cc:197] Undistorting image [371/483]
+I20261008 17:34:54.696359  1357 undistortion.cc:197] Undistorting image [372/483]
+I20261008 17:34:54.700591  1357 undistortion.cc:197] Undistorting image [373/483]
+I20261008 17:34:54.719285  1357 undistortion.cc:197] Undistorting image [374/483]
+I20261008 17:34:54.720585  1357 undistortion.cc:197] Undistorting image [375/483]
+I20261008 17:34:54.721782  1357 undistortion.cc:197] Undistorting image [376/483]
+I20261008 17:34:54.727583  1357 undistortion.cc:197] Undistorting image [377/483]
+I20261008 17:34:54.732568  1357 undistortion.cc:197] Undistorting image [378/483]
+I20261008 17:34:54.733002  1357 undistortion.cc:197] Undistorting image [379/483]
+I20261008 17:34:54.733249  1357 undistortion.cc:197] Undistorting image [380/483]
+I20261008 17:34:54.733477  1357 undistortion.cc:197] Undistorting image [381/483]
+I20261008 17:34:54.734288  1357 undistortion.cc:197] Undistorting image [382/483]
+I20261008 17:34:54.736397  1357 undistortion.cc:197] Undistorting image [383/483]
+I20261008 17:34:55.287468  1357 undistortion.cc:197] Undistorting image [384/483]
+I20261008 17:34:55.289935  1357 undistortion.cc:197] Undistorting image [385/483]
+I20261008 17:34:55.290823  1357 undistortion.cc:197] Undistorting image [386/483]
+I20261008 17:34:55.291133  1357 undistortion.cc:197] Undistorting image [387/483]
+I20261008 17:34:55.291411  1357 undistortion.cc:197] Undistorting image [388/483]
+I20261008 17:34:55.291667  1357 undistortion.cc:197] Undistorting image [389/483]
+I20261008 17:34:55.291900  1357 undistortion.cc:197] Undistorting image [390/483]
+I20261008 17:34:55.292145  1357 undistortion.cc:197] Undistorting image [391/483]
+I20261008 17:34:55.292392  1357 undistortion.cc:197] Undistorting image [392/483]
+I20261008 17:34:55.304167  1357 undistortion.cc:197] Undistorting image [393/483]
+I20261008 17:34:55.306066  1357 undistortion.cc:197] Undistorting image [394/483]
+I20261008 17:34:55.330507  1357 undistortion.cc:197] Undistorting image [395/483]
+I20261008 17:34:55.354756  1357 undistortion.cc:197] Undistorting image [396/483]
+I20261008 17:34:55.442394  1357 undistortion.cc:197] Undistorting image [397/483]
+I20261008 17:34:55.443609  1357 undistortion.cc:197] Undistorting image [398/483]
+I20261008 17:34:55.444056  1357 undistortion.cc:197] Undistorting image [399/483]
+I20261008 17:34:55.444296  1357 undistortion.cc:197] Undistorting image [400/483]
+I20261008 17:34:55.444538  1357 undistortion.cc:197] Undistorting image [401/483]
+I20261008 17:34:55.444761  1357 undistortion.cc:197] Undistorting image [402/483]
+I20261008 17:34:55.965019  1357 undistortion.cc:197] Undistorting image [403/483]
+I20261008 17:34:55.996902  1357 undistortion.cc:197] Undistorting image [404/483]
+I20261008 17:34:56.321384  1357 undistortion.cc:197] Undistorting image [405/483]
+I20261008 17:34:56.325115  1357 undistortion.cc:197] Undistorting image [406/483]
+I20261008 17:34:56.327389  1357 undistortion.cc:197] Undistorting image [407/483]
+I20261008 17:34:56.335763  1357 undistortion.cc:197] Undistorting image [408/483]
+I20261008 17:34:56.337811  1357 undistortion.cc:197] Undistorting image [409/483]
+I20261008 17:34:56.338145  1357 undistortion.cc:197] Undistorting image [410/483]
+I20261008 17:34:56.338505  1357 undistortion.cc:197] Undistorting image [411/483]
+I20261008 17:34:56.338786  1357 undistortion.cc:197] Undistorting image [412/483]
+I20261008 17:34:56.339147  1357 undistortion.cc:197] Undistorting image [413/483]
+I20261008 17:34:56.340956  1357 undistortion.cc:197] Undistorting image [414/483]
+I20261008 17:34:56.344452  1357 undistortion.cc:197] Undistorting image [415/483]
+I20261008 17:34:56.373257  1357 undistortion.cc:197] Undistorting image [416/483]
+I20261008 17:34:56.375029  1357 undistortion.cc:197] Undistorting image [417/483]
+I20261008 17:34:56.404414  1357 undistortion.cc:197] Undistorting image [418/483]
+I20261008 17:34:56.408567  1357 undistortion.cc:197] Undistorting image [419/483]
+I20261008 17:34:56.413333  1357 undistortion.cc:197] Undistorting image [420/483]
+I20261008 17:34:56.419555  1357 undistortion.cc:197] Undistorting image [421/483]
+I20261008 17:34:56.438113  1357 undistortion.cc:197] Undistorting image [422/483]
+I20261008 17:34:56.445539  1357 undistortion.cc:197] Undistorting image [423/483]
+I20261008 17:34:56.447291  1357 undistortion.cc:197] Undistorting image [424/483]
+I20261008 17:34:56.618731  1357 undistortion.cc:197] Undistorting image [425/483]
+I20261008 17:34:56.653298  1357 undistortion.cc:197] Undistorting image [426/483]
+I20261008 17:34:56.682934  1357 undistortion.cc:197] Undistorting image [427/483]
+I20261008 17:34:56.718997  1357 undistortion.cc:197] Undistorting image [428/483]
+I20261008 17:34:56.766877  1357 undistortion.cc:197] Undistorting image [429/483]
+I20261008 17:34:56.951376  1357 undistortion.cc:197] Undistorting image [430/483]
+I20261008 17:34:57.017321  1357 undistortion.cc:197] Undistorting image [431/483]
+I20261008 17:34:57.035526  1357 undistortion.cc:197] Undistorting image [432/483]
+I20261008 17:34:57.039266  1357 undistortion.cc:197] Undistorting image [433/483]
+I20261008 17:34:57.053821  1357 undistortion.cc:197] Undistorting image [434/483]
+I20261008 17:34:57.065793  1357 undistortion.cc:197] Undistorting image [435/483]
+I20261008 17:34:57.080829  1357 undistortion.cc:197] Undistorting image [436/483]
+I20261008 17:34:57.128760  1357 undistortion.cc:197] Undistorting image [437/483]
+I20261008 17:34:57.147413  1357 undistortion.cc:197] Undistorting image [438/483]
+I20261008 17:34:57.175850  1357 undistortion.cc:197] Undistorting image [439/483]
+I20261008 17:34:57.191922  1357 undistortion.cc:197] Undistorting image [440/483]
+I20261008 17:34:57.215050  1357 undistortion.cc:197] Undistorting image [441/483]
+I20261008 17:34:57.255852  1357 undistortion.cc:197] Undistorting image [442/483]
+I20261008 17:34:57.396940  1357 undistortion.cc:197] Undistorting image [443/483]
+I20261008 17:34:57.405023  1357 undistortion.cc:197] Undistorting image [444/483]
+I20261008 17:34:57.413069  1357 undistortion.cc:197] Undistorting image [445/483]
+I20261008 17:34:57.418578  1357 undistortion.cc:197] Undistorting image [446/483]
+I20261008 17:34:57.430364  1357 undistortion.cc:197] Undistorting image [447/483]
+I20261008 17:34:57.443135  1357 undistortion.cc:197] Undistorting image [448/483]
+I20261008 17:34:57.443674  1357 undistortion.cc:197] Undistorting image [449/483]
+I20261008 17:34:57.549223  1357 undistortion.cc:197] Undistorting image [450/483]
+I20261008 17:34:57.612308  1357 undistortion.cc:197] Undistorting image [451/483]
+I20261008 17:34:57.616612  1357 undistortion.cc:197] Undistorting image [452/483]
+I20261008 17:34:57.620306  1357 undistortion.cc:197] Undistorting image [453/483]
+I20261008 17:34:57.646942  1357 undistortion.cc:197] Undistorting image [454/483]
+I20261008 17:34:57.649147  1357 undistortion.cc:197] Undistorting image [455/483]
+I20261008 17:34:57.667138  1357 undistortion.cc:197] Undistorting image [456/483]
+I20261008 17:34:57.669471  1357 undistortion.cc:197] Undistorting image [457/483]
+I20261008 17:34:57.723923  1357 undistortion.cc:197] Undistorting image [458/483]
+I20261008 17:34:57.726868  1357 undistortion.cc:197] Undistorting image [459/483]
+I20261008 17:34:57.728574  1357 undistortion.cc:197] Undistorting image [460/483]
+I20261008 17:34:57.731551  1357 undistortion.cc:197] Undistorting image [461/483]
+I20261008 17:34:57.762272  1357 undistortion.cc:197] Undistorting image [462/483]
+I20261008 17:34:57.769376  1357 undistortion.cc:197] Undistorting image [463/483]
+I20261008 17:34:57.776132  1357 undistortion.cc:197] Undistorting image [464/483]
+I20261008 17:34:57.777546  1357 undistortion.cc:197] Undistorting image [465/483]
+I20261008 17:34:57.779680  1357 undistortion.cc:197] Undistorting image [466/483]
+I20261008 17:34:57.780169  1357 undistortion.cc:197] Undistorting image [467/483]
+I20261008 17:34:57.780603  1357 undistortion.cc:197] Undistorting image [468/483]
+I20261008 17:34:57.786791  1357 undistortion.cc:197] Undistorting image [469/483]
+I20261008 17:34:57.790436  1357 undistortion.cc:197] Undistorting image [470/483]
+I20261008 17:34:57.823709  1357 undistortion.cc:197] Undistorting image [471/483]
+I20261008 17:34:57.824322  1357 undistortion.cc:197] Undistorting image [472/483]
+I20261008 17:34:57.825212  1357 undistortion.cc:197] Undistorting image [473/483]
+I20261008 17:34:57.832707  1357 undistortion.cc:197] Undistorting image [474/483]
+I20261008 17:34:57.833458  1357 undistortion.cc:197] Undistorting image [475/483]
+I20261008 17:34:57.869848  1357 undistortion.cc:197] Undistorting image [476/483]
+I20261008 17:34:57.872197  1357 undistortion.cc:197] Undistorting image [477/483]
+I20261008 17:34:57.872756  1357 undistortion.cc:197] Undistorting image [478/483]
+I20261008 17:34:57.873450  1357 undistortion.cc:197] Undistorting image [479/483]
+I20261008 17:34:57.874002  1357 undistortion.cc:197] Undistorting image [480/483]
+I20261008 17:34:57.874660  1357 undistortion.cc:197] Undistorting image [481/483]
+I20261008 17:34:57.875341  1357 undistortion.cc:197] Undistorting image [482/483]
+I20261008 17:34:57.876921  1357 undistortion.cc:197] Undistorting image [483/483]
+I20261008 17:34:57.877646  1357 undistortion.cc:207] Writing reconstruction...
+I20261008 17:34:58.154372  1357 undistortion.cc:212] Writing configuration...
+I20261008 17:34:58.155722  1357 undistortion.cc:216] Writing scripts...
+I20261008 17:34:58.156687  1357 timer.cc:91] Elapsed time: 0.313 [minutes]
++ colmap model_analyzer --path /home/kiranriya0990/hn3d_work/room/dense_ext/sparse
+I20261008 17:34:58.341161  1378 model.cc:444] Rigs: 3
+I20261008 17:34:58.342814  1378 model.cc:445] Cameras: 3
+I20261008 17:34:58.343413  1378 model.cc:446] Frames: 483
+I20261008 17:34:58.343891  1378 model.cc:447] Registered frames: 483
+I20261008 17:34:58.344355  1378 model.cc:449] Images: 483
+I20261008 17:34:58.344719  1378 model.cc:450] Registered images: 483
+I20261008 17:34:58.345266  1378 model.cc:452] Points: 64898
+I20261008 17:34:58.345621  1378 model.cc:453] Observations: 526193
+I20261008 17:34:58.346047  1378 model.cc:455] Mean track length: 8.108000
+I20261008 17:34:58.346465  1378 model.cc:457] Mean observations per image: 1089.426501
+I20261008 17:34:58.346907  1378 model.cc:460] Mean reprojection error: 1.164790px
+EXIT=0

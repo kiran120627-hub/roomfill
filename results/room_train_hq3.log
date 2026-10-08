@@ -1,0 +1,82 @@
+train=478 test=5 points=64898 scene_scale=8.494 res=1589x892
+step      0 loss 0.3255 psnr  9.66 n=64,898 mem=2.02GB t=2s
+step    500 loss 0.1897 psnr 13.03 n=64,898 mem=2.02GB t=37s
+step   1000 loss 0.0695 psnr 21.42 n=82,826 mem=2.02GB t=70s
+step   1500 loss 0.0464 psnr 24.25 n=105,707 mem=2.02GB t=102s
+step   2000 loss 0.0983 psnr 19.07 n=134,910 mem=2.02GB t=137s
+step   2500 loss 0.1041 psnr 18.08 n=172,180 mem=2.02GB t=171s
+step   3000 loss 0.0945 psnr 19.63 n=219,748 mem=2.02GB t=207s
+step   3500 loss 0.0366 psnr 26.43 n=280,458 mem=2.02GB t=242s
+step   4000 loss 0.0942 psnr 19.93 n=357,941 mem=2.02GB t=278s
+step   4500 loss 0.0887 psnr 18.69 n=456,831 mem=2.02GB t=316s
+step   5000 loss 0.0787 psnr 21.09 n=583,041 mem=2.02GB t=355s
+step   5500 loss 0.0980 psnr 18.37 n=744,123 mem=2.02GB t=397s
+step   6000 loss 0.0867 psnr 20.29 n=949,708 mem=2.02GB t=440s
+step   6500 loss 0.0912 psnr 19.00 n=1,212,092 mem=2.02GB t=487s
+step   7000 loss 0.1675 psnr 14.61 n=1,546,968 mem=2.02GB t=538s
+step   7500 loss 0.3739 psnr  7.90 n=1,974,364 mem=2.58GB t=593s
+step   8000 loss 0.3858 psnr  6.78 n=2,500,000 mem=3.02GB t=652s
+step   8500 loss 0.1081 psnr 16.89 n=2,500,000 mem=3.02GB t=723s
+step   9000 loss 0.4252 psnr  6.07 n=2,500,000 mem=3.11GB t=798s
+step   9500 loss 0.1405 psnr 14.03 n=2,500,000 mem=3.11GB t=872s
+step  10000 loss 0.1738 psnr 14.79 n=2,500,000 mem=3.11GB t=946s
+step  10500 loss 0.1288 psnr 15.52 n=2,500,000 mem=3.11GB t=1019s
+step  11000 loss 0.1775 psnr 13.29 n=2,500,000 mem=3.11GB t=1093s
+step  11500 loss 0.2147 psnr 12.25 n=2,500,000 mem=3.15GB t=1166s
+step  12000 loss 0.3726 psnr  7.95 n=2,500,000 mem=3.15GB t=1242s
+step  12500 loss 0.1474 psnr 14.78 n=2,500,000 mem=3.15GB t=1317s
+step  13000 loss 0.2662 psnr 10.69 n=2,500,000 mem=3.15GB t=1393s
+step  13500 loss 0.2572 psnr 10.33 n=2,500,000 mem=3.15GB t=1467s
+step  14000 loss 0.2325 psnr 10.99 n=2,500,000 mem=3.15GB t=1544s
+step  14500 loss 0.2657 psnr  9.95 n=2,500,000 mem=3.15GB t=1624s
+step  15000 loss 0.2027 psnr 12.66 n=2,500,000 mem=3.15GB t=1700s
+step  15500 loss 0.3105 psnr  8.12 n=2,500,000 mem=3.18GB t=1777s
+step  16000 loss 0.3654 psnr  8.23 n=2,500,000 mem=3.34GB t=1855s
+step  16500 loss 0.2672 psnr  9.46 n=2,500,000 mem=3.34GB t=1931s
+step  17000 loss 0.2784 psnr 10.26 n=2,500,000 mem=3.34GB t=2008s
+step  17500 loss 0.2855 psnr  9.74 n=2,500,000 mem=3.34GB t=2085s
+step  18000 loss 0.3466 psnr  7.39 n=2,500,000 mem=3.34GB t=2166s
+step  18500 loss 0.3641 psnr  6.94 n=2,500,000 mem=3.34GB t=2244s
+step  19000 loss 0.1967 psnr 13.39 n=2,500,000 mem=3.34GB t=2322s
+step  19500 loss 0.2332 psnr 11.17 n=2,500,000 mem=3.34GB t=2404s
+step  20000 loss 0.4472 psnr  6.65 n=2,500,000 mem=3.34GB t=2484s
+step  20500 loss 0.3937 psnr  7.35 n=2,500,000 mem=3.34GB t=2562s
+step  21000 loss 0.2458 psnr 10.53 n=2,500,000 mem=3.34GB t=2642s
+step  21500 loss 0.3251 psnr  8.87 n=2,500,000 mem=3.34GB t=2853s
+step  22000 loss 0.3033 psnr  8.48 n=2,500,000 mem=3.78GB t=2932s
+step  22500 loss 0.3643 psnr  7.37 n=2,500,000 mem=3.78GB t=3012s
+*** Aborted at 1791486710 (unix time) try "date -d @1791486710" if you are using GNU date ***
+PC: @     0x7e5f5a6d4fba (/usr/lib/wsl/drivers/nvaci.inf_amd64_0cb5df13bda15685/libcuda.so.1.1+0x4ddfb9)
+*** SIGTERM (@0x3e8000002b5) received by PID 445 (TID 0x7e6047acf740) from PID 693; stack trace: ***
+    @     0x7e60478a9514 (/usr/lib/x86_64-linux-gnu/libc.so.6+0xa9513)
+    @     0x7e60478a9589 pthread_once
+    @     0x7e5d47ed1178 (/home/kiranriya0990/hn3d/lib/python3.12/site-packages/pycolmap/_core.cpython-312-x86_64-linux-gnu.so+0x1509177)
+    @     0x7e6047845cb0 (/usr/lib/x86_64-linux-gnu/libc.so.6+0x45caf)
+    @     0x7e5f5a6d4fba (/usr/lib/wsl/drivers/nvaci.inf_amd64_0cb5df13bda15685/libcuda.so.1.1+0x4ddfb9)
+    @     0x7e5f5a5296cc (/usr/lib/wsl/drivers/nvaci.inf_amd64_0cb5df13bda15685/libcuda.so.1.1+0x3326cb)
+    @     0x7e5f5b4ff045 (/usr/lib/wsl/drivers/nvaci.inf_amd64_0cb5df13bda15685/libcuda.so.1.1+0x1308044)
+    @     0x7e5f5a43d480 (/usr/lib/wsl/drivers/nvaci.inf_amd64_0cb5df13bda15685/libcuda.so.1.1+0x24647f)
+    @     0x7e5f5a5e4ff2 (/usr/lib/wsl/drivers/nvaci.inf_amd64_0cb5df13bda15685/libcuda.so.1.1+0x3edff1)
+    @     0x7e5f5a5ce8fa cuStreamSynchronize
+    @     0x7e6012412003 (/home/kiranriya0990/hn3d/lib/python3.12/site-packages/nvidia/cu13/lib/libcudart.so.13+0x12002)
+    @     0x7e6012474360 cudaStreamSynchronize
+    @     0x7e5f613b0608 at::native::copy_kernel_cuda(at::TensorIterator&, bool)
+    @     0x7e5f7bb9fade at::native::copy_impl(at::Tensor&, at::Tensor const&, bool) [clone .isra.0]
+    @     0x7e5f7bba2080 at::native::copy_(at::Tensor&, at::Tensor const&, bool)
+    @     0x7e5f7ca1cf42 at::_ops::copy_::call(at::Tensor&, at::Tensor const&, bool)
+    @     0x7e5f7bf84ffa at::native::_to_copy(at::Tensor const&, std::optional<c10::ScalarType>, std::optional<c10::Layout>, std::optional<c10::Device>, std::optional<bool>, bool, std::optional<c10::MemoryFormat>)
+    @     0x7e5f7cebcbac c10::impl::wrap_kernel_functor_unboxed_<c10::impl::detail::WrapFunctionIntoFunctor_<c10::CompileTimeFunctionPointer<at::Tensor (at::Tensor const&, std::optional<c10::ScalarType>, std::optional<c10::Layout>, std::optional<c10::Device>, std::optional<bool>, 
+    @     0x7e5f7c4cbc72 at::_ops::_to_copy::redispatch(c10::DispatchKeySet, at::Tensor const&, std::optional<c10::ScalarType>, std::optional<c10::Layout>, std::optional<c10::Device>, std::optional<bool>, bool, std::optional<c10::MemoryFormat>)
+    @     0x7e5f7cc2cedb c10::impl::wrap_kernel_functor_unboxed_<c10::impl::detail::WrapFunctionIntoFunctor_<c10::CompileTimeFunctionPointer<at::Tensor (at::Tensor const&, std::optional<c10::ScalarType>, std::optional<c10::Layout>, std::optional<c10::Device>, std::optional<bool>, 
+    @     0x7e5f7c57cb84 at::_ops::_to_copy::call(at::Tensor const&, std::optional<c10::ScalarType>, std::optional<c10::Layout>, std::optional<c10::Device>, std::optional<bool>, bool, std::optional<c10::MemoryFormat>)
+    @     0x7e5f7bf6da34 at::native::to(at::Tensor const&, std::optional<c10::ScalarType>, std::optional<c10::Layout>, std::optional<c10::Device>, std::optional<bool>, bool, bool, std::optional<c10::MemoryFormat>)
+    @     0x7e5f7d0079e2 c10::impl::wrap_kernel_functor_unboxed_<c10::impl::detail::WrapFunctionIntoFunctor_<c10::CompileTimeFunctionPointer<at::Tensor (at::Tensor const&, std::optional<c10::ScalarType>, std::optional<c10::Layout>, std::optional<c10::Device>, std::optional<bool>, 
+    @     0x7e5f7c6a2379 at::_ops::to_dtype_layout::redispatch(c10::DispatchKeySet, at::Tensor const&, std::optional<c10::ScalarType>, std::optional<c10::Layout>, std::optional<c10::Device>, std::optional<bool>, bool, bool, std::optional<c10::MemoryFormat>)
+    @     0x7e5f7cc2cdb5 c10::impl::wrap_kernel_functor_unboxed_<c10::impl::detail::WrapFunctionIntoFunctor_<c10::CompileTimeFunctionPointer<at::Tensor (at::Tensor const&, std::optional<c10::ScalarType>, std::optional<c10::Layout>, std::optional<c10::Device>, std::optional<bool>, 
+    @     0x7e5f7c72a1f0 at::_ops::to_dtype_layout::call(at::Tensor const&, std::optional<c10::ScalarType>, std::optional<c10::Layout>, std::optional<c10::Device>, std::optional<bool>, bool, bool, std::optional<c10::MemoryFormat>)
+    @     0x7e5f8f8c3d8b at::Tensor::to(c10::TensorOptions, bool, bool, std::optional<c10::MemoryFormat>) const
+    @     0x7e5f7bf402c5 at::native::_index_put_impl_(at::Tensor&, c10::List<std::optional<at::Tensor> > const&, at::Tensor const&, bool, bool)
+    @     0x7e5f634fd3ed c10::impl::wrap_kernel_functor_unboxed_<c10::impl::detail::WrapFunctionIntoFunctor_<c10::CompileTimeFunctionPointer<at::Tensor& (at::Tensor&, c10::List<std::optional<at::Tensor> > const&, at::Tensor const&, bool, bool), &at::(anonymous namespace)::(anonymo
+    @     0x7e5f7c5aa4fa at::_ops::_index_put_impl_::call(at::Tensor&, c10::List<std::optional<at::Tensor> > const&, at::Tensor const&, bool, bool)
+    @     0x7e5f7f95a424 c10::impl::wrap_kernel_functor_unboxed_<c10::impl::detail::WrapFunctionIntoFunctor_<c10::CompileTimeFunctionPointer<at::Tensor& (c10::DispatchKeySet, at::Tensor&, c10::List<std::optional<at::Tensor> > const&, at::Tensor const&, bool), &torch::ADInplaceOrVi
+    @     0x7e5f7f2c8430 torch::autograd::VariableType::(anonymous namespace)::index_put_(c10::DispatchKeySet, at::Tensor&, c10::List<std::optional<at::Tensor> > const&, at::Tensor const&, bool)

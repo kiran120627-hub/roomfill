@@ -83,6 +83,8 @@ def main() -> None:
     ap.add_argument("--comp", required=True, type=Path)
     ap.add_argument("--measurements", required=True, type=Path)
     ap.add_argument("--out", required=True, type=Path)
+    ap.add_argument("--comp-shell-run", type=Path, default=None,
+                    help="run holding shell/scale for --comp when it lives in a different COLMAP frame")
     ap.add_argument("--band", type=float, default=0.30, help="metres from a true wall to count as shell")
     args = ap.parse_args()
 
@@ -101,8 +103,13 @@ def main() -> None:
     gt = gt_box_samples(Lx, Lz, H)
 
     res = {"gt_box_m": {"x": Lx, "z": Lz, "height": H}, "band_m": args.band}
-    for name, run in (("baseline", args.base), ("completed", args.comp)):
-        res[name] = evaluate(load_pts(run, to_room), gt, Lx, Lz, H, args.band)
+    to_room_comp = to_room
+    if args.comp_shell_run:
+        sh_c = json.loads((args.comp_shell_run / "shell.json").read_text())
+        sc_c = json.loads((args.comp_shell_run / "scale.json").read_text())
+        to_room_comp = room_frame(sh_c, sc_c["chosen_scale"])
+    for name, run, fr in (("baseline", args.base, to_room), ("completed", args.comp, to_room_comp)):
+        res[name] = evaluate(load_pts(run, fr), gt, Lx, Lz, H, args.band)
 
     got = sc["dims_m"]
     res["dimensions"] = {
