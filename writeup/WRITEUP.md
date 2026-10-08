@@ -109,6 +109,26 @@ reported alongside. RoomFill beats the baseline on every metric at full resoluti
 pruning alone (half resolution) moves PSNR cc 16.04 to 16.22 and LPIPS cc 0.628 to 0.623; the radius was
 fixed at 0.5 m rather than picked as the best of {0.3, 0.5, 0.8} on the test photos.
 
+### 5.3b High-quality display model (what the live viewer shows)
+
+Web splat viewers display only each Gaussian's base colour (degree-0 SH). A model trained with view-dependent
+colour loses about 2 dB when shown that way (25.05 to 22.89 dB on a training view), which reads as flat,
+smeared colour. For the viewer we therefore train a second model the way it will be displayed: base colour
+only, 3DGS-MCMC densification (1.2 M Gaussian budget, opacity and scale regularisation 0.01), 30,000 iterations,
+full resolution; then the same floater pruning, blueprint-guided completion and export.
+
+| Held-out photos (full res) | PSNR | PSNR cc | SSIM cc | LPIPS cc | Chamfer |
+|---|---|---|---|---|---|
+| Baseline 3DGS | 10.68 | 15.79 | 0.720 | 0.605 | 22.2 cm |
+| RoomFill (official, section 5.3) | 11.26 | 16.15 | **0.724** | **0.601** | **15.5 cm** |
+| RoomFill HQ display model | **11.83** | **16.26** | 0.717 | 0.603 | 18.3 cm |
+
+The HQ model is visibly cleaner in the well-covered views (no ghost over the board, crisper fans, window bars
+and desk edges; figure `results/slides/6_quality_before_after.jpg`) and has the best PSNR, but is slightly
+worse on SSIM and Chamfer, smears the sparsely filmed TV wall, and its denser Gaussians merge furniture into
+5 connected objects instead of 36. We keep the official RoomFill configuration for the reported results and
+use the HQ model only as the viewer's display model; the viewer's panel shows the HQ model's own numbers.
+
 ### 5.4 Honesty (15 percent of the rubric)
 
 | Surface | Observed | Seen-through opening | Generated |

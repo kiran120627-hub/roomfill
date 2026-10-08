@@ -6,9 +6,9 @@
       "lpips": 0.6045096278190613
     },
     "completed": {
-      "psnr": 16.1495504728389,
-      "ssim": 0.7238410472869873,
-      "lpips": 0.6013688802719116
+      "psnr": 16.259988069839846,
+      "ssim": 0.717279052734375,
+      "lpips": 0.6025718688964844
     }
   },
   "quality_is_colour_aligned": true,
@@ -22,13 +22,13 @@
       "shell_points": 60136
     },
     "completed": {
-      "accuracy_m": 0.15086666089510375,
-      "completeness_m": 0.15835459810607014,
-      "chamfer_m": 0.15461062950058696,
-      "coverage_10cm": 0.2808118835493927,
-      "coverage_25cm": 0.9023474098427678,
-      "shell_points": 272629
+      "accuracy_m": 0.16395121089999104,
+      "completeness_m": 0.20208278133933485,
+      "chamfer_m": 0.18301699611966293,
+      "coverage_10cm": 0.19526259305316593,
+      "coverage_25cm": 0.8216615845868184,
+      "shell_points": 224379
     }
   },
-  "resolution": "full"
+  "model": "hq (MCMC, base colour, 30k)"
 }

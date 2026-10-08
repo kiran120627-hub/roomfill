@@ -20,7 +20,7 @@ import numpy as np
 import torch
 import torch.nn.functional as F
 from gsplat import rasterization
-from gsplat.strategy import DefaultStrategy
+from gsplat.strategy import DefaultStrategy, MCMCStrategy
 
 from common import load_scene, psnr, save_ply, ssim
 
@@ -40,7 +40,8 @@ def knn_mean_dist(x: torch.Tensor, k: int = 3, chunk: int = 4096) -> torch.Tenso
     return torch.cat(out)
 
 
-def init_params(points: np.ndarray, colors: np.ndarray, scene_scale: float, device) -> tuple[dict, dict]:
+def init_params(points: np.ndarray, colors: np.ndarray, scene_scale: float, device,
+                init_opacity: float = 0.1, train_sh: bool = True) -> tuple[dict, dict]:
     means = torch.from_numpy(points).float().to(device)
     rgb = torch.from_numpy(colors).float().to(device)
     n = means.shape[0]
@@ -49,14 +50,14 @@ def init_params(points: np.ndarray, colors: np.ndarray, scene_scale: float, devi
         "means": means,
         "scales": torch.log(dist)[:, None].repeat(1, 3),
         "quats": F.normalize(torch.rand(n, 4, device=device), dim=-1),
-        "opacities": torch.logit(torch.full((n,), 0.1, device=device)),
+        "opacities": torch.logit(torch.full((n,), init_opacity, device=device)),
         "sh0": rgb_to_sh(rgb)[:, None, :],
         "shN": torch.zeros(n, (SH_DEGREE + 1) ** 2 - 1, 3, device=device),
         "tag": torch.zeros(n, device=device),
     }
     params = {k: torch.nn.Parameter(v) for k, v in params.items()}
     lrs = {"means": 1.6e-4 * scene_scale, "scales": 5e-3, "quats": 1e-3, "opacities": 5e-2,
-           "sh0": 2.5e-3, "shN": 2.5e-3 / 20, "tag": 0.0}
+           "sh0": 2.5e-3, "shN": (2.5e-3 / 20) if train_sh else 0.0, "tag": 0.0}
     optims = {k: torch.optim.Adam([{"params": params[k], "lr": lr, "name": k}], eps=1e-15)
               for k, lr in lrs.items()}
     return params, optims
@@ -153,6 +154,12 @@ def main() -> None:
                     help="weight of the monocular-depth Pearson loss (0 = vanilla 3DGS baseline)")
     ap.add_argument("--opacity-reg", type=float, default=0.0,
                     help="L1 weight on opacities; suppresses semi-transparent floaters")
+    ap.add_argument("--scale-reg", type=float, default=0.0, help="L1 weight on Gaussian scales (MCMC recipe)")
+    ap.add_argument("--strategy", choices=["default", "mcmc"], default="default",
+                    help="densification: original 3DGS clone/split, or 3DGS-MCMC relocation (fewer floaters)")
+    ap.add_argument("--cap", type=int, default=1_500_000, help="MCMC Gaussian budget")
+    ap.add_argument("--sh-degree", type=int, default=3,
+                    help="0 = base colour only: what web viewers display, so nothing is lost on export")
     args = ap.parse_args()
 
     torch.manual_seed(args.seed)
@@ -165,10 +172,16 @@ def main() -> None:
           f"scene_scale={scene.scene_scale:.3f} res={scene.train[0].width}x{scene.train[0].height}", flush=True)
 
     mono = mono_depths(scene, args.data, args.downscale, device) if args.depth_prior > 0 else None
-    params, optims = init_params(scene.points, scene.colors, scene.scene_scale, device)
-    strategy = DefaultStrategy(refine_stop_iter=int(args.iters * 0.8), verbose=False)
+    mcmc = args.strategy == "mcmc"
+    params, optims = init_params(scene.points, scene.colors, scene.scene_scale, device,
+                                 init_opacity=0.5 if mcmc else 0.1, train_sh=args.sh_degree > 0)
+    if mcmc:
+        strategy = MCMCStrategy(cap_max=args.cap, refine_stop_iter=int(args.iters * 0.85), verbose=False)
+        state = strategy.initialize_state()
+    else:
+        strategy = DefaultStrategy(refine_stop_iter=int(args.iters * 0.8), verbose=False)
+        state = strategy.initialize_state(scene_scale=scene.scene_scale)
     strategy.check_sanity(params, optims)
-    state = strategy.initialize_state(scene_scale=scene.scene_scale)
     sched = torch.optim.lr_scheduler.ExponentialLR(optims["means"], gamma=0.01 ** (1.0 / args.iters))
 
     t0 = time.time()
@@ -177,14 +190,15 @@ def main() -> None:
         v = scene.train[order[step % len(order)]]
         if step % len(order) == len(order) - 1:
             order = np.random.permutation(len(scene.train))
-        sh_deg = min(step // 1000, SH_DEGREE)
+        sh_deg = min(step // 1000, args.sh_degree)
 
         if mono is not None:
             pred, alpha, info, depth = render(params, v, sh_deg, device, with_depth=True)
         else:
             pred, alpha, info = render(params, v, sh_deg, device)
         gt = v.image.to(device, non_blocking=True).float() / 255
-        strategy.step_pre_backward(params, optims, state, step, info)
+        if not mcmc:
+            strategy.step_pre_backward(params, optims, state, step, info)
         l1 = (pred - gt).abs().mean()
         loss = 0.8 * l1 + 0.2 * (1 - ssim(pred.permute(2, 0, 1)[None], gt.permute(2, 0, 1)[None]))
         if mono is not None:
@@ -193,6 +207,8 @@ def main() -> None:
             loss = loss + w * pearson_depth_loss(depth, mono[v.name].to(device).float(), alpha)
         if args.opacity_reg > 0:
             loss = loss + args.opacity_reg * torch.sigmoid(params["opacities"]).mean()
+        if args.scale_reg > 0:
+            loss = loss + args.scale_reg * torch.exp(params["scales"]).mean()
         loss.backward()
 
         for opt in optims.values():
@@ -200,10 +216,15 @@ def main() -> None:
             opt.zero_grad(set_to_none=True)
         sched.step()
 
-        # Cap growth to stay inside 8 GB: once over budget, pretend refinement has ended.
-        if params["means"].shape[0] > args.max_gaussians:
-            strategy.refine_stop_iter = min(strategy.refine_stop_iter, step)
-        strategy.step_post_backward(params, optims, state, step, info, packed=True)
+        if mcmc:
+            # MCMC relocates dead Gaussians and injects position noise scaled by the current lr.
+            strategy.step_post_backward(params, optims, state, step, info,
+                                        lr=optims["means"].param_groups[0]["lr"])
+        else:
+            # Cap growth to stay inside 8 GB: once over budget, pretend refinement has ended.
+            if params["means"].shape[0] > args.max_gaussians:
+                strategy.refine_stop_iter = min(strategy.refine_stop_iter, step)
+            strategy.step_post_backward(params, optims, state, step, info, packed=True)
 
         if step % 500 == 0 or step == args.iters - 1:
             print(f"step {step:6d} loss {loss.item():.4f} psnr {psnr(pred.detach(), gt):5.2f} "
@@ -218,7 +239,8 @@ def main() -> None:
     metrics.update({"train_time_s": train_time, "num_gaussians": int(params["means"].shape[0]),
                     "iters": args.iters, "train_views": len(scene.train), "test_views": len(scene.test),
                     "downscale": args.downscale, "depth_prior": args.depth_prior,
-                    "opacity_reg": args.opacity_reg})
+                    "opacity_reg": args.opacity_reg, "scale_reg": args.scale_reg,
+                    "strategy": args.strategy, "sh_degree": args.sh_degree})
     (args.out / "metrics.json").write_text(json.dumps(metrics, indent=2))
     m = metrics["mean"]
     print(f"TEST  psnr={m['psnr']:.2f}  ssim={m['ssim']:.4f}  lpips={m['lpips']:.4f}  ({train_time / 60:.1f} min)")

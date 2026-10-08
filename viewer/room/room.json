@@ -33,56 +33,62 @@
   "faces": {
     "wall_x0": {
       "snap": 0.0,
-      "observed": 0.399,
-      "opening": 0.083,
-      "generated": 0.518,
+      "plan_protected": 0.0,
+      "observed": 0.291,
+      "opening": 0.179,
+      "generated": 0.53,
       "method": "lama",
-      "new_gaussians": 25068
+      "new_gaussians": 25642
     },
     "wall_x1": {
       "snap": 0.0,
-      "observed": 0.732,
-      "opening": 0.0,
-      "generated": 0.268,
+      "plan_protected": 0.0,
+      "observed": 0.693,
+      "opening": 0.009,
+      "generated": 0.298,
       "method": "lama",
-      "new_gaussians": 12995
+      "new_gaussians": 14445
     },
     "wall_y0": {
       "snap": 0.0,
-      "observed": 0.574,
-      "opening": 0.019,
-      "generated": 0.407,
+      "plan_protected": 0.0,
+      "observed": 0.381,
+      "opening": 0.006,
+      "generated": 0.612,
       "method": "lama",
-      "new_gaussians": 22129
+      "new_gaussians": 33315
     },
     "wall_y1": {
       "snap": 0.0,
-      "observed": 0.388,
-      "opening": 0.001,
-      "generated": 0.611,
+      "plan_protected": 0.0,
+      "observed": 0.48,
+      "opening": 0.189,
+      "generated": 0.331,
       "method": "lama",
-      "new_gaussians": 33244
+      "new_gaussians": 18001
     },
     "floor": {
       "snap": 0.0,
-      "observed": 0.756,
+      "plan_protected": 0.0,
+      "observed": 0.827,
       "opening": 0.0,
-      "generated": 0.244,
+      "generated": 0.173,
       "method": "lama",
-      "new_gaussians": 34724
+      "new_gaussians": 24596
     },
     "ceiling": {
       "snap": 0.0,
-      "observed": 0.394,
+      "plan_protected": 0.0,
+      "observed": 0.332,
       "opening": 0.0,
-      "generated": 0.606,
+      "generated": 0.668,
       "method": "lama",
-      "new_gaussians": 86362
+      "new_gaussians": 95169
     }
   },
   "gaussians": {
-    "total": 862581,
-    "generated": 214522
+    "total": 1245259,
+    "generated": 211168
   },
   "dim_error_pct_vs_tape": {
     "length_width": [

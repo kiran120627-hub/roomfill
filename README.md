@@ -16,7 +16,8 @@ Blueprints and Room Video), Mode B, with Mode A and both modes combined as bonus
 | Held-out photos, raw PSNR | 10.68 | **11.26** |
 | Room dimensions vs tape (with floor plan) | no scale | **3.7% / 4.0%, height 6.4%** |
 
-Full resolution (1588 x 893), 20,000 iterations, same frames for both. Live demo:
+Full resolution (1588 x 893), 20,000 iterations, same frames for both. The live viewer shows a separate
+high-quality display model (base colour only, 3DGS-MCMC, 30k iterations; see write-up 5.3b). Live demo:
 https://kiran120627-hub.github.io/roomfill/viewer/?scene=room
 
 Full tables, ablations and limitations: [writeup/WRITEUP.md](writeup/WRITEUP.md) and
