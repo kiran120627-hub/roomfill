@@ -21,7 +21,11 @@ high-quality display model (base colour only, 3DGS-MCMC, 30k iterations; see wri
 https://kiran120627-hub.github.io/roomfill/viewer/?scene=room
 
 Full tables, ablations and limitations: [writeup/WRITEUP.md](writeup/WRITEUP.md) and
-[results/room/RESULTS.md](results/room/RESULTS.md).
+[results/room/RESULTS.md](results/room/RESULTS.md). Pitch deck (7 slides, with speaker notes):
+[deck/RoomFill_HackNex2026.pptx](deck/RoomFill_HackNex2026.pptx). Judge Q&A:
+[writeup/QA_CHEATSHEET.md](writeup/QA_CHEATSHEET.md).
+
+No LLM anywhere: COLMAP, per-scene 3D Gaussian Splatting, LaMa and Depth Anything V2, all run locally (zero API cost).
 
 ## What it does
 1. Picks the 400 sharpest frames, solves camera poses with COLMAP (sequential + loop-closure pairs).
@@ -43,7 +47,8 @@ Full tables, ablations and limitations: [writeup/WRITEUP.md](writeup/WRITEUP.md)
 python viewer/serve.py
 ```
 Open http://localhost:8766/?scene=room. Drag to look, scroll to walk, **G** shows generated regions,
-**B** compares with the baseline, **1-3** jump to viewpoints, **M** shows measurements, **R** resets the view, **H** hides the UI.
+**B** compares with the baseline, **T** is a tape measure (click two points, distance in metres),
+**1-3** jump to viewpoints, **M** shows the numbers panel, **R** resets the view, **H** hides the UI.
 
 ## Run the pipeline on a new room
 Requirements: WSL Ubuntu, NVIDIA GPU, COLMAP, ffmpeg, PyTorch with CUDA, gsplat (built from source),
@@ -61,4 +66,5 @@ Optional inputs: `data/heldout/*.jpg` (held-out photos), `data/measurements.json
 | `scripts/00-11_*.py` | pipeline stages (ingest, SfM, train, shell, scale, completion, geometry, export, report, objects, eval, floor plan, figures) |
 | `viewer/` | offline web viewer (three.js + Spark), scenes, local server |
 | `results/` | metrics, report, floor plan model, slide figures |
-| `writeup/` | write-up and demo script |
+| `writeup/` | write-up, demo script, judge Q&A |
+| `deck/` | pitch deck and its generator (`build_deck.js`, pptxgenjs) |
