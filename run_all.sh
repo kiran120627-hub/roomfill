@@ -40,7 +40,8 @@ if [[ -f "$PLAN" ]]; then
 fi
 MEAS_ARGS=(); [[ -f "$MEAS" ]] && MEAS_ARGS=(--measurements "$MEAS")
 [[ -f "$B/scale.json"   ]] || python 03b_scale.py --run "$B" --data "$DENSE" "${MEAS_ARGS[@]}" "${PLAN_ARGS[@]}"
-[[ -f "$C/metrics.json" ]] || python 04_complete.py --run "$B" --data "$DENSE" --out "$C" --vis-views 10000
+PLAN_C=(); [[ -f "$HERE/results/floorplan/layout.json" ]] && PLAN_C=(--plan-layout "$HERE/results/floorplan/layout.json")
+[[ -f "$C/metrics.json" ]] || python 04_complete.py --run "$B" --data "$DENSE" --out "$C" --vis-views 10000 "${PLAN_C[@]}"
 
 python 09_eval.py --data "$DENSE" --downscale "$DS" --runs "$B" "$C"
 [[ -f "$MEAS" ]] && python 05_geometry.py --base "$B" --comp "$C" --measurements "$MEAS" --out "$OUT/geometry.json"

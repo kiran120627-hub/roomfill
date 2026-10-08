@@ -155,8 +155,17 @@ floor slab, plus `layout.json`. On our plan: interior 9.23 x 8.88 m, wall thickn
 west wall. With both dimensions labelled, the axes are scaled separately; the parser reports that the
 drawing itself is 8.2 percent out of proportion to its labels.
 
-**Both modes in one pipeline:** the parsed plan sets the metric scale of the video reconstruction
-(section 5.2).
+**Both modes in one pipeline (blueprint-guided completion):**
+1. *Scale:* the parsed plan sets the metric scale of the video reconstruction (section 5.2).
+2. *Alignment:* the plan's orientation relative to the reconstruction is unknown, so all 4 flips are
+   tried and scored by whether the plan's openings land on wall areas the cameras saw *through*.
+   On our room the choice is unambiguous: the plan's door overlaps the video's seen-through doorway by
+   77 percent in one orientation and 0 percent in the other three. This is an independent cross-check
+   between the drawing and the reconstruction.
+3. *Protection:* the aligned plan's doors (0 to 2.05 m) and windows (sill to lintel) are marked as
+   openings, so completion can never paint a wall over them. In our room the video had already seen
+   through the door (2,389 of 3,096 door texels; the other 707 were the observed door frame), so the plan
+   newly protected 0 texels here. The guarantee matters when a door or window was never filmed.
 
 ## 7. Ablation summary (research contribution)
 

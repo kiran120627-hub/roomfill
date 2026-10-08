@@ -1,0 +1,141 @@
+{
+  "mean": {
+    "psnr": 11.25608516409639,
+    "ssim": 0.6574368476867676,
+    "lpips": 0.6448888063430787,
+    "psnr_cc": 16.1495504728389,
+    "ssim_cc": 0.7238410472869873,
+    "lpips_cc": 0.6013688802719116
+  },
+  "per_view": [
+    {
+      "name": "heldout/heldout_photo_1.jpg",
+      "psnr": 7.450359897312426,
+      "ssim": 0.5872626900672913,
+      "lpips": 0.7172929048538208,
+      "psnr_cc": 14.167407380477314,
+      "ssim_cc": 0.6729752421379089,
+      "lpips_cc": 0.6344073414802551
+    },
+    {
+      "name": "heldout/heldout_photo_2.jpg",
+      "psnr": 8.870291724501895,
+      "ssim": 0.603458821773529,
+      "lpips": 0.6416939496994019,
+      "psnr_cc": 14.438685068407818,
+      "ssim_cc": 0.6738408207893372,
+      "lpips_cc": 0.6221675276756287
+    },
+    {
+      "name": "heldout/heldout_photo_3.jpg",
+      "psnr": 17.17626225369196,
+      "ssim": 0.7751473784446716,
+      "lpips": 0.5858120918273926,
+      "psnr_cc": 18.162799001127002,
+      "ssim_cc": 0.788117527961731,
+      "lpips_cc": 0.5702756643295288
+    },
+    {
+      "name": "heldout/heldout_photo_4.jpg",
+      "psnr": 4.660531767310891,
+      "ssim": 0.5519182085990906,
+      "lpips": 0.7294396758079529,
+      "psnr_cc": 13.735806504579264,
+      "ssim_cc": 0.6980193853378296,
+      "lpips_cc": 0.6469725370407104
+    },
+    {
+      "name": "heldout/heldout_photo_5.jpg",
+      "psnr": 18.12298017766478,
+      "ssim": 0.7693971395492554,
+      "lpips": 0.550205409526825,
+      "psnr_cc": 20.2430544096031,
+      "ssim_cc": 0.7862522602081299,
+      "lpips_cc": 0.5330213308334351
+    }
+  ],
+  "faces": {
+    "wall_x0": {
+      "snap": 0.0,
+      "plan_protected": 0.0,
+      "observed": 0.399,
+      "opening": 0.083,
+      "generated": 0.518,
+      "method": "lama",
+      "new_gaussians": 25068
+    },
+    "wall_x1": {
+      "snap": 0.0,
+      "plan_protected": 0.0,
+      "observed": 0.732,
+      "opening": 0.0,
+      "generated": 0.268,
+      "method": "lama",
+      "new_gaussians": 12995
+    },
+    "wall_y0": {
+      "snap": 0.0,
+      "plan_protected": 0.0,
+      "observed": 0.574,
+      "opening": 0.019,
+      "generated": 0.407,
+      "method": "lama",
+      "new_gaussians": 22129
+    },
+    "wall_y1": {
+      "snap": 0.0,
+      "plan_protected": 0.0,
+      "observed": 0.388,
+      "opening": 0.001,
+      "generated": 0.611,
+      "method": "lama",
+      "new_gaussians": 33244
+    },
+    "floor": {
+      "snap": 0.0,
+      "plan_protected": 0.0,
+      "observed": 0.756,
+      "opening": 0.0,
+      "generated": 0.244,
+      "method": "lama",
+      "new_gaussians": 34724
+    },
+    "ceiling": {
+      "snap": 0.0,
+      "plan_protected": 0.0,
+      "observed": 0.394,
+      "opening": 0.0,
+      "generated": 0.606,
+      "method": "lama",
+      "new_gaussians": 86362
+    }
+  },
+  "generated_gaussians": 214522,
+  "floaters_pruned": 29677,
+  "blueprint": {
+    "plan": "../results/floorplan/layout.json",
+    "swap_axes": false,
+    "orientation": {
+      "flip_along_length": false,
+      "flip_along_breadth": true
+    },
+    "evidence_seen_through": 0.772,
+    "evidence_by_orientation": {
+      "00": 0.0,
+      "01": 0.772,
+      "10": 0.0,
+      "11": 0.0
+    },
+    "openings": [
+      {
+        "kind": "door",
+        "plan_wall": "west",
+        "face": "wall_x0",
+        "opening_texels": 3096,
+        "already_seen_through": 2389,
+        "newly_protected_by_plan": 0
+      }
+    ]
+  },
+  "num_gaussians": 863147
+}
