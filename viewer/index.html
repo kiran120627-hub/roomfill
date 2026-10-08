@@ -108,8 +108,24 @@
     border-radius: var(--radius); color: var(--text-2);
     transition: color .2s var(--ease), transform .12s var(--ease);
   }
+  .icon-btn.glass {                       /* `all: unset` above wipes the glass panel; restore it */
+    background: var(--surface); border: 1px solid var(--line-strong); box-sizing: border-box;
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / .05), 0 12px 40px rgb(0 0 0 / .28);
+    backdrop-filter: blur(18px) saturate(140%); -webkit-backdrop-filter: blur(18px) saturate(140%);
+  }
   .icon-btn:hover { color: var(--text); }
   .icon-btn:active { transform: scale(.94); }
+  .icon-btn[aria-pressed="true"] { color: var(--good); box-shadow: inset 0 0 0 1px var(--good); }
+
+  /* Tape measure overlay: endpoints are projected from metric world space every frame */
+  #tape { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; overflow: visible; }
+  #tape line { stroke: var(--good); stroke-width: 2.5; stroke-linecap: round; filter: drop-shadow(0 0 2px rgb(0 0 0 / .8)); }
+  #tape line.live { stroke-dasharray: 6 6; opacity: .8; }
+  #tape circle { fill: var(--good); stroke: #0c0d10; stroke-width: 2; }
+  #tape .tag rect { fill: #0c0d10; opacity: .88; stroke: var(--good); stroke-width: 1; }
+  #tape .tag text { fill: #edeef1; font: 600 15px var(--mono); }
+  #tape .tag text.sub { fill: #a3a6b1; font: 500 11px var(--mono); }
+  body.measuring #stage canvas { cursor: crosshair; }
 
   select {
     appearance: none; background: transparent; border: 0; color: var(--text); font: 500 14px var(--font);
@@ -216,6 +232,9 @@
   }
   @media (max-width: 767px) {
     .brand span, .hints, .seg button span { display: none; }
+    .topbar { flex-wrap: wrap; gap: 8px; }
+    .topbar .spacer { flex-basis: 100%; height: 0; }     /* modes + tools drop to a second row */
+    #theme { display: none; }                              /* phones follow the system theme */
     .inspector { top: auto; bottom: 16px; left: 16px; right: 16px; width: auto; max-height: 46dvh; }
     .inspector[hidden] { transform: translateY(calc(100% + 24px)); }
     .status { bottom: 72px; }
@@ -250,7 +269,8 @@
   <button class="icon-btn glass" id="reset" title="Reset view (R)" aria-label="Reset view"><i class="ph ph-arrow-counter-clockwise"></i></button>
   <button class="icon-btn glass" id="theme" title="Theme" aria-label="Toggle theme"><i class="ph ph-circle-half"></i></button>
   <button class="icon-btn glass" id="help" title="About this view (?)" aria-label="About this view"><i class="ph ph-question"></i></button>
-  <button class="icon-btn glass" id="info" title="Measurements (M)" aria-label="Toggle measurements" aria-expanded="true"><i class="ph ph-ruler"></i></button>
+  <button class="icon-btn glass" id="measure" title="Tape measure (T)" aria-label="Tape measure" aria-pressed="false"><i class="ph ph-ruler"></i></button>
+  <button class="icon-btn glass" id="info" title="Numbers (M)" aria-label="Toggle numbers panel" aria-expanded="true"><i class="ph ph-chart-bar"></i></button>
 </header>
 
 <aside class="inspector glass" id="inspector" aria-label="Measurements">
@@ -297,6 +317,7 @@
 </aside>
 
 <div class="caption" id="caption" aria-live="polite"></div>
+<svg id="tape" aria-hidden="true"></svg>
 
 <nav class="views seg glass" aria-label="Viewpoints">
   <button data-view="overview" aria-pressed="true"><i class="ph ph-house-line"></i><span>Overview</span></button>
@@ -312,13 +333,14 @@
       <li><i class="ph ph-hand-grabbing"></i><span><b>Drag</b> to look around, <b>scroll</b> to walk</span></li>
       <li><i class="ph ph-sparkle"></i><span><b>Show generated</b> tints never-seen surfaces magenta</span></li>
       <li><i class="ph ph-cube"></i><span><b>Baseline</b> shows vanilla Gaussian splatting for comparison</span></li>
+      <li><i class="ph ph-ruler"></i><span><b>Tape measure</b>: click any two points for the real distance in metres</span></li>
     </ul>
     <button class="primary" id="introGo">Explore the room</button>
   </div>
 </div>
 
 <div class="hints glass" aria-hidden="true">
-  <span><kbd>B</kbd>baseline</span><span><kbd>G</kbd>generated</span><span><kbd>1-3</kbd>views</span><span><kbd>M</kbd>numbers</span><span><kbd>H</kbd>hide UI</span>
+  <span><kbd>B</kbd>baseline</span><span><kbd>G</kbd>generated</span><span><kbd>1-3</kbd>views</span><span><kbd>T</kbd>tape</span><span><kbd>M</kbd>numbers</span><span><kbd>H</kbd>hide UI</span>
 </div>
 
 <div class="status glass" id="status" role="status" aria-live="polite">
@@ -443,7 +465,7 @@ addEventListener("resize", () => {
   camera.updateProjectionMatrix();
   renderer.setSize(innerWidth, innerHeight);
 });
-renderer.setAnimationLoop(() => { controls.update(); keepInside(); renderer.render(world, camera); });
+renderer.setAnimationLoop(() => { controls.update(); keepInside(); renderer.render(world, camera); drawTape(); });
 let splat = null;
 
 // Compact .splat first (2.4x smaller), PLY as fallback.
@@ -554,6 +576,109 @@ function goView(name) { setView(...VIEWS[name]()); markView(name); }
 document.querySelectorAll(".views button").forEach((b) => (b.onclick = () => goView(b.dataset.view)));
 renderer.domElement.addEventListener("pointerdown", () => markView(""));
 
+// Tape measure. The export is already in metres (gravity-aligned room frame, floor at y = 0),
+// so the distance between two picked points is a real-world length with no extra scaling.
+const tape = { on: false, segs: [], first: null, hover: null };
+const svg = $("tape"), ray = new THREE.Raycaster(), ndc = new THREE.Vector2();
+const SVGNS = "http://www.w3.org/2000/svg";
+// A single ray can slip between splats at an edge and land on the wall behind, so a click
+// casts a small cross of rays and keeps the median depth along the centre ray.
+function pick(x, y, robust = false) {
+  const cast = (px, py) => {
+    ndc.set((px / innerWidth) * 2 - 1, -(py / innerHeight) * 2 + 1);
+    ray.setFromCamera(ndc, camera);
+    return splat ? ray.intersectObject(splat, false)[0]?.distance : undefined;
+  };
+  if (splat && robust) {
+    const r = 3, ds = [[0, 0], [r, 0], [-r, 0], [0, r], [0, -r]].map(([dx, dy]) => cast(x + dx, y + dy)).filter((v) => v != null);
+    cast(x, y);                                  // leave the centre ray in `ray` for the fallback below
+    if (ds.length >= 3) {
+      ds.sort((a, b) => a - b);
+      const dir = ray.ray.direction.clone().normalize();
+      return ray.ray.origin.clone().addScaledVector(dir, ds[ds.length >> 1]);
+    }
+  } else if (splat) {
+    const t = cast(x, y);
+    if (t != null) return ray.ray.origin.clone().addScaledVector(ray.ray.direction.clone().normalize(), t);
+  } else {
+    cast(x, y);
+  }
+  if (!d) return null;
+  // Nothing solid under the cursor: fall back to the fitted room shell (walls, floor, ceiling).
+  const o = ray.ray.origin, v = ray.ray.direction, lim = { x: d.length / 2, z: d.width / 2 };
+  let t = Infinity;
+  for (const [k, lo, hi] of [["x", -lim.x, lim.x], ["y", 0, d.height], ["z", -lim.z, lim.z]]) {
+    if (Math.abs(v[k]) < 1e-6) continue;
+    const tt = ((v[k] > 0 ? hi : lo) - o[k]) / v[k];
+    if (tt > 0) t = Math.min(t, tt);
+  }
+  return Number.isFinite(t) ? o.clone().addScaledVector(v, t) : null;
+}
+function toScreen(p) {
+  const q = p.clone().project(camera);
+  return q.z > 1 ? null : [(q.x + 1) / 2 * innerWidth, (1 - q.y) / 2 * innerHeight];
+}
+const el = (tag, attrs, parent) => {
+  const n = document.createElementNS(SVGNS, tag);
+  for (const k in attrs) n.setAttribute(k, attrs[k]);
+  parent.appendChild(n);
+  return n;
+};
+function drawSeg(a, b, live) {
+  const A = toScreen(a), B = toScreen(b);
+  if (!A || !B) return;
+  el("line", { x1: A[0], y1: A[1], x2: B[0], y2: B[1], class: live ? "live" : "" }, svg);
+  for (const P of [A, B]) el("circle", { cx: P[0], cy: P[1], r: 5 }, svg);
+  const dist = a.distanceTo(b), dy = Math.abs(a.y - b.y), dh = Math.hypot(a.x - b.x, a.z - b.z);
+  const g = el("g", { class: "tag" }, svg), mx = (A[0] + B[0]) / 2, my = (A[1] + B[1]) / 2;
+  const main = el("text", { x: mx, y: my - 4, "text-anchor": "middle" }, g);
+  main.textContent = dist.toFixed(2) + " m";
+  const sub = el("text", { x: mx, y: my + 12, "text-anchor": "middle", class: "sub" }, g);
+  sub.textContent = `↕ ${dy.toFixed(2)}  ↔ ${dh.toFixed(2)}`;
+  const w = Math.max(main.getComputedTextLength(), sub.getComputedTextLength()) + 18;
+  g.insertBefore(el("rect", { x: mx - w / 2, y: my - 22, width: w, height: 42, rx: 8 }, g), main);
+}
+function drawTape() {
+  svg.replaceChildren();
+  if (!tape.on) return;
+  for (const [a, b] of tape.segs) drawSeg(a, b, false);
+  if (tape.first) {
+    if (tape.hover) drawSeg(tape.first, tape.hover, true);
+    else { const A = toScreen(tape.first); if (A) el("circle", { cx: A[0], cy: A[1], r: 5 }, svg); }
+  }
+}
+const TAPE_CAPTION = "<b>Tape measure</b>: click two points. Distances are real metres. <b>Esc</b> to finish";
+function setTape(on) {
+  tape.on = on;
+  tape.segs = []; tape.first = tape.hover = null;
+  document.body.classList.toggle("measuring", on);
+  $("measure").setAttribute("aria-pressed", String(on));
+  $("caption").innerHTML = on ? TAPE_CAPTION : CAPTION[mode];
+  drawTape();
+}
+$("measure").onclick = () => setTape(!tape.on);
+// A click (not a drag) places a point; dragging still looks around.
+let downAt = null;
+renderer.domElement.addEventListener("pointerdown", (e) => { downAt = [e.clientX, e.clientY]; });
+renderer.domElement.addEventListener("pointerup", (e) => {
+  if (!tape.on || !downAt || Math.hypot(e.clientX - downAt[0], e.clientY - downAt[1]) > 6) return;
+  const p = pick(e.clientX, e.clientY, true);
+  if (!p) return;
+  if (!tape.first) tape.first = p;
+  else {
+    tape.segs.push([tape.first, p]);
+    tape.first = tape.hover = null;
+    const s = tape.segs.at(-1);
+    $("caption").innerHTML = `<b>${s[0].distanceTo(s[1]).toFixed(2)} m</b> measured. Click two more points, or <b>Esc</b> to finish`;
+  }
+});
+let hoverQueued = false;
+renderer.domElement.addEventListener("pointermove", (e) => {
+  if (!tape.on || !tape.first || e.buttons || hoverQueued) return;
+  hoverQueued = true;                            // raycasting a million splats: at most once per frame
+  requestAnimationFrame(() => { hoverQueued = false; tape.hover = pick(e.clientX, e.clientY); });
+});
+
 // Compare mode is offered only when the baseline export exists.
 fetch(files.baseline[0], { method: "HEAD" }).then((r) => {
   if (r.ok) document.querySelector('.seg button[data-mode="baseline"]').hidden = false;
@@ -592,6 +717,8 @@ addEventListener("keydown", (e) => {
   else if (k === "?") $("help").click();
   else if (k === "r") resetView();
   else if (k === "m") $("info").click();
+  else if (k === "t") setTape(!tape.on);
+  else if (k === "escape" && tape.on) setTape(false);
   else if (k === "h") document.body.classList.toggle("clean");
 });
 
