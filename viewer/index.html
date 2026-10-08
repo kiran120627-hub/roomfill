@@ -97,6 +97,7 @@
     padding: 7px 12px; border-radius: var(--radius-sm); color: var(--text-2); font-weight: 500;
     transition: background .2s var(--ease), color .2s var(--ease), transform .12s var(--ease);
   }
+  .seg button[hidden] { display: none; }               /* all: unset + display: flex would otherwise show it */
   .seg button:hover { color: var(--text); }
   .seg button:active { transform: scale(.97); }
   .seg button[aria-pressed="true"] { background: var(--line-strong); color: var(--text); }
@@ -137,7 +138,7 @@
 
   /* Inspector: the numbers judges score */
   .inspector {
-    position: fixed; top: 74px; right: 16px; z-index: 2; width: 300px; max-height: calc(100dvh - 110px);
+    position: fixed; top: 74px; right: 16px; z-index: 2; width: 300px; max-height: calc(100dvh - 190px);   /* stop above the caption + viewpoint bar */
     overflow: auto; padding: 18px; display: grid; gap: 18px;
     transition: transform .35s var(--ease), opacity .25s var(--ease);
   }
@@ -497,21 +498,38 @@ function showError(msg) {
   $("statusPct").textContent = "";
   busy = false;
 }
-async function fetchWithRetry(urls) {
+// Each mode's file is downloaded once per visit and kept in memory, so switching modes is instant
+// after the first time. Progress is shown only for the mode the viewer is waiting on.
+const bytesCache = {};
+let waitingOn = "normal";
+function getBytes(which) {
+  if (!bytesCache[which]) {
+    bytesCache[which] = fetchWithRetry(which).catch((e) => { delete bytesCache[which]; throw e; });
+  }
+  return bytesCache[which];
+}
+
+async function fetchWithRetry(which) {
   // Small local servers occasionally drop a large transfer; retry before giving up.
-  for (const url of urls) {
-    const head = await fetch(url, { method: "HEAD" }).catch(() => null);
+  for (const url of files[which]) {
+    const head = await fetch(url, { method: "HEAD", cache: "no-cache" }).catch(() => null);
     if (!head || !head.ok) continue;
     for (let attempt = 1; attempt <= 3; attempt++) {
-      try { return { bytes: await fetchWithProgress(url), url }; }
-      catch (e) { setProgress(0, `Connection dropped, retrying (${attempt}/3)`); await new Promise((r) => setTimeout(r, 600)); }
+      try { return { bytes: await fetchWithProgress(url, which), url }; }
+      catch (e) {
+        if (waitingOn === which) setProgress(0, `Connection dropped, retrying (${attempt}/3)`);
+        await new Promise((r) => setTimeout(r, 600));
+      }
     }
   }
   throw new Error("no loadable file");
 }
 
-async function fetchWithProgress(url) {
-  const res = await fetch(url, { cache: "no-store" });
+const MB = (n) => (n / 1048576).toFixed(0);
+async function fetchWithProgress(url, which) {
+  // "no-cache" revalidates with the server: an unchanged file comes from the browser cache (304)
+  // instead of being downloaded again, while a re-exported scene is still picked up.
+  const res = await fetch(url, { cache: "no-cache" });
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
   const total = Number(res.headers.get("content-length")) || 0;
   const reader = res.body.getReader();
@@ -522,7 +540,8 @@ async function fetchWithProgress(url) {
     if (done) break;
     chunks.push(value);
     got += value.length;
-    if (total) setProgress(Math.min(90, (90 * got) / total), null);
+    if (total && waitingOn === which)
+      setProgress(Math.min(90, (90 * got) / total), `${LABEL[which]}: ${MB(got)} of ${MB(total)} MB`);
   }
   const bytes = new Uint8Array(got);
   let o = 0;
@@ -533,11 +552,13 @@ async function fetchWithProgress(url) {
 async function load(which) {
   if (busy) return;
   busy = true;
+  waitingOn = which;
   setProgress(0, LABEL[which]);
   try {
-    const { bytes, url } = await fetchWithRetry(files[which]);
+    const { bytes, url } = await getBytes(which);
     setProgress(95, "Preparing splats");
-    const next = new SplatMesh({ fileBytes: bytes, fileName: url.split("/").pop() });
+    // Hand Spark a copy: it may transfer the buffer to a worker, and the cached bytes must survive.
+    const next = new SplatMesh({ fileBytes: bytes.slice(), fileName: url.split("/").pop() });
     await next.initialized;
     if (splat) { world.remove(splat); splat.dispose?.(); }
     splat = next;
@@ -545,7 +566,7 @@ async function load(which) {
     mode = which;
     document.querySelectorAll(".topbar .seg button").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.mode === which)));
     status.classList.add("done");
-    $("caption").innerHTML = CAPTION[which];
+    $("caption").innerHTML = tape.on ? TAPE_CAPTION : CAPTION[which];
     busy = false;
   } catch (e) {
     console.error(e);
@@ -723,6 +744,16 @@ addEventListener("keydown", (e) => {
 });
 
 await load("normal");
+// Once the room is up, fetch the other two views in the background so G and B switch without a wait
+// (skipped on phones to spare memory and data).
+if (!matchMedia("(max-width: 767px)").matches) {
+  (async () => {
+    for (const m of ["honest", "baseline"]) {
+      if (m === "baseline" && document.querySelector('.seg button[data-mode="baseline"]').hidden) continue;
+      await getBytes(m).catch(() => {});
+    }
+  })();
+}
 </script>
 </body>
 </html>
