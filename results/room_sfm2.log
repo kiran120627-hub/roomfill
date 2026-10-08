@@ -1,0 +1,26 @@
+candidates=510 kept=400 median_sharpness=45.4 p10=10.4
+heldout=0
+WARNING: no held-out photos found — novel-view metrics will fall back to every 8th frame
++ colmap feature_extractor --database_path /home/kiranriya0990/hn3d_work/room/colmap/database.db --image_path /home/kiranriya0990/hn3d_work/room/images --ImageReader.camera_model OPENCV --ImageReader.single_camera_per_folder 1 --SiftExtraction.max_num_features 12000 --SiftExtraction.num_threads 18 --SiftExtraction.use_gpu 0
+I20261008 08:57:11.413566  3849 misc.cc:44] 
+==============================================================================
+Feature extraction
+==============================================================================
+I20261008 08:57:11.417316  3868 sift.cc:727] Creating SIFT CPU feature extractor
+I20261008 08:57:11.418084  3881 sift.cc:727] Creating SIFT CPU feature extractor
+I20261008 08:57:11.417356  3870 sift.cc:727] Creating SIFT CPU feature extractor
+I20261008 08:57:11.417397  3871 sift.cc:727] Creating SIFT CPU feature extractor
+I20261008 08:57:11.417466  3872 sift.cc:727] Creating SIFT CPU feature extractor
+I20261008 08:57:11.417583  3873 sift.cc:727] Creating SIFT CPU feature extractor
+I20261008 08:57:11.417629  3874 sift.cc:727] Creating SIFT CPU feature extractor
+I20261008 08:57:11.417690  3875 sift.cc:727] Creating SIFT CPU feature extractor
+I20261008 08:57:11.417738  3876 sift.cc:727] Creating SIFT CPU feature extractor
+I20261008 08:57:11.417822  3877 sift.cc:727] Creating SIFT CPU feature extractor
+I20261008 08:57:11.417865  3878 sift.cc:727] Creating SIFT CPU feature extractor
+I20261008 08:57:11.417923  3879 sift.cc:727] Creating SIFT CPU feature extractor
+I20261008 08:57:11.418022  3880 sift.cc:727] Creating SIFT CPU feature extractor
+I20261008 08:57:11.418176  3883 sift.cc:727] Creating SIFT CPU feature extractor
+I20261008 08:57:11.417326  3869 sift.cc:727] Creating SIFT CPU feature extractor
+I20261008 08:57:11.418205  3882 sift.cc:727] Creating SIFT CPU feature extractor
+I20261008 08:57:11.418226  3884 sift.cc:727] Creating SIFT CPU feature extractor
+I20261008 08:57:11.418298  3885 sift.cc:727] Creating SIFT CPU feature extractor

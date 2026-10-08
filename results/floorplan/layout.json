@@ -1,0 +1,35 @@
+{
+  "source": "floorplan.jpg",
+  "units": "metres",
+  "frame": "x = length (plan horizontal), z = breadth (plan vertical, down), y up; origin room centre",
+  "scale_m_per_px": {
+    "x": 0.010897284533648171,
+    "y": 0.011792828685258966
+  },
+  "scale_from": "known length 9.23 m and breadth 8.88 m (axes scaled separately)",
+  "drawing_aspect_error": 0.0822,
+  "room": {
+    "length": 9.23,
+    "breadth": 8.88,
+    "height": 3.5,
+    "wall_thickness": 0.349
+  },
+  "openings": [
+    {
+      "wall": "west",
+      "kind": "door",
+      "start_m": 0.554,
+      "end_m": 1.427,
+      "width_m": 0.873
+    }
+  ],
+  "pixels": {
+    "interior_bbox": [
+      258,
+      146,
+      1105,
+      899
+    ],
+    "wall_thickness_px": 32
+  }
+}

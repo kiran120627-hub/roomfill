@@ -1,0 +1,702 @@
++ colmap feature_extractor --database_path /home/kiranriya0990/hn3d_work/room_sparse/colmap/database.db --image_path /home/kiranriya0990/hn3d_work/room_sparse/images --ImageReader.camera_model OPENCV --ImageReader.single_camera_per_folder 1 --SiftExtraction.max_num_features 12000 --SiftExtraction.num_threads 12 --SiftExtraction.use_gpu 0
+I20261008 12:12:33.230484   488 misc.cc:44] 
+==============================================================================
+Feature extraction
+==============================================================================
+I20261008 12:12:33.233986   501 sift.cc:727] Creating SIFT CPU feature extractor
+I20261008 12:12:33.235270   510 sift.cc:727] Creating SIFT CPU feature extractor
+I20261008 12:12:33.234215   503 sift.cc:727] Creating SIFT CPU feature extractor
+I20261008 12:12:33.234445   504 sift.cc:727] Creating SIFT CPU feature extractor
+I20261008 12:12:33.234552   505 sift.cc:727] Creating SIFT CPU feature extractor
+I20261008 12:12:33.234676   506 sift.cc:727] Creating SIFT CPU feature extractor
+I20261008 12:12:33.234854   507 sift.cc:727] Creating SIFT CPU feature extractor
+I20261008 12:12:33.235005   508 sift.cc:727] Creating SIFT CPU feature extractor
+I20261008 12:12:33.235183   509 sift.cc:727] Creating SIFT CPU feature extractor
+I20261008 12:12:33.234125   502 sift.cc:727] Creating SIFT CPU feature extractor
+I20261008 12:12:33.235391   511 sift.cc:727] Creating SIFT CPU feature extractor
+I20261008 12:12:33.235636   512 sift.cc:727] Creating SIFT CPU feature extractor
+I20261008 12:12:37.712674   513 feature_extraction.cc:259] Processed file [1/36]
+I20261008 12:12:37.717456   513 feature_extraction.cc:262]   Name:            train/frame_0013.jpg
+I20261008 12:12:37.724640   513 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 12:12:37.726719   513 feature_extraction.cc:274]   Camera:          #2 - OPENCV
+I20261008 12:12:37.727939   513 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 12:12:37.728992   513 feature_extraction.cc:281]   Features:        2401
+I20261008 12:12:37.748798   513 feature_extraction.cc:259] Processed file [2/36]
+I20261008 12:12:37.750069   513 feature_extraction.cc:262]   Name:            train/frame_0000.jpg
+I20261008 12:12:37.750725   513 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 12:12:37.751137   513 feature_extraction.cc:274]   Camera:          #2 - OPENCV
+I20261008 12:12:37.751411   513 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 12:12:37.751665   513 feature_extraction.cc:281]   Features:        1624
+I20261008 12:12:37.876583   513 feature_extraction.cc:259] Processed file [3/36]
+I20261008 12:12:37.884522   513 feature_extraction.cc:262]   Name:            train/frame_0026.jpg
+I20261008 12:12:37.886826   513 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 12:12:37.887960   513 feature_extraction.cc:274]   Camera:          #2 - OPENCV
+I20261008 12:12:37.891031   513 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 12:12:37.892059   513 feature_extraction.cc:281]   Features:        1558
+I20261008 12:12:38.035657   513 feature_extraction.cc:259] Processed file [4/36]
+I20261008 12:12:38.038481   513 feature_extraction.cc:262]   Name:            train/frame_0052.jpg
+I20261008 12:12:38.039199   513 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 12:12:38.041632   513 feature_extraction.cc:274]   Camera:          #2 - OPENCV
+I20261008 12:12:38.042342   513 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 12:12:38.042961   513 feature_extraction.cc:281]   Features:        2747
+I20261008 12:12:38.993211   513 feature_extraction.cc:259] Processed file [5/36]
+I20261008 12:12:39.001222   513 feature_extraction.cc:262]   Name:            train/frame_0039.jpg
+I20261008 12:12:39.031739   513 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 12:12:39.044858   513 feature_extraction.cc:274]   Camera:          #2 - OPENCV
+I20261008 12:12:39.046972   513 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 12:12:39.048872   513 feature_extraction.cc:281]   Features:        1588
+I20261008 12:12:39.185719   513 feature_extraction.cc:259] Processed file [6/36]
+I20261008 12:12:39.230269   513 feature_extraction.cc:262]   Name:            train/frame_0078.jpg
+I20261008 12:12:39.233999   513 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 12:12:39.263077   513 feature_extraction.cc:274]   Camera:          #2 - OPENCV
+I20261008 12:12:39.267127   513 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 12:12:39.269593   513 feature_extraction.cc:281]   Features:        3134
+I20261008 12:12:39.519313   513 feature_extraction.cc:259] Processed file [7/36]
+I20261008 12:12:39.580217   513 feature_extraction.cc:262]   Name:            train/frame_0065.jpg
+I20261008 12:12:39.597360   513 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 12:12:39.598512   513 feature_extraction.cc:274]   Camera:          #2 - OPENCV
+I20261008 12:12:39.609627   513 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 12:12:39.614812   513 feature_extraction.cc:281]   Features:        2731
+I20261008 12:12:40.703207   513 feature_extraction.cc:259] Processed file [8/36]
+I20261008 12:12:40.714161   513 feature_extraction.cc:262]   Name:            heldout/heldout_photo_3.jpg
+I20261008 12:12:40.720880   513 feature_extraction.cc:271]   Dimensions:      1200 x 1600
+I20261008 12:12:40.721496   513 feature_extraction.cc:274]   Camera:          #1 - OPENCV
+I20261008 12:12:40.722016   513 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 12:12:40.722457   513 feature_extraction.cc:281]   Features:        4898
+I20261008 12:12:40.812288   513 feature_extraction.cc:259] Processed file [9/36]
+I20261008 12:12:40.814699   513 feature_extraction.cc:262]   Name:            heldout/heldout_photo_4.jpg
+I20261008 12:12:40.816259   513 feature_extraction.cc:271]   Dimensions:      1200 x 1600
+I20261008 12:12:40.818344   513 feature_extraction.cc:274]   Camera:          #1 - OPENCV
+I20261008 12:12:40.819607   513 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 12:12:40.820521   513 feature_extraction.cc:281]   Features:        5240
+I20261008 12:12:41.082120   513 feature_extraction.cc:259] Processed file [10/36]
+I20261008 12:12:41.089861   513 feature_extraction.cc:262]   Name:            train/frame_0091.jpg
+I20261008 12:12:41.091794   513 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 12:12:41.092386   513 feature_extraction.cc:274]   Camera:          #2 - OPENCV
+I20261008 12:12:41.092892   513 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 12:12:41.093669   513 feature_extraction.cc:281]   Features:        2201
+I20261008 12:12:41.105710   513 feature_extraction.cc:259] Processed file [11/36]
+I20261008 12:12:41.107234   513 feature_extraction.cc:262]   Name:            train/frame_0104.jpg
+I20261008 12:12:41.108970   513 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 12:12:41.110003   513 feature_extraction.cc:274]   Camera:          #2 - OPENCV
+I20261008 12:12:41.111634   513 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 12:12:41.112965   513 feature_extraction.cc:281]   Features:        2617
+I20261008 12:12:41.131748   513 feature_extraction.cc:259] Processed file [12/36]
+I20261008 12:12:41.136245   513 feature_extraction.cc:262]   Name:            heldout/heldout_photo_5.jpg
+I20261008 12:12:41.138116   513 feature_extraction.cc:271]   Dimensions:      1200 x 1600
+I20261008 12:12:41.138839   513 feature_extraction.cc:274]   Camera:          #1 - OPENCV
+I20261008 12:12:41.139470   513 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 12:12:41.150943   513 feature_extraction.cc:281]   Features:        7765
+I20261008 12:12:41.388505   513 feature_extraction.cc:259] Processed file [13/36]
+I20261008 12:12:41.392345   513 feature_extraction.cc:262]   Name:            train/frame_0130.jpg
+I20261008 12:12:41.393141   513 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 12:12:41.393911   513 feature_extraction.cc:274]   Camera:          #2 - OPENCV
+I20261008 12:12:41.395717   513 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 12:12:41.397203   513 feature_extraction.cc:281]   Features:        2367
+I20261008 12:12:41.408831   513 feature_extraction.cc:259] Processed file [14/36]
+I20261008 12:12:41.414031   513 feature_extraction.cc:262]   Name:            train/frame_0117.jpg
+I20261008 12:12:41.414990   513 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 12:12:41.415563   513 feature_extraction.cc:274]   Camera:          #2 - OPENCV
+I20261008 12:12:41.416340   513 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 12:12:41.417021   513 feature_extraction.cc:281]   Features:        2574
+I20261008 12:12:41.501145   513 feature_extraction.cc:259] Processed file [15/36]
+I20261008 12:12:41.506565   513 feature_extraction.cc:262]   Name:            heldout/heldout_photo_1.jpg
+I20261008 12:12:41.509349   513 feature_extraction.cc:271]   Dimensions:      1200 x 1600
+I20261008 12:12:41.510427   513 feature_extraction.cc:274]   Camera:          #1 - OPENCV
+I20261008 12:12:41.511219   513 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 12:12:41.511997   513 feature_extraction.cc:281]   Features:        5306
+I20261008 12:12:42.088465   513 feature_extraction.cc:259] Processed file [16/36]
+I20261008 12:12:42.091908   513 feature_extraction.cc:262]   Name:            heldout/heldout_photo_2.jpg
+I20261008 12:12:42.093040   513 feature_extraction.cc:271]   Dimensions:      1200 x 1600
+I20261008 12:12:42.093613   513 feature_extraction.cc:274]   Camera:          #1 - OPENCV
+I20261008 12:12:42.094192   513 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 12:12:42.094939   513 feature_extraction.cc:281]   Features:        5122
+I20261008 12:12:42.398397   513 feature_extraction.cc:259] Processed file [17/36]
+I20261008 12:12:42.401789   513 feature_extraction.cc:262]   Name:            train/frame_0143.jpg
+I20261008 12:12:42.403373   513 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 12:12:42.404844   513 feature_extraction.cc:274]   Camera:          #2 - OPENCV
+I20261008 12:12:42.405613   513 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 12:12:42.406975   513 feature_extraction.cc:281]   Features:        2510
+I20261008 12:12:42.622078   513 feature_extraction.cc:259] Processed file [18/36]
+I20261008 12:12:42.624634   513 feature_extraction.cc:262]   Name:            train/frame_0156.jpg
+I20261008 12:12:42.625790   513 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 12:12:42.629348   513 feature_extraction.cc:274]   Camera:          #2 - OPENCV
+I20261008 12:12:42.630618   513 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 12:12:42.631474   513 feature_extraction.cc:281]   Features:        2357
+I20261008 12:12:43.548388   513 feature_extraction.cc:259] Processed file [19/36]
+I20261008 12:12:43.554543   513 feature_extraction.cc:262]   Name:            train/frame_0169.jpg
+I20261008 12:12:43.557549   513 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 12:12:43.558211   513 feature_extraction.cc:274]   Camera:          #2 - OPENCV
+I20261008 12:12:43.559208   513 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 12:12:43.559899   513 feature_extraction.cc:281]   Features:        2368
+I20261008 12:12:44.648242   513 feature_extraction.cc:259] Processed file [20/36]
+I20261008 12:12:44.651432   513 feature_extraction.cc:262]   Name:            train/frame_0208.jpg
+I20261008 12:12:44.654503   513 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 12:12:44.655093   513 feature_extraction.cc:274]   Camera:          #2 - OPENCV
+I20261008 12:12:44.656477   513 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 12:12:44.657944   513 feature_extraction.cc:281]   Features:        1398
+I20261008 12:12:45.047636   513 feature_extraction.cc:259] Processed file [21/36]
+I20261008 12:12:45.058331   513 feature_extraction.cc:262]   Name:            train/frame_0247.jpg
+I20261008 12:12:45.059616   513 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 12:12:45.060184   513 feature_extraction.cc:274]   Camera:          #2 - OPENCV
+I20261008 12:12:45.061106   513 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 12:12:45.062147   513 feature_extraction.cc:281]   Features:        417
+I20261008 12:12:45.353139   513 feature_extraction.cc:259] Processed file [22/36]
+I20261008 12:12:45.369620   513 feature_extraction.cc:262]   Name:            train/frame_0260.jpg
+I20261008 12:12:45.379220   513 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 12:12:45.386610   513 feature_extraction.cc:274]   Camera:          #2 - OPENCV
+I20261008 12:12:45.432885   513 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 12:12:45.436561   513 feature_extraction.cc:281]   Features:        1305
+I20261008 12:12:46.026378   513 feature_extraction.cc:259] Processed file [23/36]
+I20261008 12:12:46.039701   513 feature_extraction.cc:262]   Name:            train/frame_0221.jpg
+I20261008 12:12:46.041317   513 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 12:12:46.042083   513 feature_extraction.cc:274]   Camera:          #2 - OPENCV
+I20261008 12:12:46.043004   513 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 12:12:46.043743   513 feature_extraction.cc:281]   Features:        1132
+I20261008 12:12:46.142838   513 feature_extraction.cc:259] Processed file [24/36]
+I20261008 12:12:46.147044   513 feature_extraction.cc:262]   Name:            train/frame_0299.jpg
+I20261008 12:12:46.148614   513 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 12:12:46.149284   513 feature_extraction.cc:274]   Camera:          #2 - OPENCV
+I20261008 12:12:46.149830   513 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 12:12:46.150173   513 feature_extraction.cc:281]   Features:        2865
+I20261008 12:12:46.399843   513 feature_extraction.cc:259] Processed file [25/36]
+I20261008 12:12:46.403389   513 feature_extraction.cc:262]   Name:            train/frame_0312.jpg
+I20261008 12:12:46.405728   513 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 12:12:46.420801   513 feature_extraction.cc:274]   Camera:          #2 - OPENCV
+I20261008 12:12:46.424053   513 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 12:12:46.426522   513 feature_extraction.cc:281]   Features:        2630
+I20261008 12:12:46.547559   513 feature_extraction.cc:259] Processed file [26/36]
+I20261008 12:12:46.549647   513 feature_extraction.cc:262]   Name:            train/frame_0182.jpg
+I20261008 12:12:46.550305   513 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 12:12:46.550776   513 feature_extraction.cc:274]   Camera:          #2 - OPENCV
+I20261008 12:12:46.551165   513 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 12:12:46.551821   513 feature_extraction.cc:281]   Features:        2144
+I20261008 12:12:46.661676   513 feature_extraction.cc:259] Processed file [27/36]
+I20261008 12:12:46.666311   513 feature_extraction.cc:262]   Name:            train/frame_0195.jpg
+I20261008 12:12:46.669198   513 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 12:12:46.669737   513 feature_extraction.cc:274]   Camera:          #2 - OPENCV
+I20261008 12:12:46.670193   513 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 12:12:46.670787   513 feature_extraction.cc:281]   Features:        2016
+I20261008 12:12:47.150238   513 feature_extraction.cc:259] Processed file [28/36]
+I20261008 12:12:47.151737   513 feature_extraction.cc:262]   Name:            train/frame_0273.jpg
+I20261008 12:12:47.152850   513 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 12:12:47.153663   513 feature_extraction.cc:274]   Camera:          #2 - OPENCV
+I20261008 12:12:47.154335   513 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 12:12:47.154889   513 feature_extraction.cc:281]   Features:        2915
+I20261008 12:12:47.288614   513 feature_extraction.cc:259] Processed file [29/36]
+I20261008 12:12:47.290704   513 feature_extraction.cc:262]   Name:            train/frame_0234.jpg
+I20261008 12:12:47.292200   513 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 12:12:47.294044   513 feature_extraction.cc:274]   Camera:          #2 - OPENCV
+I20261008 12:12:47.294685   513 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 12:12:47.295533   513 feature_extraction.cc:281]   Features:        243
+I20261008 12:12:47.662667   513 feature_extraction.cc:259] Processed file [30/36]
+I20261008 12:12:47.664593   513 feature_extraction.cc:262]   Name:            train/frame_0338.jpg
+I20261008 12:12:47.665287   513 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 12:12:47.665833   513 feature_extraction.cc:274]   Camera:          #2 - OPENCV
+I20261008 12:12:47.666383   513 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 12:12:47.667030   513 feature_extraction.cc:281]   Features:        906
+I20261008 12:12:47.689267   513 feature_extraction.cc:259] Processed file [31/36]
+I20261008 12:12:47.691465   513 feature_extraction.cc:262]   Name:            train/frame_0325.jpg
+I20261008 12:12:47.693457   513 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 12:12:47.694366   513 feature_extraction.cc:274]   Camera:          #2 - OPENCV
+I20261008 12:12:47.695091   513 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 12:12:47.696038   513 feature_extraction.cc:281]   Features:        1135
+I20261008 12:12:47.984427   513 feature_extraction.cc:259] Processed file [32/36]
+I20261008 12:12:47.987035   513 feature_extraction.cc:262]   Name:            train/frame_0351.jpg
+I20261008 12:12:47.987860   513 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 12:12:47.988435   513 feature_extraction.cc:274]   Camera:          #2 - OPENCV
+I20261008 12:12:47.988943   513 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 12:12:47.989473   513 feature_extraction.cc:281]   Features:        542
+I20261008 12:12:47.997874   513 feature_extraction.cc:259] Processed file [33/36]
+I20261008 12:12:47.998555   513 feature_extraction.cc:262]   Name:            train/frame_0364.jpg
+I20261008 12:12:47.999071   513 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 12:12:47.999886   513 feature_extraction.cc:274]   Camera:          #2 - OPENCV
+I20261008 12:12:48.000491   513 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 12:12:48.000999   513 feature_extraction.cc:281]   Features:        242
+I20261008 12:12:48.013828   513 feature_extraction.cc:259] Processed file [34/36]
+I20261008 12:12:48.014483   513 feature_extraction.cc:262]   Name:            train/frame_0286.jpg
+I20261008 12:12:48.015012   513 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 12:12:48.015473   513 feature_extraction.cc:274]   Camera:          #2 - OPENCV
+I20261008 12:12:48.015874   513 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 12:12:48.016351   513 feature_extraction.cc:281]   Features:        2929
+I20261008 12:12:48.298234   513 feature_extraction.cc:259] Processed file [35/36]
+I20261008 12:12:48.299469   513 feature_extraction.cc:262]   Name:            train/frame_0377.jpg
+I20261008 12:12:48.300155   513 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 12:12:48.300712   513 feature_extraction.cc:274]   Camera:          #2 - OPENCV
+I20261008 12:12:48.301239   513 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 12:12:48.301923   513 feature_extraction.cc:281]   Features:        638
+I20261008 12:12:48.428831   513 feature_extraction.cc:259] Processed file [36/36]
+I20261008 12:12:48.430301   513 feature_extraction.cc:262]   Name:            train/frame_0390.jpg
+I20261008 12:12:48.430787   513 feature_extraction.cc:271]   Dimensions:      1600 x 900
+I20261008 12:12:48.431954   513 feature_extraction.cc:274]   Camera:          #2 - OPENCV
+I20261008 12:12:48.432605   513 feature_extraction.cc:277]   Focal Length:    1920.00px
+I20261008 12:12:48.433022   513 feature_extraction.cc:281]   Features:        1302
+I20261008 12:12:48.440629   488 timer.cc:91] Elapsed time: 0.253 [minutes]
+pairs=630 train=31 heldout=5
++ colmap matches_importer --database_path /home/kiranriya0990/hn3d_work/room_sparse/colmap/database.db --match_list_path /home/kiranriya0990/hn3d_work/room_sparse/colmap/pairs.txt --match_type pairs --SiftMatching.num_threads 12 --SiftMatching.guided_matching 1 --SiftMatching.use_gpu 0
+I20261008 12:12:48.587805   537 misc.cc:44] 
+==============================================================================
+Feature matching
+==============================================================================
+I20261008 12:12:48.590409   538 sift.cc:1434] Creating SIFT CPU feature matcher
+I20261008 12:12:48.591189   539 sift.cc:1434] Creating SIFT CPU feature matcher
+I20261008 12:12:48.592187   540 sift.cc:1434] Creating SIFT CPU feature matcher
+I20261008 12:12:48.592988   541 sift.cc:1434] Creating SIFT CPU feature matcher
+I20261008 12:12:48.594193   542 sift.cc:1434] Creating SIFT CPU feature matcher
+I20261008 12:12:48.594594   543 sift.cc:1434] Creating SIFT CPU feature matcher
+I20261008 12:12:48.595666   544 sift.cc:1434] Creating SIFT CPU feature matcher
+I20261008 12:12:48.596792   545 sift.cc:1434] Creating SIFT CPU feature matcher
+I20261008 12:12:48.597178   546 sift.cc:1434] Creating SIFT CPU feature matcher
+I20261008 12:12:48.597539   547 sift.cc:1434] Creating SIFT CPU feature matcher
+I20261008 12:12:48.598336   548 sift.cc:1434] Creating SIFT CPU feature matcher
+I20261008 12:12:48.598682   549 sift.cc:1434] Creating SIFT CPU feature matcher
+I20261008 12:12:48.606509   562 sift.cc:1434] Creating SIFT CPU feature matcher
+I20261008 12:12:48.606719   563 sift.cc:1434] Creating SIFT CPU feature matcher
+I20261008 12:12:48.607389   564 sift.cc:1434] Creating SIFT CPU feature matcher
+I20261008 12:12:48.607990   565 sift.cc:1434] Creating SIFT CPU feature matcher
+I20261008 12:12:48.609529   566 sift.cc:1434] Creating SIFT CPU feature matcher
+I20261008 12:12:48.610127   567 sift.cc:1434] Creating SIFT CPU feature matcher
+I20261008 12:12:48.610433   568 sift.cc:1434] Creating SIFT CPU feature matcher
+I20261008 12:12:48.610543   569 sift.cc:1434] Creating SIFT CPU feature matcher
+I20261008 12:12:48.610742   571 sift.cc:1434] Creating SIFT CPU feature matcher
+I20261008 12:12:48.610775   573 sift.cc:1434] Creating SIFT CPU feature matcher
+I20261008 12:12:48.611577   570 sift.cc:1434] Creating SIFT CPU feature matcher
+I20261008 12:12:48.611657   572 sift.cc:1434] Creating SIFT CPU feature matcher
+I20261008 12:12:48.614987   537 pairing.cc:795] Importing image pairs...
+I20261008 12:12:48.617615   537 pairing.cc:828] Matching block [1/1]
+I20261008 12:13:00.846658   537 feature_matching.cc:47] in 12.229s
+I20261008 12:13:00.849077   537 timer.cc:91] Elapsed time: 0.204 [minutes]
++ colmap mapper --database_path /home/kiranriya0990/hn3d_work/room_sparse/colmap/database.db --image_path /home/kiranriya0990/hn3d_work/room_sparse/images --output_path /home/kiranriya0990/hn3d_work/room_sparse/colmap/sparse --Mapper.num_threads 12 --Mapper.init_min_num_inliers 60 --Mapper.abs_pose_min_num_inliers 15 --Mapper.abs_pose_min_inlier_ratio 0.15 --Mapper.ba_global_function_tolerance 0.000001
+I20261008 12:13:00.928483   578 incremental_pipeline.cc:254] Loading database
+I20261008 12:13:00.931159   578 database_cache.cc:66] Loading rigs...
+I20261008 12:13:00.931957   578 database_cache.cc:76]  2 in 0.001s
+I20261008 12:13:00.932550   578 database_cache.cc:84] Loading cameras...
+I20261008 12:13:00.932933   578 database_cache.cc:102]  2 in 0.000s
+I20261008 12:13:00.933552   578 database_cache.cc:110] Loading frames...
+I20261008 12:13:00.934271   578 database_cache.cc:127]  36 in 0.001s
+I20261008 12:13:00.934680   578 database_cache.cc:135] Loading matches...
+I20261008 12:13:00.935354   578 database_cache.cc:140]  140 in 0.001s
+I20261008 12:13:00.935681   578 database_cache.cc:156] Loading images...
+I20261008 12:13:00.940275   578 database_cache.cc:241]  36 in 0.005s (connected 35)
+I20261008 12:13:00.941771   578 database_cache.cc:252] Building correspondence graph...
+I20261008 12:13:00.947561   578 database_cache.cc:279]  in 0.006s (ignored 0)
+I20261008 12:13:00.948814   578 timer.cc:91] Elapsed time: 0.000 [minutes]
+I20261008 12:13:00.953992   578 incremental_pipeline.cc:300] Finding good initial image pair
+I20261008 12:13:00.993798   578 incremental_pipeline.cc:324] Registering initial image pair #11 and #18
+I20261008 12:13:00.996384   578 incremental_pipeline.cc:338] Global bundle adjustment
+I20261008 12:13:01.051920   578 incremental_pipeline.cc:428] Registering image #17 (num_reg_frames=2)
+I20261008 12:13:01.052860   578 incremental_pipeline.cc:431] => Image sees 72 / 1198 points
+I20261008 12:13:01.136953   578 incremental_pipeline.cc:43] Retriangulation and Global bundle adjustment
+I20261008 12:13:01.336345   578 incremental_pipeline.cc:428] Registering image #19 (num_reg_frames=3)
+I20261008 12:13:01.337770   578 incremental_pipeline.cc:431] => Image sees 216 / 1036 points
+I20261008 12:13:01.518322   578 incremental_pipeline.cc:43] Retriangulation and Global bundle adjustment
+I20261008 12:13:01.858311   578 incremental_pipeline.cc:428] Registering image #26 (num_reg_frames=4)
+I20261008 12:13:01.862776   578 incremental_pipeline.cc:431] => Image sees 222 / 928 points
+I20261008 12:13:02.114609   578 incremental_pipeline.cc:43] Retriangulation and Global bundle adjustment
+I20261008 12:13:02.252144   578 incremental_pipeline.cc:428] Registering image #13 (num_reg_frames=5)
+I20261008 12:13:02.253968   578 incremental_pipeline.cc:431] => Image sees 284 / 1109 points
+I20261008 12:13:02.395490   578 incremental_pipeline.cc:43] Retriangulation and Global bundle adjustment
+I20261008 12:13:02.432221   578 incremental_pipeline.cc:428] Registering image #14 (num_reg_frames=6)
+I20261008 12:13:02.434381   578 incremental_pipeline.cc:431] => Image sees 392 / 1255 points
+I20261008 12:13:02.552524   578 incremental_pipeline.cc:43] Retriangulation and Global bundle adjustment
+I20261008 12:13:02.600975   578 incremental_pipeline.cc:428] Registering image #6 (num_reg_frames=7)
+I20261008 12:13:02.602042   578 incremental_pipeline.cc:431] => Image sees 323 / 1322 points
+I20261008 12:13:02.726011   578 incremental_pipeline.cc:43] Retriangulation and Global bundle adjustment
+I20261008 12:13:02.866299   578 incremental_pipeline.cc:428] Registering image #10 (num_reg_frames=8)
+I20261008 12:13:02.868244   578 incremental_pipeline.cc:431] => Image sees 390 / 973 points
+I20261008 12:13:03.005963   578 incremental_pipeline.cc:43] Retriangulation and Global bundle adjustment
+I20261008 12:13:03.115499   578 incremental_pipeline.cc:428] Registering image #7 (num_reg_frames=9)
+I20261008 12:13:03.116613   578 incremental_pipeline.cc:431] => Image sees 317 / 1165 points
+I20261008 12:13:03.225247   578 incremental_pipeline.cc:43] Retriangulation and Global bundle adjustment
+I20261008 12:13:03.355597   578 incremental_pipeline.cc:428] Registering image #12 (num_reg_frames=10)
+I20261008 12:13:03.356434   578 incremental_pipeline.cc:431] => Image sees 407 / 1205 points
+I20261008 12:13:03.560873   578 incremental_pipeline.cc:43] Retriangulation and Global bundle adjustment
+I20261008 12:13:03.738508   578 incremental_pipeline.cc:428] Registering image #4 (num_reg_frames=11)
+I20261008 12:13:03.739542   578 incremental_pipeline.cc:431] => Image sees 406 / 933 points
+I20261008 12:13:03.948575   578 incremental_pipeline.cc:428] Registering image #27 (num_reg_frames=12)
+I20261008 12:13:03.949472   578 incremental_pipeline.cc:431] => Image sees 262 / 824 points
+I20261008 12:13:04.099938   578 incremental_pipeline.cc:43] Retriangulation and Global bundle adjustment
+I20261008 12:13:04.177282   578 incremental_pipeline.cc:428] Registering image #8 (num_reg_frames=13)
+I20261008 12:13:04.178602   578 incremental_pipeline.cc:431] => Image sees 269 / 710 points
+I20261008 12:13:04.349212   578 incremental_pipeline.cc:428] Registering image #20 (num_reg_frames=14)
+I20261008 12:13:04.350755   578 incremental_pipeline.cc:431] => Image sees 224 / 568 points
+I20261008 12:13:04.484563   578 incremental_pipeline.cc:43] Retriangulation and Global bundle adjustment
+I20261008 12:13:04.728216   578 incremental_pipeline.cc:428] Registering image #23 (num_reg_frames=15)
+I20261008 12:13:04.730248   578 incremental_pipeline.cc:431] => Image sees 178 / 443 points
+I20261008 12:13:04.863480   578 incremental_pipeline.cc:428] Registering image #5 (num_reg_frames=16)
+I20261008 12:13:04.864531   578 incremental_pipeline.cc:431] => Image sees 150 / 436 points
+I20261008 12:13:04.978557   578 incremental_pipeline.cc:43] Retriangulation and Global bundle adjustment
+I20261008 12:13:05.245219   578 incremental_pipeline.cc:428] Registering image #9 (num_reg_frames=17)
+I20261008 12:13:05.246898   578 incremental_pipeline.cc:431] => Image sees 131 / 406 points
+I20261008 12:13:05.400810   578 incremental_pipeline.cc:428] Registering image #1 (num_reg_frames=18)
+I20261008 12:13:05.401809   578 incremental_pipeline.cc:431] => Image sees 114 / 516 points
+I20261008 12:13:05.504581   578 incremental_pipeline.cc:43] Retriangulation and Global bundle adjustment
+I20261008 12:13:07.895776   578 incremental_pipeline.cc:428] Registering image #3 (num_reg_frames=19)
+I20261008 12:13:07.897156   578 incremental_pipeline.cc:431] => Image sees 125 / 553 points
+I20261008 12:13:07.956521   578 incremental_pipeline.cc:428] Registering image #15 (num_reg_frames=20)
+I20261008 12:13:07.957729   578 incremental_pipeline.cc:431] => Image sees 62 / 203 points
+I20261008 12:13:07.968139   578 incremental_pipeline.cc:442] => Could not register, trying another image.
+I20261008 12:13:07.968799   578 incremental_pipeline.cc:428] Registering image #2 (num_reg_frames=20)
+I20261008 12:13:07.969344   578 incremental_pipeline.cc:431] => Image sees 55 / 255 points
+I20261008 12:13:08.005892   578 incremental_pipeline.cc:43] Retriangulation and Global bundle adjustment
+I20261008 12:13:08.147871   578 incremental_pipeline.cc:428] Registering image #24 (num_reg_frames=21)
+I20261008 12:13:08.149335   578 incremental_pipeline.cc:431] => Image sees 38 / 354 points
+I20261008 12:13:08.160983   578 incremental_pipeline.cc:442] => Could not register, trying another image.
+I20261008 12:13:08.161754   578 incremental_pipeline.cc:428] Registering image #29 (num_reg_frames=21)
+I20261008 12:13:08.162168   578 incremental_pipeline.cc:431] => Image sees 43 / 96 points
+I20261008 12:13:08.204835   578 incremental_pipeline.cc:428] Registering image #21 (num_reg_frames=22)
+I20261008 12:13:08.206146   578 incremental_pipeline.cc:431] => Image sees 21 / 49 points
+I20261008 12:13:08.271986   578 incremental_pipeline.cc:428] Registering image #15 (num_reg_frames=23)
+I20261008 12:13:08.273976   578 incremental_pipeline.cc:431] => Image sees 62 / 203 points
+I20261008 12:13:08.286262   578 incremental_pipeline.cc:442] => Could not register, trying another image.
+I20261008 12:13:08.287895   578 incremental_pipeline.cc:428] Registering image #24 (num_reg_frames=23)
+I20261008 12:13:08.288430   578 incremental_pipeline.cc:431] => Image sees 38 / 354 points
+I20261008 12:13:08.297750   578 incremental_pipeline.cc:442] => Could not register, trying another image.
+I20261008 12:13:08.299114   578 incremental_pipeline.cc:43] Retriangulation and Global bundle adjustment
+I20261008 12:13:08.595453   578 incremental_pipeline.cc:428] Registering image #15 (num_reg_frames=23)
+I20261008 12:13:08.596398   578 incremental_pipeline.cc:431] => Image sees 62 / 203 points
+I20261008 12:13:08.605530   578 incremental_pipeline.cc:442] => Could not register, trying another image.
+I20261008 12:13:08.606258   578 incremental_pipeline.cc:428] Registering image #24 (num_reg_frames=23)
+I20261008 12:13:08.606961   578 incremental_pipeline.cc:431] => Image sees 38 / 354 points
+I20261008 12:13:08.616060   578 incremental_pipeline.cc:442] => Could not register, trying another image.
+I20261008 12:13:08.617062   578 incremental_pipeline.cc:43] Retriangulation and Global bundle adjustment
+I20261008 12:13:08.646636   578 incremental_pipeline.cc:584] Keeping successful reconstruction
+I20261008 12:13:08.660874   578 incremental_pipeline.cc:300] Finding good initial image pair
+I20261008 12:13:08.888042   578 incremental_pipeline.cc:304] => No good initial image pair found.
+I20261008 12:13:08.889294   578 incremental_pipeline.cc:547] Discarding reconstruction due to no initial pair
+I20261008 12:13:08.889925   578 incremental_pipeline.cc:235] => Relaxing the initialization constraints.
+I20261008 12:13:08.891429   578 incremental_pipeline.cc:300] Finding good initial image pair
+I20261008 12:13:08.934510   578 incremental_pipeline.cc:324] Registering initial image pair #31 and #30
+I20261008 12:13:08.935534   578 incremental_pipeline.cc:338] Global bundle adjustment
+I20261008 12:13:08.961056   578 incremental_pipeline.cc:428] Registering image #32 (num_reg_frames=2)
+I20261008 12:13:08.961998   578 incremental_pipeline.cc:431] => Image sees 46 / 201 points
+I20261008 12:13:08.962564   578 incremental_pipeline.cc:442] => Could not register, trying another image.
+I20261008 12:13:08.963050   578 incremental_pipeline.cc:43] Retriangulation and Global bundle adjustment
+I20261008 12:13:08.979790   578 incremental_pipeline.cc:428] Registering image #32 (num_reg_frames=2)
+I20261008 12:13:08.980751   578 incremental_pipeline.cc:431] => Image sees 46 / 201 points
+I20261008 12:13:08.996124   578 incremental_pipeline.cc:43] Retriangulation and Global bundle adjustment
+I20261008 12:13:09.024271   578 incremental_pipeline.cc:428] Registering image #35 (num_reg_frames=3)
+I20261008 12:13:09.025540   578 incremental_pipeline.cc:431] => Image sees 17 / 174 points
+I20261008 12:13:09.026573   578 incremental_pipeline.cc:442] => Could not register, trying another image.
+I20261008 12:13:09.026980   578 incremental_pipeline.cc:43] Retriangulation and Global bundle adjustment
+I20261008 12:13:09.028286   578 incremental_pipeline.cc:428] Registering image #35 (num_reg_frames=3)
+I20261008 12:13:09.028818   578 incremental_pipeline.cc:431] => Image sees 17 / 174 points
+I20261008 12:13:09.029596   578 incremental_pipeline.cc:442] => Could not register, trying another image.
+I20261008 12:13:09.029943   578 incremental_pipeline.cc:580] Discarding reconstruction due to insufficient size
+I20261008 12:13:09.031483   578 incremental_pipeline.cc:300] Finding good initial image pair
+I20261008 12:13:09.036607   578 incremental_pipeline.cc:324] Registering initial image pair #30 and #33
+I20261008 12:13:09.037298   578 incremental_pipeline.cc:338] Global bundle adjustment
+I20261008 12:13:09.038273   578 incremental_pipeline.cc:557] Discarding reconstruction due to bad initial pair
+I20261008 12:13:09.040167   578 incremental_pipeline.cc:300] Finding good initial image pair
+I20261008 12:13:09.042876   578 incremental_pipeline.cc:324] Registering initial image pair #32 and #35
+I20261008 12:13:09.043457   578 incremental_pipeline.cc:338] Global bundle adjustment
+W20261008 12:13:09.043854   578 bundle_adjustment.cc:566] Failed to fix Gauge with two cameras. Falling back to fixing Gauge with three points.
+W20261008 12:13:09.044404   578 bundle_adjustment.cc:472] Failed to fix Gauge due to insufficient number of fixed points: 0
+I20261008 12:13:09.044842   578 incremental_pipeline.cc:557] Discarding reconstruction due to bad initial pair
+I20261008 12:13:09.047042   578 incremental_pipeline.cc:300] Finding good initial image pair
+I20261008 12:13:09.050709   578 incremental_pipeline.cc:324] Registering initial image pair #35 and #33
+I20261008 12:13:09.051323   578 incremental_pipeline.cc:338] Global bundle adjustment
+I20261008 12:13:09.066309   578 incremental_pipeline.cc:580] Discarding reconstruction due to insufficient size
+I20261008 12:13:09.069717   578 incremental_pipeline.cc:300] Finding good initial image pair
+I20261008 12:13:09.245164   578 incremental_pipeline.cc:304] => No good initial image pair found.
+I20261008 12:13:09.246035   578 incremental_pipeline.cc:547] Discarding reconstruction due to no initial pair
+I20261008 12:13:09.246447   578 incremental_pipeline.cc:244] => Relaxing the initialization constraints.
+I20261008 12:13:09.247522   578 incremental_pipeline.cc:300] Finding good initial image pair
+I20261008 12:13:09.269351   578 incremental_pipeline.cc:324] Registering initial image pair #25 and #24
+I20261008 12:13:09.270584   578 incremental_pipeline.cc:338] Global bundle adjustment
+I20261008 12:13:09.294431   578 incremental_pipeline.cc:428] Registering image #28 (num_reg_frames=2)
+I20261008 12:13:09.295228   578 incremental_pipeline.cc:431] => Image sees 16 / 290 points
+I20261008 12:13:09.296437   578 incremental_pipeline.cc:442] => Could not register, trying another image.
+I20261008 12:13:09.296772   578 incremental_pipeline.cc:43] Retriangulation and Global bundle adjustment
+I20261008 12:13:09.327575   578 incremental_pipeline.cc:580] Discarding reconstruction due to insufficient size
+I20261008 12:13:09.329305   578 incremental_pipeline.cc:300] Finding good initial image pair
+I20261008 12:13:09.353297   578 incremental_pipeline.cc:324] Registering initial image pair #31 and #30
+I20261008 12:13:09.354858   578 incremental_pipeline.cc:338] Global bundle adjustment
+I20261008 12:13:09.377796   578 incremental_pipeline.cc:428] Registering image #32 (num_reg_frames=2)
+I20261008 12:13:09.379316   578 incremental_pipeline.cc:431] => Image sees 46 / 201 points
+I20261008 12:13:09.380594   578 incremental_pipeline.cc:442] => Could not register, trying another image.
+I20261008 12:13:09.381006   578 incremental_pipeline.cc:43] Retriangulation and Global bundle adjustment
+I20261008 12:13:09.398128   578 incremental_pipeline.cc:428] Registering image #32 (num_reg_frames=2)
+I20261008 12:13:09.399112   578 incremental_pipeline.cc:431] => Image sees 46 / 201 points
+I20261008 12:13:09.408783   578 incremental_pipeline.cc:43] Retriangulation and Global bundle adjustment
+I20261008 12:13:09.456995   578 incremental_pipeline.cc:580] Discarding reconstruction due to insufficient size
+I20261008 12:13:09.458956   578 incremental_pipeline.cc:300] Finding good initial image pair
+I20261008 12:13:09.460685   578 incremental_pipeline.cc:324] Registering initial image pair #31 and #32
+I20261008 12:13:09.461460   578 incremental_pipeline.cc:338] Global bundle adjustment
+I20261008 12:13:09.483024   578 incremental_pipeline.cc:428] Registering image #30 (num_reg_frames=2)
+I20261008 12:13:09.484139   578 incremental_pipeline.cc:431] => Image sees 40 / 227 points
+I20261008 12:13:09.501606   578 incremental_pipeline.cc:43] Retriangulation and Global bundle adjustment
+I20261008 12:13:09.534936   578 incremental_pipeline.cc:580] Discarding reconstruction due to insufficient size
+I20261008 12:13:09.537197   578 incremental_pipeline.cc:300] Finding good initial image pair
+I20261008 12:13:09.539053   578 incremental_pipeline.cc:324] Registering initial image pair #30 and #32
+I20261008 12:13:09.539882   578 incremental_pipeline.cc:338] Global bundle adjustment
+I20261008 12:13:09.562610   578 incremental_pipeline.cc:428] Registering image #31 (num_reg_frames=2)
+I20261008 12:13:09.563460   578 incremental_pipeline.cc:431] => Image sees 45 / 236 points
+I20261008 12:13:09.581730   578 incremental_pipeline.cc:43] Retriangulation and Global bundle adjustment
+I20261008 12:13:09.612169   578 incremental_pipeline.cc:580] Discarding reconstruction due to insufficient size
+I20261008 12:13:09.613945   578 incremental_pipeline.cc:300] Finding good initial image pair
+I20261008 12:13:09.617635   578 incremental_pipeline.cc:324] Registering initial image pair #35 and #33
+I20261008 12:13:09.618316   578 incremental_pipeline.cc:338] Global bundle adjustment
+I20261008 12:13:09.633513   578 incremental_pipeline.cc:428] Registering image #32 (num_reg_frames=2)
+I20261008 12:13:09.634963   578 incremental_pipeline.cc:431] => Image sees 16 / 201 points
+I20261008 12:13:09.636291   578 incremental_pipeline.cc:442] => Could not register, trying another image.
+I20261008 12:13:09.636771   578 incremental_pipeline.cc:43] Retriangulation and Global bundle adjustment
+I20261008 12:13:09.646245   578 incremental_pipeline.cc:428] Registering image #32 (num_reg_frames=2)
+I20261008 12:13:09.647177   578 incremental_pipeline.cc:431] => Image sees 16 / 201 points
+I20261008 12:13:09.648451   578 incremental_pipeline.cc:442] => Could not register, trying another image.
+I20261008 12:13:09.649299   578 incremental_pipeline.cc:580] Discarding reconstruction due to insufficient size
+I20261008 12:13:09.651274   578 incremental_pipeline.cc:300] Finding good initial image pair
+I20261008 12:13:09.653349   578 incremental_pipeline.cc:324] Registering initial image pair #35 and #32
+I20261008 12:13:09.654202   578 incremental_pipeline.cc:338] Global bundle adjustment
+I20261008 12:13:09.654763   578 incremental_pipeline.cc:557] Discarding reconstruction due to bad initial pair
+I20261008 12:13:09.656857   578 incremental_pipeline.cc:300] Finding good initial image pair
+I20261008 12:13:09.835304   578 incremental_pipeline.cc:324] Registering initial image pair #33 and #30
+I20261008 12:13:09.837105   578 incremental_pipeline.cc:338] Global bundle adjustment
+I20261008 12:13:09.838491   578 incremental_pipeline.cc:557] Discarding reconstruction due to bad initial pair
+I20261008 12:13:09.839965   578 incremental_pipeline.cc:300] Finding good initial image pair
+I20261008 12:13:09.840955   578 incremental_pipeline.cc:304] => No good initial image pair found.
+I20261008 12:13:09.841498   578 incremental_pipeline.cc:547] Discarding reconstruction due to no initial pair
+I20261008 12:13:09.841912   578 incremental_pipeline.cc:235] => Relaxing the initialization constraints.
+I20261008 12:13:09.843557   578 incremental_pipeline.cc:300] Finding good initial image pair
+I20261008 12:13:09.866292   578 incremental_pipeline.cc:324] Registering initial image pair #25 and #24
+I20261008 12:13:09.867630   578 incremental_pipeline.cc:338] Global bundle adjustment
+I20261008 12:13:09.887104   578 incremental_pipeline.cc:428] Registering image #28 (num_reg_frames=2)
+I20261008 12:13:09.887964   578 incremental_pipeline.cc:431] => Image sees 16 / 290 points
+I20261008 12:13:09.888978   578 incremental_pipeline.cc:442] => Could not register, trying another image.
+I20261008 12:13:09.889621   578 incremental_pipeline.cc:43] Retriangulation and Global bundle adjustment
+I20261008 12:13:09.899569   578 incremental_pipeline.cc:428] Registering image #28 (num_reg_frames=2)
+I20261008 12:13:09.900301   578 incremental_pipeline.cc:431] => Image sees 16 / 290 points
+I20261008 12:13:09.902359   578 incremental_pipeline.cc:442] => Could not register, trying another image.
+I20261008 12:13:09.903326   578 incremental_pipeline.cc:580] Discarding reconstruction due to insufficient size
+I20261008 12:13:09.905401   578 incremental_pipeline.cc:300] Finding good initial image pair
+I20261008 12:13:09.926533   578 incremental_pipeline.cc:324] Registering initial image pair #24 and #34
+I20261008 12:13:09.927740   578 incremental_pipeline.cc:338] Global bundle adjustment
+I20261008 12:13:09.941327   578 incremental_pipeline.cc:580] Discarding reconstruction due to insufficient size
+I20261008 12:13:09.943679   578 incremental_pipeline.cc:300] Finding good initial image pair
+I20261008 12:13:09.950928   578 incremental_pipeline.cc:324] Registering initial image pair #28 and #34
+I20261008 12:13:09.952215   578 incremental_pipeline.cc:338] Global bundle adjustment
+I20261008 12:13:09.969805   578 incremental_pipeline.cc:580] Discarding reconstruction due to insufficient size
+I20261008 12:13:09.972440   578 incremental_pipeline.cc:300] Finding good initial image pair
+I20261008 12:13:09.974643   578 incremental_pipeline.cc:324] Registering initial image pair #31 and #30
+I20261008 12:13:09.975462   578 incremental_pipeline.cc:338] Global bundle adjustment
+I20261008 12:13:09.998799   578 incremental_pipeline.cc:428] Registering image #32 (num_reg_frames=2)
+I20261008 12:13:10.000070   578 incremental_pipeline.cc:431] => Image sees 46 / 201 points
+I20261008 12:13:10.022948   578 incremental_pipeline.cc:43] Retriangulation and Global bundle adjustment
+I20261008 12:13:10.061409   578 incremental_pipeline.cc:428] Registering image #35 (num_reg_frames=3)
+I20261008 12:13:10.062525   578 incremental_pipeline.cc:431] => Image sees 21 / 174 points
+I20261008 12:13:10.063542   578 incremental_pipeline.cc:442] => Could not register, trying another image.
+I20261008 12:13:10.063911   578 incremental_pipeline.cc:428] Registering image #33 (num_reg_frames=3)
+I20261008 12:13:10.064234   578 incremental_pipeline.cc:431] => Image sees 15 / 87 points
+I20261008 12:13:10.065065   578 incremental_pipeline.cc:442] => Could not register, trying another image.
+I20261008 12:13:10.065464   578 incremental_pipeline.cc:43] Retriangulation and Global bundle adjustment
+I20261008 12:13:10.067142   578 incremental_pipeline.cc:428] Registering image #35 (num_reg_frames=3)
+I20261008 12:13:10.067664   578 incremental_pipeline.cc:431] => Image sees 21 / 174 points
+I20261008 12:13:10.068789   578 incremental_pipeline.cc:442] => Could not register, trying another image.
+I20261008 12:13:10.069371   578 incremental_pipeline.cc:428] Registering image #33 (num_reg_frames=3)
+I20261008 12:13:10.069809   578 incremental_pipeline.cc:431] => Image sees 15 / 87 points
+I20261008 12:13:10.070362   578 incremental_pipeline.cc:442] => Could not register, trying another image.
+I20261008 12:13:10.070636   578 incremental_pipeline.cc:580] Discarding reconstruction due to insufficient size
+I20261008 12:13:10.071784   578 incremental_pipeline.cc:300] Finding good initial image pair
+I20261008 12:13:10.073065   578 incremental_pipeline.cc:324] Registering initial image pair #31 and #32
+I20261008 12:13:10.073752   578 incremental_pipeline.cc:338] Global bundle adjustment
+I20261008 12:13:10.092921   578 incremental_pipeline.cc:428] Registering image #30 (num_reg_frames=2)
+I20261008 12:13:10.094058   578 incremental_pipeline.cc:431] => Image sees 40 / 227 points
+I20261008 12:13:10.111791   578 incremental_pipeline.cc:43] Retriangulation and Global bundle adjustment
+I20261008 12:13:10.145771   578 incremental_pipeline.cc:580] Discarding reconstruction due to insufficient size
+I20261008 12:13:10.148310   578 incremental_pipeline.cc:300] Finding good initial image pair
+I20261008 12:13:10.150254   578 incremental_pipeline.cc:324] Registering initial image pair #30 and #32
+I20261008 12:13:10.150942   578 incremental_pipeline.cc:338] Global bundle adjustment
+I20261008 12:13:10.175848   578 incremental_pipeline.cc:428] Registering image #31 (num_reg_frames=2)
+I20261008 12:13:10.176801   578 incremental_pipeline.cc:431] => Image sees 45 / 236 points
+I20261008 12:13:10.198486   578 incremental_pipeline.cc:43] Retriangulation and Global bundle adjustment
+I20261008 12:13:10.228273   578 incremental_pipeline.cc:580] Discarding reconstruction due to insufficient size
+I20261008 12:13:10.230103   578 incremental_pipeline.cc:300] Finding good initial image pair
+I20261008 12:13:10.235230   578 incremental_pipeline.cc:324] Registering initial image pair #35 and #33
+I20261008 12:13:10.236294   578 incremental_pipeline.cc:338] Global bundle adjustment
+I20261008 12:13:10.255919   578 incremental_pipeline.cc:428] Registering image #32 (num_reg_frames=2)
+I20261008 12:13:10.257164   578 incremental_pipeline.cc:431] => Image sees 16 / 201 points
+I20261008 12:13:10.257910   578 incremental_pipeline.cc:442] => Could not register, trying another image.
+I20261008 12:13:10.258276   578 incremental_pipeline.cc:43] Retriangulation and Global bundle adjustment
+I20261008 12:13:10.271642   578 incremental_pipeline.cc:428] Registering image #32 (num_reg_frames=2)
+I20261008 12:13:10.272287   578 incremental_pipeline.cc:431] => Image sees 16 / 201 points
+I20261008 12:13:10.273214   578 incremental_pipeline.cc:442] => Could not register, trying another image.
+I20261008 12:13:10.273620   578 incremental_pipeline.cc:580] Discarding reconstruction due to insufficient size
+I20261008 12:13:10.274842   578 incremental_pipeline.cc:300] Finding good initial image pair
+I20261008 12:13:10.277861   578 incremental_pipeline.cc:324] Registering initial image pair #35 and #32
+I20261008 12:13:10.278986   578 incremental_pipeline.cc:338] Global bundle adjustment
+W20261008 12:13:10.279426   578 bundle_adjustment.cc:566] Failed to fix Gauge with two cameras. Falling back to fixing Gauge with three points.
+W20261008 12:13:10.280791   578 bundle_adjustment.cc:472] Failed to fix Gauge due to insufficient number of fixed points: 0
+I20261008 12:13:10.281373   578 incremental_pipeline.cc:557] Discarding reconstruction due to bad initial pair
+I20261008 12:13:10.283213   578 incremental_pipeline.cc:300] Finding good initial image pair
+I20261008 12:13:10.495019   578 incremental_pipeline.cc:324] Registering initial image pair #33 and #30
+I20261008 12:13:10.496026   578 incremental_pipeline.cc:338] Global bundle adjustment
+I20261008 12:13:10.496877   578 incremental_pipeline.cc:557] Discarding reconstruction due to bad initial pair
+I20261008 12:13:10.498116   578 incremental_pipeline.cc:300] Finding good initial image pair
+I20261008 12:13:10.498747   578 incremental_pipeline.cc:304] => No good initial image pair found.
+I20261008 12:13:10.499080   578 incremental_pipeline.cc:547] Discarding reconstruction due to no initial pair
+I20261008 12:13:10.499441   578 incremental_pipeline.cc:244] => Relaxing the initialization constraints.
+I20261008 12:13:10.500509   578 incremental_pipeline.cc:300] Finding good initial image pair
+I20261008 12:13:10.521624   578 incremental_pipeline.cc:324] Registering initial image pair #25 and #24
+I20261008 12:13:10.522727   578 incremental_pipeline.cc:338] Global bundle adjustment
+I20261008 12:13:10.545269   578 incremental_pipeline.cc:428] Registering image #28 (num_reg_frames=2)
+I20261008 12:13:10.545995   578 incremental_pipeline.cc:431] => Image sees 18 / 290 points
+I20261008 12:13:10.547433   578 incremental_pipeline.cc:442] => Could not register, trying another image.
+I20261008 12:13:10.547889   578 incremental_pipeline.cc:43] Retriangulation and Global bundle adjustment
+I20261008 12:13:10.592492   578 incremental_pipeline.cc:580] Discarding reconstruction due to insufficient size
+I20261008 12:13:10.594079   578 incremental_pipeline.cc:300] Finding good initial image pair
+I20261008 12:13:10.612993   578 incremental_pipeline.cc:324] Registering initial image pair #24 and #34
+I20261008 12:13:10.614567   578 incremental_pipeline.cc:338] Global bundle adjustment
+I20261008 12:13:10.634565   578 incremental_pipeline.cc:428] Registering image #28 (num_reg_frames=2)
+I20261008 12:13:10.635664   578 incremental_pipeline.cc:431] => Image sees 19 / 290 points
+I20261008 12:13:10.642683   578 incremental_pipeline.cc:442] => Could not register, trying another image.
+I20261008 12:13:10.643353   578 incremental_pipeline.cc:43] Retriangulation and Global bundle adjustment
+I20261008 12:13:10.651886   578 incremental_pipeline.cc:428] Registering image #28 (num_reg_frames=2)
+I20261008 12:13:10.652882   578 incremental_pipeline.cc:431] => Image sees 19 / 290 points
+I20261008 12:13:10.659950   578 incremental_pipeline.cc:442] => Could not register, trying another image.
+I20261008 12:13:10.661036   578 incremental_pipeline.cc:580] Discarding reconstruction due to insufficient size
+I20261008 12:13:10.662353   578 incremental_pipeline.cc:300] Finding good initial image pair
+I20261008 12:13:10.668569   578 incremental_pipeline.cc:324] Registering initial image pair #28 and #34
+I20261008 12:13:10.670017   578 incremental_pipeline.cc:338] Global bundle adjustment
+I20261008 12:13:10.684980   578 incremental_pipeline.cc:428] Registering image #25 (num_reg_frames=2)
+I20261008 12:13:10.685778   578 incremental_pipeline.cc:431] => Image sees 15 / 427 points
+I20261008 12:13:10.686872   578 incremental_pipeline.cc:442] => Could not register, trying another image.
+I20261008 12:13:10.687278   578 incremental_pipeline.cc:43] Retriangulation and Global bundle adjustment
+I20261008 12:13:10.696460   578 incremental_pipeline.cc:428] Registering image #25 (num_reg_frames=2)
+I20261008 12:13:10.697072   578 incremental_pipeline.cc:431] => Image sees 18 / 427 points
+I20261008 12:13:10.697827   578 incremental_pipeline.cc:442] => Could not register, trying another image.
+I20261008 12:13:10.698226   578 incremental_pipeline.cc:580] Discarding reconstruction due to insufficient size
+I20261008 12:13:10.699324   578 incremental_pipeline.cc:300] Finding good initial image pair
+I20261008 12:13:10.701007   578 incremental_pipeline.cc:324] Registering initial image pair #31 and #30
+I20261008 12:13:10.701548   578 incremental_pipeline.cc:338] Global bundle adjustment
+I20261008 12:13:10.728360   578 incremental_pipeline.cc:428] Registering image #32 (num_reg_frames=2)
+I20261008 12:13:10.729171   578 incremental_pipeline.cc:431] => Image sees 45 / 201 points
+I20261008 12:13:10.729597   578 incremental_pipeline.cc:442] => Could not register, trying another image.
+I20261008 12:13:10.729871   578 incremental_pipeline.cc:43] Retriangulation and Global bundle adjustment
+I20261008 12:13:10.746325   578 incremental_pipeline.cc:428] Registering image #32 (num_reg_frames=2)
+I20261008 12:13:10.747104   578 incremental_pipeline.cc:431] => Image sees 45 / 201 points
+I20261008 12:13:10.758535   578 incremental_pipeline.cc:43] Retriangulation and Global bundle adjustment
+I20261008 12:13:10.808656   578 incremental_pipeline.cc:580] Discarding reconstruction due to insufficient size
+I20261008 12:13:10.811251   578 incremental_pipeline.cc:300] Finding good initial image pair
+I20261008 12:13:10.813916   578 incremental_pipeline.cc:324] Registering initial image pair #30 and #32
+I20261008 12:13:10.814812   578 incremental_pipeline.cc:338] Global bundle adjustment
+I20261008 12:13:10.841164   578 incremental_pipeline.cc:428] Registering image #31 (num_reg_frames=2)
+I20261008 12:13:10.842383   578 incremental_pipeline.cc:431] => Image sees 45 / 236 points
+I20261008 12:13:10.854905   578 incremental_pipeline.cc:43] Retriangulation and Global bundle adjustment
+I20261008 12:13:10.875392   578 incremental_pipeline.cc:428] Registering image #35 (num_reg_frames=3)
+I20261008 12:13:10.876379   578 incremental_pipeline.cc:431] => Image sees 21 / 174 points
+I20261008 12:13:10.877413   578 incremental_pipeline.cc:442] => Could not register, trying another image.
+I20261008 12:13:10.877828   578 incremental_pipeline.cc:428] Registering image #33 (num_reg_frames=3)
+I20261008 12:13:10.878087   578 incremental_pipeline.cc:431] => Image sees 15 / 87 points
+I20261008 12:13:10.878712   578 incremental_pipeline.cc:442] => Could not register, trying another image.
+I20261008 12:13:10.878984   578 incremental_pipeline.cc:43] Retriangulation and Global bundle adjustment
+I20261008 12:13:10.880465   578 incremental_pipeline.cc:428] Registering image #35 (num_reg_frames=3)
+I20261008 12:13:10.880765   578 incremental_pipeline.cc:431] => Image sees 21 / 174 points
+I20261008 12:13:10.881723   578 incremental_pipeline.cc:442] => Could not register, trying another image.
+I20261008 12:13:10.882051   578 incremental_pipeline.cc:428] Registering image #33 (num_reg_frames=3)
+I20261008 12:13:10.882334   578 incremental_pipeline.cc:431] => Image sees 15 / 87 points
+I20261008 12:13:10.882939   578 incremental_pipeline.cc:442] => Could not register, trying another image.
+I20261008 12:13:10.883159   578 incremental_pipeline.cc:580] Discarding reconstruction due to insufficient size
+I20261008 12:13:10.884160   578 incremental_pipeline.cc:300] Finding good initial image pair
+I20261008 12:13:10.886994   578 incremental_pipeline.cc:324] Registering initial image pair #32 and #35
+I20261008 12:13:10.887691   578 incremental_pipeline.cc:338] Global bundle adjustment
+I20261008 12:13:10.891289   578 incremental_pipeline.cc:557] Discarding reconstruction due to bad initial pair
+I20261008 12:13:10.893174   578 incremental_pipeline.cc:300] Finding good initial image pair
+I20261008 12:13:10.896992   578 incremental_pipeline.cc:324] Registering initial image pair #35 and #33
+I20261008 12:13:10.897710   578 incremental_pipeline.cc:338] Global bundle adjustment
+I20261008 12:13:10.912415   578 incremental_pipeline.cc:428] Registering image #32 (num_reg_frames=2)
+I20261008 12:13:10.913883   578 incremental_pipeline.cc:431] => Image sees 16 / 201 points
+I20261008 12:13:10.914953   578 incremental_pipeline.cc:442] => Could not register, trying another image.
+I20261008 12:13:10.915405   578 incremental_pipeline.cc:43] Retriangulation and Global bundle adjustment
+I20261008 12:13:10.923763   578 incremental_pipeline.cc:428] Registering image #32 (num_reg_frames=2)
+I20261008 12:13:10.924746   578 incremental_pipeline.cc:431] => Image sees 16 / 201 points
+I20261008 12:13:10.925449   578 incremental_pipeline.cc:442] => Could not register, trying another image.
+I20261008 12:13:10.925854   578 incremental_pipeline.cc:580] Discarding reconstruction due to insufficient size
+I20261008 12:13:10.927073   578 incremental_pipeline.cc:300] Finding good initial image pair
+I20261008 12:13:11.116559   578 incremental_pipeline.cc:324] Registering initial image pair #16 and #35
+I20261008 12:13:11.118081   578 incremental_pipeline.cc:338] Global bundle adjustment
+I20261008 12:13:11.119150   578 incremental_pipeline.cc:557] Discarding reconstruction due to bad initial pair
+I20261008 12:13:11.120345   578 incremental_pipeline.cc:300] Finding good initial image pair
+I20261008 12:13:11.123004   578 incremental_pipeline.cc:324] Registering initial image pair #33 and #30
+I20261008 12:13:11.123687   578 incremental_pipeline.cc:338] Global bundle adjustment
+I20261008 12:13:11.124205   578 incremental_pipeline.cc:557] Discarding reconstruction due to bad initial pair
+I20261008 12:13:11.125182   578 incremental_pipeline.cc:300] Finding good initial image pair
+I20261008 12:13:11.125543   578 incremental_pipeline.cc:304] => No good initial image pair found.
+I20261008 12:13:11.125864   578 incremental_pipeline.cc:547] Discarding reconstruction due to no initial pair
+I20261008 12:13:11.126142   578 timer.cc:91] Elapsed time: 0.170 [minutes]
+models=1 using=0
++ colmap image_undistorter --image_path /home/kiranriya0990/hn3d_work/room_sparse/images --input_path /home/kiranriya0990/hn3d_work/room_sparse/colmap/sparse/0 --output_path /home/kiranriya0990/hn3d_work/room_sparse/dense --output_type COLMAP
+I20261008 12:13:11.149766   582 misc.cc:44] 
+==============================================================================
+Reading reconstruction
+==============================================================================
+I20261008 12:13:11.155615   582 image.cc:361] => Reconstruction with 23 images and 2532 points
+I20261008 12:13:11.156610   582 misc.cc:44] 
+==============================================================================
+Image undistortion
+==============================================================================
+I20261008 12:13:11.167498   582 undistortion.cc:197] Undistorting image [1/23]
+I20261008 12:13:11.424486   582 undistortion.cc:197] Undistorting image [2/23]
+I20261008 12:13:11.491199   582 undistortion.cc:197] Undistorting image [3/23]
+I20261008 12:13:11.492098   582 undistortion.cc:197] Undistorting image [4/23]
+I20261008 12:13:11.517292   582 undistortion.cc:197] Undistorting image [5/23]
+I20261008 12:13:11.518128   582 undistortion.cc:197] Undistorting image [6/23]
+I20261008 12:13:11.522941   582 undistortion.cc:197] Undistorting image [7/23]
+I20261008 12:13:11.523901   582 undistortion.cc:197] Undistorting image [8/23]
+I20261008 12:13:11.524267   582 undistortion.cc:197] Undistorting image [9/23]
+I20261008 12:13:11.571765   582 undistortion.cc:197] Undistorting image [10/23]
+I20261008 12:13:11.573176   582 undistortion.cc:197] Undistorting image [11/23]
+I20261008 12:13:11.573731   582 undistortion.cc:197] Undistorting image [12/23]
+I20261008 12:13:11.574110   582 undistortion.cc:197] Undistorting image [13/23]
+I20261008 12:13:11.574470   582 undistortion.cc:197] Undistorting image [14/23]
+I20261008 12:13:11.574905   582 undistortion.cc:197] Undistorting image [15/23]
+I20261008 12:13:11.575279   582 undistortion.cc:197] Undistorting image [16/23]
+I20261008 12:13:11.575650   582 undistortion.cc:197] Undistorting image [17/23]
+I20261008 12:13:11.576021   582 undistortion.cc:197] Undistorting image [18/23]
+I20261008 12:13:11.576382   582 undistortion.cc:197] Undistorting image [19/23]
+I20261008 12:13:11.577029   582 undistortion.cc:197] Undistorting image [20/23]
+I20261008 12:13:11.577682   582 undistortion.cc:197] Undistorting image [21/23]
+I20261008 12:13:11.612952   582 undistortion.cc:197] Undistorting image [22/23]
+I20261008 12:13:11.642633   582 undistortion.cc:197] Undistorting image [23/23]
+I20261008 12:13:11.644172   582 undistortion.cc:207] Writing reconstruction...
+I20261008 12:13:11.660357   582 undistortion.cc:212] Writing configuration...
+I20261008 12:13:11.661916   582 undistortion.cc:216] Writing scripts...
+I20261008 12:13:11.663018   582 timer.cc:91] Elapsed time: 0.008 [minutes]
++ colmap model_analyzer --path /home/kiranriya0990/hn3d_work/room_sparse/dense/sparse
+I20261008 12:13:11.687507   603 model.cc:444] Rigs: 2
+I20261008 12:13:11.688678   603 model.cc:445] Cameras: 2
+I20261008 12:13:11.689630   603 model.cc:446] Frames: 23
+I20261008 12:13:11.690135   603 model.cc:447] Registered frames: 23
+I20261008 12:13:11.690467   603 model.cc:449] Images: 23
+I20261008 12:13:11.690706   603 model.cc:450] Registered images: 23
+I20261008 12:13:11.690999   603 model.cc:452] Points: 2532
+I20261008 12:13:11.691236   603 model.cc:453] Observations: 8127
+I20261008 12:13:11.691430   603 model.cc:455] Mean track length: 3.209716
+I20261008 12:13:11.691758   603 model.cc:457] Mean observations per image: 353.347826
+I20261008 12:13:11.692075   603 model.cc:460] Mean reprojection error: 0.905067px
+train=20 test=3 points=2532 scene_scale=7.211 res=792x445
+step      0 loss 0.2002 psnr 12.67 n=2,532 mem=0.11GB t=2s
+step    500 loss 0.0983 psnr 19.33 n=2,532 mem=0.11GB t=12s
+step   1000 loss 0.0633 psnr 23.17 n=20,842 mem=0.13GB t=21s
+step   1500 loss 0.0306 psnr 28.01 n=73,434 mem=0.17GB t=31s
+step   2000 loss 0.0256 psnr 29.24 n=138,537 mem=0.25GB t=42s
+step   2500 loss 0.0267 psnr 28.18 n=206,425 mem=0.35GB t=53s
+step   3000 loss 0.0142 psnr 34.18 n=268,926 mem=0.43GB t=66s
+step   3500 loss 0.0237 psnr 30.18 n=274,287 mem=0.46GB t=78s
+step   4000 loss 0.0106 psnr 38.89 n=317,587 mem=0.50GB t=91s
+step   4500 loss 0.0156 psnr 31.97 n=351,036 mem=0.57GB t=105s
+step   5000 loss 0.0145 psnr 34.31 n=379,585 mem=0.59GB t=119s
+step   5500 loss 0.0130 psnr 35.03 n=402,346 mem=0.63GB t=134s
+step   6000 loss 0.0154 psnr 33.77 n=402,346 mem=0.63GB t=148s
+step   6500 loss 0.0105 psnr 35.87 n=402,346 mem=0.63GB t=163s
+step   6999 loss 0.0110 psnr 35.38 n=402,346 mem=0.63GB t=178s
+/home/kiranriya0990/hn3d/lib/python3.12/site-packages/torchvision/models/_utils.py:207: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/home/kiranriya0990/hn3d/lib/python3.12/site-packages/torchvision/models/_utils.py:222: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=VGG16_Weights.IMAGENET1K_V1`. You can also use `weights=VGG16_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+TEST  psnr=13.54  ssim=0.6238  lpips=0.5926  (3.0 min)
+/home/kiranriya0990/hn3d/lib/python3.12/site-packages/torchvision/models/_utils.py:207: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/home/kiranriya0990/hn3d/lib/python3.12/site-packages/torchvision/models/_utils.py:222: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=VGG16_Weights.IMAGENET1K_V1`. You can also use `weights=VGG16_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+run                        PSNR   SSIM  LPIPS | PSNRcc SSIMcc LPIPScc  n
+baseline                  13.54  0.624  0.593 |  17.06  0.676   0.568  402,346

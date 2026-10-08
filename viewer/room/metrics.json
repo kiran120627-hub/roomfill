@@ -1,0 +1,33 @@
+{
+  "quality": {
+    "baseline": {
+      "psnr": 16.037247959764372,
+      "ssim": 0.6424230217933655,
+      "lpips": 0.6277210772037506
+    },
+    "completed": {
+      "psnr": 16.098845121331742,
+      "ssim": 0.6431376695632934,
+      "lpips": 0.626644229888916
+    }
+  },
+  "quality_is_colour_aligned": true,
+  "geometry": {
+    "baseline": {
+      "accuracy_m": 0.12968143118518835,
+      "completeness_m": 0.29122262467757726,
+      "chamfer_m": 0.2104520279313828,
+      "coverage_10cm": 0.2043421971619849,
+      "coverage_25cm": 0.5702519462378414,
+      "shell_points": 97186
+    },
+    "completed": {
+      "accuracy_m": 0.15166177113423443,
+      "completeness_m": 0.14624115009811287,
+      "chamfer_m": 0.14895146061617365,
+      "coverage_10cm": 0.30311909101749485,
+      "coverage_25cm": 0.9535287804711855,
+      "shell_points": 375764
+    }
+  }
+}

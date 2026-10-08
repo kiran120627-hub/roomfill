@@ -1,0 +1,71 @@
+{
+  "units": "metres",
+  "frame": "Y-up, floor y=0, room centred at x=z=0",
+  "dimensions": {
+    "length": 4.283,
+    "width": 3.694,
+    "height": 2.708
+  },
+  "camera_height_m": 1.548,
+  "scale_estimators": {
+    "depth": {
+      "length": 4.283,
+      "width": 3.694,
+      "height": 2.708
+    },
+    "camera": {
+      "length": 3.734,
+      "width": 3.22,
+      "height": 2.361
+    }
+  },
+  "ceiling_observed": true,
+  "faces": {
+    "wall_x0": {
+      "observed": 0.799,
+      "opening": 0.16,
+      "generated": 0.041,
+      "method": "lama",
+      "new_gaussians": 3589
+    },
+    "wall_x1": {
+      "observed": 0.554,
+      "opening": 0.209,
+      "generated": 0.237,
+      "method": "lama",
+      "new_gaussians": 20568
+    },
+    "wall_y0": {
+      "observed": 0.787,
+      "opening": 0.133,
+      "generated": 0.08,
+      "method": "lama",
+      "new_gaussians": 8025
+    },
+    "wall_y1": {
+      "observed": 0.523,
+      "opening": 0.468,
+      "generated": 0.009,
+      "method": "lama",
+      "new_gaussians": 862
+    },
+    "floor": {
+      "observed": 0.959,
+      "opening": 0.0,
+      "generated": 0.041,
+      "method": "lama",
+      "new_gaussians": 5673
+    },
+    "ceiling": {
+      "observed": 0.952,
+      "opening": 0.0,
+      "generated": 0.048,
+      "method": "lama",
+      "new_gaussians": 6650
+    }
+  },
+  "gaussians": {
+    "total": 560158,
+    "generated": 45367
+  }
+}

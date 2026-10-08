@@ -1,0 +1,10 @@
+# Raw capture and held-out photos stay private (people appear in them; video is 120 MB).
+data/raw/
+data/heldout/
+# Large duplicates: the viewer uses the compact .splat files; PLY/GLB/USD are rebuilt by run_all.sh.
+viewer/**/*.ply
+# Python / OS clutter
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db

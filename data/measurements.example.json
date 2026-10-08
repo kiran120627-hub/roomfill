@@ -1,0 +1,8 @@
+{
+  "room_length_m": 8.40,
+  "room_width_m": 6.60,
+  "ceiling_height_m": 3.20,
+  "door_height_m": 2.10,
+  "door_width_m": 1.00,
+  "notes": "Copy to measurements.json with your real values. Length/width order does not matter."
+}

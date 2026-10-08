@@ -1,0 +1,41 @@
+train=400 test=5 points=64898 scene_scale=8.415 res=794x446
+Loading weights:   0%|          | 0/287 [00:00<?, ?it/s]Loading weights: 100%|██████████| 287/287 [00:00<00:00, 3553.79it/s]
+[transformers] You seem to be using the pipelines sequentially on GPU. In order to maximize efficiency please use a dataset
+mono depth cached for 400 views -> /home/kiranriya0990/hn3d_work/room/dense/mono_depth_ds2.pt
+step      0 loss 0.4007 psnr 10.23 n=64,898 mem=2.02GB t=3s
+step    500 loss 0.1002 psnr 19.71 n=64,898 mem=2.02GB t=18s
+step   1000 loss 0.0578 psnr 25.43 n=65,713 mem=2.02GB t=31s
+step   1500 loss 0.0593 psnr 24.20 n=116,759 mem=2.02GB t=45s
+step   2000 loss 0.1056 psnr 19.68 n=172,498 mem=2.02GB t=60s
+step   2500 loss 0.0413 psnr 27.36 n=228,641 mem=2.02GB t=76s
+step   3000 loss 0.0554 psnr 25.57 n=281,469 mem=2.02GB t=95s
+step   3500 loss 0.0535 psnr 24.52 n=185,535 mem=2.02GB t=110s
+step   4000 loss 0.0318 psnr 28.09 n=240,220 mem=2.02GB t=128s
+step   4500 loss 0.0346 psnr 26.14 n=289,918 mem=2.02GB t=144s
+step   5000 loss 0.0358 psnr 27.40 n=339,953 mem=2.02GB t=160s
+step   5500 loss 0.0365 psnr 26.26 n=382,912 mem=2.02GB t=178s
+step   6000 loss 0.0281 psnr 28.75 n=425,634 mem=2.02GB t=197s
+step   6500 loss 0.0457 psnr 26.26 n=190,812 mem=2.02GB t=212s
+step   7000 loss 0.0502 psnr 23.84 n=211,221 mem=2.02GB t=227s
+step   7500 loss 0.0548 psnr 24.23 n=234,667 mem=2.02GB t=242s
+step   8000 loss 0.0283 psnr 29.73 n=266,836 mem=2.02GB t=256s
+step   8500 loss 0.0432 psnr 26.77 n=298,615 mem=2.02GB t=270s
+step   9000 loss 0.0399 psnr 25.18 n=333,549 mem=2.02GB t=284s
+step   9500 loss 0.0201 psnr 32.46 n=65,812 mem=2.02GB t=296s
+step  10000 loss 0.0285 psnr 28.35 n=83,332 mem=2.02GB t=307s
+step  10500 loss 0.1480 psnr 15.37 n=112,046 mem=2.02GB t=318s
+step  11000 loss 0.0855 psnr 20.51 n=149,331 mem=2.02GB t=330s
+step  11500 loss 0.0771 psnr 21.48 n=195,186 mem=2.02GB t=343s
+step  12000 loss 0.0406 psnr 25.39 n=232,249 mem=2.02GB t=356s
+step  12500 loss 0.0669 psnr 23.32 n=232,249 mem=2.02GB t=369s
+step  13000 loss 0.0565 psnr 22.65 n=232,249 mem=2.02GB t=382s
+step  13500 loss 0.0699 psnr 22.72 n=232,249 mem=2.02GB t=396s
+step  14000 loss 0.0581 psnr 22.53 n=232,249 mem=2.02GB t=410s
+step  14500 loss 0.0571 psnr 24.45 n=232,249 mem=2.02GB t=424s
+step  14999 loss 0.0504 psnr 25.61 n=232,249 mem=2.02GB t=437s
+/home/kiranriya0990/hn3d/lib/python3.12/site-packages/torchvision/models/_utils.py:207: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/home/kiranriya0990/hn3d/lib/python3.12/site-packages/torchvision/models/_utils.py:222: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=VGG16_Weights.IMAGENET1K_V1`. You can also use `weights=VGG16_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+TEST  psnr=13.12  ssim=0.5693  lpips=0.6503  (7.3 min)
+EXIT=0

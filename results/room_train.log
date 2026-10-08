@@ -1,0 +1,38 @@
+train=400 test=5 points=64898 scene_scale=8.415 res=794x446
+step      0 loss 0.3041 psnr 10.23 n=64,898 mem=2.02GB t=12s
+step    500 loss 0.0937 psnr 19.92 n=64,898 mem=2.02GB t=25s
+step   1000 loss 0.0379 psnr 26.80 n=96,955 mem=2.02GB t=36s
+step   1500 loss 0.0956 psnr 19.79 n=161,652 mem=2.02GB t=48s
+step   2000 loss 0.0767 psnr 21.15 n=228,301 mem=2.02GB t=59s
+step   2500 loss 0.0452 psnr 26.44 n=299,560 mem=2.02GB t=72s
+step   3000 loss 0.0492 psnr 25.02 n=368,506 mem=2.02GB t=85s
+step   3500 loss 0.0692 psnr 22.09 n=289,501 mem=2.02GB t=99s
+step   4000 loss 0.0444 psnr 23.71 n=373,135 mem=2.02GB t=112s
+step   4500 loss 0.0223 psnr 28.40 n=458,230 mem=2.02GB t=127s
+step   5000 loss 0.1221 psnr 16.46 n=532,071 mem=2.02GB t=142s
+step   5500 loss 0.0402 psnr 23.86 n=599,971 mem=2.02GB t=158s
+step   6000 loss 0.0412 psnr 24.55 n=672,189 mem=2.02GB t=176s
+step   6500 loss 0.0350 psnr 27.14 n=498,980 mem=2.02GB t=192s
+step   7000 loss 0.0367 psnr 24.64 n=570,868 mem=2.02GB t=209s
+step   7500 loss 0.0466 psnr 24.49 n=631,382 mem=2.02GB t=226s
+step   8000 loss 0.0326 psnr 27.02 n=696,756 mem=2.02GB t=244s
+step   8500 loss 0.0362 psnr 26.72 n=751,493 mem=2.02GB t=262s
+step   9000 loss 0.0362 psnr 24.74 n=811,486 mem=2.02GB t=280s
+step   9500 loss 0.0200 psnr 32.29 n=594,934 mem=2.02GB t=297s
+step  10000 loss 0.0178 psnr 31.25 n=648,752 mem=2.02GB t=314s
+step  10500 loss 0.1182 psnr 17.10 n=704,046 mem=2.02GB t=332s
+step  11000 loss 0.0339 psnr 25.29 n=750,716 mem=2.02GB t=352s
+step  11500 loss 0.0341 psnr 26.21 n=801,549 mem=2.02GB t=372s
+step  12000 loss 0.0163 psnr 33.86 n=833,349 mem=2.02GB t=394s
+step  12500 loss 0.0296 psnr 26.69 n=833,349 mem=2.02GB t=414s
+step  13000 loss 0.0368 psnr 24.89 n=833,349 mem=2.02GB t=434s
+step  13500 loss 0.0455 psnr 25.41 n=833,349 mem=2.02GB t=452s
+step  14000 loss 0.0371 psnr 24.64 n=833,349 mem=2.02GB t=471s
+step  14500 loss 0.0352 psnr 26.40 n=833,349 mem=2.02GB t=491s
+step  14999 loss 0.0393 psnr 25.73 n=833,349 mem=2.02GB t=511s
+/home/kiranriya0990/hn3d/lib/python3.12/site-packages/torchvision/models/_utils.py:207: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/home/kiranriya0990/hn3d/lib/python3.12/site-packages/torchvision/models/_utils.py:222: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=VGG16_Weights.IMAGENET1K_V1`. You can also use `weights=VGG16_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+TEST  psnr=11.65  ssim=0.5981  lpips=0.6625  (8.5 min)
+EXIT=0

@@ -1,0 +1,107 @@
+{
+  "units": "metres",
+  "frame": "Y-up, floor y=0, room centred at x=z=0",
+  "dimensions": {
+    "length": 9.598,
+    "width": 8.552,
+    "height": 3.276
+  },
+  "camera_height_m": 1.491,
+  "scale_estimators": {
+    "depth": {
+      "length": 19.496,
+      "width": 17.371,
+      "height": 6.655
+    },
+    "camera": {
+      "length": 9.01,
+      "width": 8.028,
+      "height": 3.075
+    },
+    "floorplan": {
+      "length": 9.598,
+      "width": 8.552,
+      "height": 3.276
+    },
+    "tape": {
+      "length": 9.598,
+      "width": 8.552,
+      "height": 3.276
+    }
+  },
+  "ceiling_observed": true,
+  "faces": {
+    "wall_x0": {
+      "snap": 0.0,
+      "observed": 0.262,
+      "opening": 0.06,
+      "generated": 0.678,
+      "method": "lama",
+      "new_gaussians": 32841
+    },
+    "wall_x1": {
+      "snap": 0.0,
+      "observed": 0.553,
+      "opening": 0.0,
+      "generated": 0.447,
+      "method": "lama",
+      "new_gaussians": 21638
+    },
+    "wall_y0": {
+      "snap": 0.0,
+      "observed": 0.419,
+      "opening": 0.018,
+      "generated": 0.563,
+      "method": "lama",
+      "new_gaussians": 30635
+    },
+    "wall_y1": {
+      "snap": 0.0,
+      "observed": 0.119,
+      "opening": 0.0,
+      "generated": 0.881,
+      "method": "lama",
+      "new_gaussians": 47926
+    },
+    "floor": {
+      "snap": 0.0,
+      "observed": 0.723,
+      "opening": 0.0,
+      "generated": 0.277,
+      "method": "lama",
+      "new_gaussians": 39406
+    },
+    "ceiling": {
+      "snap": 0.0,
+      "observed": 0.255,
+      "opening": 0.0,
+      "generated": 0.745,
+      "method": "lama",
+      "new_gaussians": 106132
+    }
+  },
+  "gaussians": {
+    "total": 1111162,
+    "generated": 278578
+  },
+  "dim_error_pct_vs_tape": {
+    "length_width": [
+      3.69,
+      3.99
+    ],
+    "height": 6.4
+  },
+  "scale_from": "floorplan",
+  "home_camera": {
+    "position": [
+      -4.473,
+      1.422,
+      -3.402
+    ],
+    "look_at": [
+      -2.051,
+      0.969,
+      -1.69
+    ]
+  }
+}
